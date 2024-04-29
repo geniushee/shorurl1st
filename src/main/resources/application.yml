@@ -33,3 +33,8 @@ logging:
     org.hibernate.orm.jdbc.extract: TRACE
     org.springframework.transaction.interceptor: TRACE
 
+custom:
+  dev:
+    domain: localhost
+    frontUrl: "http://${custom.dev.domain}:3000"
+    backUrl: "http://${custom.dev.domain}:${server.port}"
