@@ -1,18 +1,25 @@
 import React from 'react';
 import {getSUrl} from "../SUrls"
-import { useLoaderData } from 'react-router';
+import { redirect, useLoaderData } from 'react-router-dom';
 
 export async function loader({ params }) {
-    const sUrl = await getSUrl(params.surl);
-    return {sUrl};
+    console.log(params)
+    if (!params) {
+            console.log("스트레스 받아")
+            return redirect("/main")
+          }
+    const sUrl  = await getSUrl({params});
+    console.log(sUrl)
+    return redirect(sUrl);
 }
 
 function SUrl() {
-    const { sUrl } = useLoaderData();
-    
+    // const { sUrl } = useLoaderData();
+
+
     return (
         <div>
-            하염
+            redirect
         </div>
     );
 }

@@ -1,27 +1,18 @@
 import './App.css'
-import SUrl from './domain/SUrl'
-import { Outlet,Link, useLoaderData, Form } from 'react-router-dom'
-import {getSUrl} from "./SUrls";
-
-export async function loader() {
-  const SUrls = await getSUrl();
-  return { SUrls };
-}
+import { Outlet, Link, redirect } from 'react-router-dom'
 
 function App() {
-  const {SUrls} = useLoaderData();
-
 
   return (
     <>
-    <div>메인 페이지</div>
-    <Link to="/1">링크</Link>
-    <div>{SUrls.length ? (SUrls.map((SUrl) => (
-      <div>{SUrl}</div>))) : (<div>없음</div>)
-    }</div>
-    <div id="detail">
-      <Outlet />
-    </div>
+      <div>
+        <Link to='/'>메인 페이지</Link><Link to={'/create'}>새로 만들기</Link>
+        </div>
+      <Link to="/1">시험 링크 : /1</Link>
+
+      <div id="detail">
+        <Outlet />
+      </div>
     </>
   )
 }

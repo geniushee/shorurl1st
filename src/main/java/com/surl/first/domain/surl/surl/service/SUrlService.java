@@ -25,4 +25,8 @@ public class SUrlService {
 
 		return sUrl.getShortUrl();
 	}
+
+	public SUrl findSUrl(String sUrl) throws Exception{
+		return sUrlRepository.findById(Long.valueOf(sUrl)).orElseThrow(() -> new RuntimeException("찾는 URL이 없습니다."));
+	}
 }

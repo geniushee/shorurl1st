@@ -1,7 +1,6 @@
 package com.surl.first.domain.surl.surl.entity;
 
-import com.surl.first.global.config.Appconfig;
-import com.surl.first.global.entity.IdEntity;
+import com.surl.first.global.config.AppConfig;
 import com.surl.first.global.entity.TimeEntity;
 
 import jakarta.persistence.Entity;
@@ -27,6 +26,6 @@ public class SUrl extends TimeEntity {
 	private String content;
 
 	public String getShortUrl() {
-		return Appconfig.getFrontUrl() + "/" + id;
+		return AppConfig.getFrontUrl() + "/" + id;
 	}
 }
