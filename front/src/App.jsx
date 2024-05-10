@@ -1,14 +1,14 @@
 import './App.css'
 import { Outlet, Link, redirect } from 'react-router-dom'
+import Navbar from './global/Navbar';
 
 function App() {
 
   return (
     <>
       <div>
-        <Link to='/'>메인 페이지</Link><Link to={'/create'}>새로 만들기</Link>
-        </div>
-      <Link to="/1">시험 링크 : /1</Link>
+        <Navbar></Navbar>
+      </div>
 
       <div id="detail">
         <Outlet />

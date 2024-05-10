@@ -38,3 +38,5 @@ custom:
     domain: localhost
     frontUrl: "http://${custom.dev.domain}:3000"
     backUrl: "http://${custom.dev.domain}:${server.port}"
+  jwt:
+    secretKey: ${custom.jwt.key}

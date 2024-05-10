@@ -1,5 +1,6 @@
 package com.surl.first.global.securityConfig.jwtConfig;
 
+import com.surl.first.global.config.AppConfig;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -15,7 +16,8 @@ import java.util.Date;
 import java.util.Map;
 
 public class JwtUtil {
-    private static final String SECRET_KEY = "nqtjqoiwejfklsadnfvklasjncqiopwhnmioqwjodixqjhwopxsaisdfakl";
+    private static final String SECRET_KEY = AppConfig.getJwtSecretKey();
+
 
     private static SecretKey getSecretKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);

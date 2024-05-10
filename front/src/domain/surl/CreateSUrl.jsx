@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, redirect, useLoaderData } from "react-router-dom"
-import { createNewSUrl } from '../SUrls';
+import { createNewSUrl } from '../../SUrls';
 
 export async function loader({ request }) {
     console.log(request)

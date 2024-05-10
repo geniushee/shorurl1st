@@ -38,3 +38,4 @@ out/
 
 ### custom ###
 ./front
+application-secret.yml

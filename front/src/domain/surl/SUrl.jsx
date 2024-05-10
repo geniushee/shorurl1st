@@ -1,5 +1,5 @@
 import React from 'react';
-import {getSUrl} from "../SUrls"
+import {getSUrl} from "../../SUrls"
 import { redirect, useLoaderData } from 'react-router-dom';
 
 export async function loader({ params }) {

@@ -13,6 +13,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class AppConfig {
 
+	@Getter
+	private static String jwtSecretKey;
+
 	@Bean
 	public PasswordEncoder passwordEncoder(){
 		return new BCryptPasswordEncoder();
@@ -24,6 +27,11 @@ public class AppConfig {
 	@Value("${custom.dev.frontUrl}")
 	public void setFrontUrl(String frontUrl){
 		this.frontUrl = frontUrl;
+	}
+
+	@Value("${custom.jwt.secretKey}")
+	public void setJwtSecretKey(String jwtSecretKey){
+		this.jwtSecretKey = jwtSecretKey;
 	}
 
 }

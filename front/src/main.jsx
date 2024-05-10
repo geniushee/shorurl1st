@@ -4,9 +4,10 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Errorpage from './errors/Errorpage.jsx'
-import SUrl, { loader as SUrlLoader } from './domain/SUrl.jsx'
-import CreateSUrl, { action as createAction, loader as newLoader } from './domain/CreateSUrl.jsx'
+import SUrl, { loader as SUrlLoader } from "./domain/surl/SUrl.jsx"
+import CreateSUrl, { action as createAction, loader as newLoader } from './domain/surl/CreateSUrl.jsx'
 import Main from './domain/Main.jsx'
+import SignIn, {action as signinAction} from './domain/member/SignIn.jsx'
 
 
 const router = createBrowserRouter([
@@ -25,10 +26,16 @@ const router = createBrowserRouter([
         loader: newLoader,
         action: createAction,
       },
+      {
+        path: "/signin",
+        element: <SignIn/>,
+        action: signinAction,
+      }
     ]
   },{
     path: "/:surl",
     element: <SUrl />,
+    errorElement: <Errorpage/>,
     loader: SUrlLoader,
   }
 ])
