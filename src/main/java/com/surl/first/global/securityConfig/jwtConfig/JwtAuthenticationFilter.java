@@ -10,6 +10,7 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseCookie;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -39,13 +40,31 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     .equals("accessToken"))
                     .findFirst().orElseThrow().getValue();
             System.out.println(accessToken);
-            Claims claims = JwtUtil.decode(accessToken);
+            String refreshToken = Arrays.stream(cookies)
+                    .filter(cookie ->
+                            cookie.getName()
+                                    .equals("refreshToken"))
+                    .findFirst().orElseThrow().getValue();
+            Claims claims;
+            if(!JwtUtil.notExpired(accessToken) && JwtUtil.notExpired(refreshToken)){
+                Member member = memberService.findByRefreshToken(refreshToken);
+                Map data = Map.of(
+                        "id", member.getId(),
+                        "username", member.getUsername(),
+                        "Authorities", member.getAuthorities());
+                ResponseCookie token = JwtUtil.encodeAndSetCookie("accessToken",10,data);
+                response.addHeader("Set-Cookie", token.toString());
+                claims = JwtUtil.decode(token.toString());
+            } else{
+                claims = JwtUtil.decode(accessToken);
+            }
+
             Map data = claims.get("data", Map.class);
             Long id = Long.valueOf(data.get("id").toString());
 
             System.out.println(id);
             Member member = memberService.findById(id);
-            SecurityUser user = new SecurityUser(member.getId(), member.getUsername(), member.getPassword(), member.getAuthorities());
+            SecurityUser user = new SecurityUser(member.getId(), member.getUsername(), member.getPassword(), member.getName(), member.getAuthorities());
             Authentication auth = new UsernamePasswordAuthenticationToken(user, member.getPassword(), member.getAuthorities());
 
             SecurityContextHolder.getContext().setAuthentication(auth);

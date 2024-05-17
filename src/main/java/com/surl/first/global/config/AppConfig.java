@@ -29,6 +29,12 @@ public class AppConfig {
 		this.frontUrl = frontUrl;
 	}
 
+	@Getter
+	private static String frontDomain;
+
+	@Value("${custom.dev.domain}")
+	public void setFrontDomain(String frontDomain){this.frontDomain = frontDomain;}
+
 	@Value("${custom.jwt.secretKey}")
 	public void setJwtSecretKey(String jwtSecretKey){
 		this.jwtSecretKey = jwtSecretKey;

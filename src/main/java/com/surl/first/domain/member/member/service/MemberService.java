@@ -42,6 +42,7 @@ public class MemberService {
         return memberRepository.findById(id).orElseThrow(()->new RuntimeException("찾을 수 없음."));
     }
 
+    @Transactional
     public HttpHeaders checkMemberAndMakeCookie(String username, String password) {
         Optional<Member> opMember = memberRepository.findByUsername(username);
 
@@ -88,5 +89,9 @@ public class MemberService {
         headers.add("Set-Cookie", accessCookie.toString());
         headers.add("Set-Cookie", refreshCookie.toString());
         return headers;
+    }
+
+    public Member findByRefreshToken(String refreshToken) {
+        return memberRepository.findByRefreshToken(refreshToken).orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."));
     }
 }

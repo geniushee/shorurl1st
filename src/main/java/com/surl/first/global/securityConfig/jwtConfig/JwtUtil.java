@@ -2,10 +2,12 @@ package com.surl.first.global.securityConfig.jwtConfig;
 
 import com.surl.first.global.config.AppConfig;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.security.SignatureException;
 import org.apache.logging.log4j.CloseableThreadContext;
 import org.springframework.http.ResponseCookie;
 
@@ -57,6 +59,7 @@ public class JwtUtil {
     public static ResponseCookie setCrossDomainCookie(String name, String value) {
         return ResponseCookie.from(name, value)
                 .path("/")
+                .domain(AppConfig.getFrontDomain())
                 .sameSite("None")
                 .httpOnly(true)
                 .secure(true)
@@ -71,9 +74,20 @@ public class JwtUtil {
     public static ResponseCookie removeCrossDomainCookie(String name) {
         return ResponseCookie.from(name)
                 .path("/")
+                .domain(AppConfig.getFrontDomain())
                 .sameSite("None")
                 .httpOnly(true)
                 .secure(true)
+                .maxAge(0)
                 .build();
+    }
+
+    public static boolean notExpired(String token) {
+        try{
+            Jwts.parser().verifyWith(getSecretKey()).build().parseSignedClaims(token).getPayload();
+            return true;
+        }catch(ExpiredJwtException | SignatureException e){
+            return false;
+        }
     }
 }

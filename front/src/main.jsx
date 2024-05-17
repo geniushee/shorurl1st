@@ -7,7 +7,8 @@ import Errorpage from './errors/Errorpage.jsx'
 import SUrl, { loader as SUrlLoader } from "./domain/surl/SUrl.jsx"
 import CreateSUrl, { action as createAction, loader as newLoader } from './domain/surl/CreateSUrl.jsx'
 import Main from './domain/Main.jsx'
-import SignIn, {action as signinAction} from './domain/member/SignIn.jsx'
+import SignIn, { action as signinAction } from './domain/member/SignIn.jsx'
+import AuthProvider from './global/AuthProvider.jsx'
 
 
 const router = createBrowserRouter([
@@ -28,20 +29,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/signin",
-        element: <SignIn/>,
+        element: <SignIn />,
         action: signinAction,
       }
     ]
-  },{
+  }, {
     path: "/:surl",
     element: <SUrl />,
-    errorElement: <Errorpage/>,
+    errorElement: <Errorpage />,
     loader: SUrlLoader,
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router}>
+      </RouterProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )

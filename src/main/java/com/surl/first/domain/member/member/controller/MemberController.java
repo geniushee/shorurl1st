@@ -1,5 +1,6 @@
 package com.surl.first.domain.member.member.controller;
 
+import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.service.MemberService;
 import com.surl.first.global.securityConfig.SecurityUser;
@@ -9,7 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.attribute.UserPrincipal;
@@ -60,15 +63,13 @@ public class MemberController {
         return new ResponseEntity<>("로그아웃에 성공했습니다.", headers, HttpStatus.OK);
     }
 
-//
-//    @PostMapping("/refreshAccessToken")
-//    public ResponseEntity<?> memberLogin(HttpServletRequest request) throws Exception {
-//        ResponseEntity res;
-//
-//
-//
-//        return res;
-//    }
+    public record UserInfoDto(Long id, String username, String name){}
+
+    @GetMapping("/info")
+    public ResponseEntity<?> getUserInfo(@AuthenticationPrincipal SecurityUser principal){
+        UserInfoDto dto = new UserInfoDto(principal.getId(), principal.getUsername(), principal.getName());
+        return ResponseEntity.ok(dto);
+    }
 
 
 }

@@ -49,6 +49,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequest -> {
                     authorizeRequest.requestMatchers("/h2-console/**")
                             .permitAll();
+                    authorizeRequest.requestMatchers("/api/v1/members/login","/api/v1/members/logout").permitAll();
                     authorizeRequest.anyRequest().permitAll();
                 })
                 .headers(
