@@ -11,6 +11,7 @@ function App() {
       <div>
         <Navbar></Navbar>
       </div>
+      <nav><Link to={"/mylist"}>내 SUrl 목록</Link></nav>
       <p>{isLogin ? "로그인" : "로그아웃"}</p>
       {!!user.username ? <div>
         <p>{user.username}</p>

@@ -46,7 +46,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     .equals("refreshToken"))
                     .findFirst().orElseThrow().getValue();
             Claims claims;
-            if(!JwtUtil.notExpired(accessToken) && JwtUtil.notExpired(refreshToken)){
+            if(!JwtUtil.notExpired(refreshToken)){
+                throw new RuntimeException("다시 로그인 해주세요.");
+            } else if(!JwtUtil.notExpired(accessToken) && JwtUtil.notExpired(refreshToken)){
                 Member member = memberService.findByRefreshToken(refreshToken);
                 Map data = Map.of(
                         "id", member.getId(),

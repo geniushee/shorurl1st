@@ -1,8 +1,9 @@
-import React from 'react';
-import { Form, redirect, useLoaderData } from "react-router-dom"
+import React, { useEffect } from 'react';
+import { Form, redirect, useLoaderData, useNavigate } from "react-router-dom"
 import { createNewSUrl } from '../../SUrls';
+import { useAuth } from '../../global/AuthProvider';
 
-export async function loader({ request }) {
+export async function loader({ request }) {   
     console.log(request)
     const url = new URL(request.url);
     const res = url.searchParams.get("res")
@@ -19,6 +20,15 @@ export async function action({ params, request }) {
 }
 
 function CreateSUrl(props) {
+    const {user, isLogin} = useAuth();
+    const navigate = useNavigate();
+    
+    useEffect(() =>{
+        if(!isLogin){
+            return navigate("/signin");
+        }
+    },[])
+    
     const loadData = useLoaderData();
 
     return (

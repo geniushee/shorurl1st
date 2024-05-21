@@ -1,12 +1,13 @@
 package com.surl.first.domain.member.member.entity;
 
+import com.surl.first.domain.surl.surl.entity.SUrl;
 import com.surl.first.global.entity.TimeEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.UuidGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

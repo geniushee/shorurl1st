@@ -8,9 +8,12 @@ export async function loader({ params }) {
             console.log("스트레스 받아")
             return redirect("/main")
           }
-    const sUrl  = await getSUrl({params});
+    let sUrl  = await getSUrl({params});
     console.log(sUrl)
-    return redirect(sUrl);
+    if(!sUrl.includes("http://") && !sUrl.includes("https://")){
+        sUrl = "https://" + sUrl;
+    }
+    window.location.href = sUrl;
 }
 
 function SUrl() {

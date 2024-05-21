@@ -14,6 +14,16 @@ export async function getSUrl({ params }){
     return SUrl;
 }
 
+export async function getMySUrls(){
+
+    const SUrls = axios({
+        method: "GET",
+        url: "http://localhost:8080/api/v1/surls/mylist",
+        withCredentials: true,
+    }).then(response => response.data)
+    return SUrls;
+}
+
 export async function createNewSUrl({origin}){
     console.log(origin)
 
@@ -23,6 +33,7 @@ export async function createNewSUrl({origin}){
         data: {
             origin: origin
         },
+        withCredentials:true,
     }).then((response) => {
         return response.data
     })

@@ -9,6 +9,7 @@ import CreateSUrl, { action as createAction, loader as newLoader } from './domai
 import Main from './domain/Main.jsx'
 import SignIn, { action as signinAction } from './domain/member/SignIn.jsx'
 import AuthProvider from './global/AuthProvider.jsx'
+import MySUrlList, {loader as myListLoader} from './domain/surl/MySUrlList.jsx'
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         element: <CreateSUrl />,
         loader: newLoader,
         action: createAction,
+      },
+      {
+        path: "/mylist",
+        element: <MySUrlList/>,
+        loader: myListLoader,
       },
       {
         path: "/signin",
