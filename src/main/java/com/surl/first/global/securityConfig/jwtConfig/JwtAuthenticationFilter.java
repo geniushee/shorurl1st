@@ -48,7 +48,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             Claims claims;
             if(!JwtUtil.notExpired(refreshToken)){
                 throw new RuntimeException("다시 로그인 해주세요.");
-            } else if(!JwtUtil.notExpired(accessToken) && JwtUtil.notExpired(refreshToken)){
+            } else if(JwtUtil.expired(accessToken) && JwtUtil.notExpired(refreshToken)){
+                System.out.println("어세스토큰 갱신!!!");
                 Member member = memberService.findByRefreshToken(refreshToken);
                 Map data = Map.of(
                         "id", member.getId(),

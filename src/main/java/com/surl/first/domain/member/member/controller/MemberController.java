@@ -4,10 +4,13 @@ import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.service.MemberService;
 import com.surl.first.global.securityConfig.SecurityUser;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -58,8 +61,9 @@ public class MemberController {
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<?> memberLogout(){
-        HttpHeaders headers = memberService.logout();
+    public ResponseEntity<?> memberLogout(HttpServletRequest request,
+                                          HttpServletResponse response){
+        HttpHeaders headers = memberService.logout(request, response);
         return new ResponseEntity<>("로그아웃에 성공했습니다.", headers, HttpStatus.OK);
     }
 

@@ -5,12 +5,12 @@ import com.surl.first.domain.member.member.service.MemberService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.surl.first.domain.surl.surl.controller.SurlController;
 import com.surl.first.domain.surl.surl.entity.SUrl;
 import com.surl.first.domain.surl.surl.repository.SUrlRepository;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -39,5 +39,43 @@ public class SUrlService {
 
     public List<SUrl> findAllByMember(Member member) {
         return sUrlRepository.findAllByMember(member);
+    }
+
+    public SUrl findSUrlByIdWithMember(Long sUrlId, Long memberId) {
+        SUrl sUrl = sUrlRepository.findById(sUrlId).orElseThrow(() -> new IllegalArgumentException("잘못된 정보입니다."));
+        Member member = memberService.findById(memberId);
+        if(!sUrl.getMember().equals(member)) {
+            throw new RuntimeException("올바른 접근이 아닙니다.");
+        }
+        return sUrl;
+    }
+
+    @Transactional
+    public SUrl modify(Long id, String title, String content) {
+        SUrl sUrl = findById(id);
+        sUrl.setTitle(title);
+        sUrl.setContent(content);
+        System.out.println(sUrl.getTitle());
+        System.out.println(sUrl.getContent());
+        return sUrl;
+    }
+
+    private SUrl findById(Long id) {
+        return sUrlRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("잘못된 정보입니다."));
+    }
+
+    public List<SUrl> findAll() {
+        return sUrlRepository.findAll();
+    }
+
+    @Transactional
+    public void deleteSUrl(Long userId, Long sUrlId) {
+        Member member = memberService.findById(userId);
+        SUrl sUrl = findById(sUrlId);
+        if(sUrl.getMember().equals(member)){
+            sUrlRepository.delete(sUrl);
+        }else {
+            throw new IllegalArgumentException("잘못된 접근입니다.");
+        }
     }
 }

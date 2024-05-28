@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
+import {redirect, useNavigate} from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -12,7 +13,6 @@ function AuthProvider({ children }) {
         username: null,
         name: null
     });
-
 
     async function getUser() {
         const data = axios({
@@ -46,7 +46,8 @@ function AuthProvider({ children }) {
                 name: null
             })
             return response.data
-        }) .catch(() => {console.log("에러 발생")})
+        }).catch(() => {console.log("에러 발생")})
+        window.location.href="/";
     }
 
     // accessToken이 있을 경우 바로 로그인 하도록 초기화

@@ -5,10 +5,7 @@ import com.surl.first.global.config.AppConfig;
 import com.surl.first.global.entity.TimeEntity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
@@ -20,7 +17,9 @@ public class SUrl extends TimeEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String origin;
+	@Setter
 	private String title;
+	@Setter
 	private String content;
 	@ManyToOne
 	private Member member;

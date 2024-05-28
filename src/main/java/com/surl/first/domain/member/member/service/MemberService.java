@@ -3,13 +3,19 @@ package com.surl.first.domain.member.member.service;
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.repository.MemberRepository;
 import com.surl.first.global.securityConfig.jwtConfig.JwtUtil;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseCookie;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -81,10 +87,10 @@ public class MemberService {
         return headers;
     }
 
-    public HttpHeaders logout() {
+    public HttpHeaders logout(HttpServletRequest request, HttpServletResponse response) {
         HttpHeaders headers = new HttpHeaders();
-        ResponseCookie accessCookie = JwtUtil.removeCrossDomainCookie("accessToken");
-        ResponseCookie refreshCookie = JwtUtil.removeCrossDomainCookie("refreshToken");
+        ResponseCookie accessCookie = JwtUtil.removeCrossDomainCookie(request, response,"accessToken");
+        ResponseCookie refreshCookie = JwtUtil.removeCrossDomainCookie(request, response,"refreshToken");
 
         headers.add("Set-Cookie", accessCookie.toString());
         headers.add("Set-Cookie", refreshCookie.toString());
@@ -93,5 +99,9 @@ public class MemberService {
 
     public Member findByRefreshToken(String refreshToken) {
         return memberRepository.findByRefreshToken(refreshToken).orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."));
+    }
+
+    public List<Member> findAll() {
+        return memberRepository.findAll();
     }
 }

@@ -8,12 +8,16 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.security.SignatureException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.CloseableThreadContext;
 import org.springframework.http.ResponseCookie;
 
 import javax.crypto.SecretKey;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 
@@ -71,7 +75,10 @@ public class JwtUtil {
         return setCrossDomainCookie(tokenName, jws);
     }
 
-    public static ResponseCookie removeCrossDomainCookie(String name) {
+    public static ResponseCookie removeCrossDomainCookie(HttpServletRequest request,
+                                                         HttpServletResponse response,String name) {
+        removeCookie(request, response, name);
+
         return ResponseCookie.from(name)
                 .path("/")
                 .domain(AppConfig.getFrontDomain())
@@ -82,6 +89,10 @@ public class JwtUtil {
                 .build();
     }
 
+    public static boolean expired(String token){
+        return !notExpired(token);
+    }
+
     public static boolean notExpired(String token) {
         try{
             Jwts.parser().verifyWith(getSecretKey()).build().parseSignedClaims(token).getPayload();
@@ -89,5 +100,18 @@ public class JwtUtil {
         }catch(ExpiredJwtException | SignatureException e){
             return false;
         }
+    }
+
+    public static void removeCookie(HttpServletRequest request,
+                                    HttpServletResponse response, String tokenName) {
+        Cookie cookie = Arrays.stream(request.getCookies())
+                .filter(coo -> coo.getName().equals(tokenName)).findFirst().orElse(null);
+        if(cookie == null){
+            return;
+        }
+
+        cookie.setPath("/");
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
     }
 }

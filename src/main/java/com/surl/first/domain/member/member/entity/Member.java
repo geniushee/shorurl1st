@@ -19,7 +19,14 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "Member", uniqueConstraints = {
+        @UniqueConstraint(
+                name = "USERNAME_EMAIL_UNIQUE",
+                columnNames = {"username", "email"}
+        )
+})
 public class Member extends TimeEntity {
+
     private String username;
     private String password;
     private String email;
@@ -28,7 +35,7 @@ public class Member extends TimeEntity {
 
 
     @SuppressWarnings("JpaAttributeTypeInspction")
-    public List<? extends GrantedAuthority> getAuthorities(){
+    public List<? extends GrantedAuthority> getAuthorities() {
         return getAuthoritiesAsStrList()
                 .stream()
                 .map(SimpleGrantedAuthority::new)
@@ -36,7 +43,7 @@ public class Member extends TimeEntity {
     }
 
     @SuppressWarnings("JpaAttributeTypeInspction")
-    private List<String> getAuthoritiesAsStrList(){
+    private List<String> getAuthoritiesAsStrList() {
         return List.of("ROLE_MEMBER");
     }
 
