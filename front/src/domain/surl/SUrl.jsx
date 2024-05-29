@@ -11,7 +11,7 @@ export async function loader({ params }) {
     let sUrl  = await getSUrl({params});
     console.log(sUrl)
     if(!sUrl.includes("http://") && !sUrl.includes("https://")){
-        sUrl = "https://" + sUrl;
+        sUrl = "http://" + sUrl;
     }
     window.location.href = sUrl;
 }

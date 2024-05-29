@@ -12,7 +12,7 @@ export async function loader({ params }) {
 export async function action({params, request}){
     const formData = await request.formData();
     const id = params.id;
-    const title = formData.get("title")
+    const title = formData.get("title").replace(/ /g, "_")
     const content = formData.get("content")
     const data = modifySUrl({ id: id, title:title, content:content });
     console.log("예스!")
@@ -67,10 +67,17 @@ function ModifySUrl(props) {
     const onChangeHandler = (e) => {
         const {name, value} = e.target;
 
-        setSUrl(preSUrl => ({
-            ...preSUrl,
-            [name] : name === "title" ? value.replace(/ /g, "_") : value,
-        }))
+        const regex = /[^\w\sㄱ-힣]/g;
+
+        if(name === "title" && regex.test(value)){
+            alert("제목에는 특수문자를 입력할 수 없습니다.");
+        }else{
+            setSUrl(preSUrl => ({
+                ...preSUrl,
+                [name] : name === "title" ? value.replace(/ /g, "_") : value,
+            }))
+        }
+
     }
     let titleValue = typeof sUrl.title === "string" ? sUrl.title : "";
     let formTitle = titleValue.replace(/_/g," ");
@@ -79,11 +86,11 @@ function ModifySUrl(props) {
     return (
         <>
             <Form method='PUT'>
-                <div>sUrl : https://localhost:5173/<span>{data.title}</span></div>
+                <div>sUrl : http://localhost:5173/<span>{data.title}</span></div>
                 <div>owner : {sUrl.owner}</div>
                 <div><label>origin : {sUrl.origin}</label></div>
                 <div><label>title : </label>
-                <input type="text" name='title' value={formTitle} placeholder='이름을 작성해주세요' onChange={onChangeHandler} />
+                <input type="text" name='title' value={formTitle} placeholder='이름을 작성해주세요' onChange={onChangeHandler} /><span>가능한 입력 : 영어대소문자, 공백, 밑줄, 한글</span>
                 </div>
                 <div><label>content : </label>
                 <textarea style={{width : 500}}  name='content' value={sUrl.content} placeholder='설명을 작성해주세요' onChange={onChangeHandler} />

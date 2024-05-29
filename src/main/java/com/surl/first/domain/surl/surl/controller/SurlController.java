@@ -14,6 +14,9 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @RestController
@@ -30,13 +33,14 @@ public class SurlController {
     @GetMapping("")
     public ResponseEntity<?> getSUrl(@RequestParam(name = "sUrl") String sUrl) {
         ResponseEntity res;
-        SUrl surl;
+        SUrl sUrlOb;
         try {
-            surl = sUrlService.findSUrl(sUrl);
+            sUrl = URLDecoder.decode(sUrl, StandardCharsets.UTF_8);
+            sUrlOb = sUrlService.findSUrl(sUrl);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        res = ResponseEntity.ok(surl.getOrigin());
+        res = ResponseEntity.ok(sUrlOb.getOrigin());
         return res;
     }
 

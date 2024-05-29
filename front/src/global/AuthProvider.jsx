@@ -15,7 +15,7 @@ function AuthProvider({ children }) {
     });
 
     async function getUser() {
-        const data = axios({
+        const data = await axios({
             method: "GET",
             url: "http://localhost:8080/api/v1/members/info",
             withCredentials: true,
@@ -35,9 +35,11 @@ function AuthProvider({ children }) {
     }
 
     async function logout(){
-        const data = axios({
+        try{
+        const data = await axios({
             method: "POST",
             url: "http://localhost:8080/api/v1/members/logout",
+            withCredentials: true,
         }).then((response) => {
             setLogin(false)
             setUser({
@@ -46,8 +48,12 @@ function AuthProvider({ children }) {
                 name: null
             })
             return response.data
-        }).catch(() => {console.log("에러 발생")})
+        })
+        console.log(data)
         window.location.href="/";
+    }catch(error){
+        console.log("에러 발생")
+    }
     }
 
     // accessToken이 있을 경우 바로 로그인 하도록 초기화

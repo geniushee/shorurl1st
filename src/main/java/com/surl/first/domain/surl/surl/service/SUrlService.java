@@ -34,7 +34,11 @@ public class SUrlService {
     }
 
     public SUrl findSUrl(String sUrl) throws Exception {
-        return sUrlRepository.findById(Long.valueOf(sUrl)).orElseThrow(() -> new RuntimeException("찾는 URL이 없습니다."));
+        try {
+            return sUrlRepository.findById(Long.valueOf(sUrl)).orElseThrow(() -> new RuntimeException("찾는 URL이 없습니다."));
+        } catch (NumberFormatException e) {
+            return sUrlRepository.findByTitle(sUrl).orElseThrow(() -> new RuntimeException("찾는 URL이 없습니다."));
+        }
     }
 
     public List<SUrl> findAllByMember(Member member) {
@@ -44,7 +48,7 @@ public class SUrlService {
     public SUrl findSUrlByIdWithMember(Long sUrlId, Long memberId) {
         SUrl sUrl = sUrlRepository.findById(sUrlId).orElseThrow(() -> new IllegalArgumentException("잘못된 정보입니다."));
         Member member = memberService.findById(memberId);
-        if(!sUrl.getMember().equals(member)) {
+        if (!sUrl.getMember().equals(member)) {
             throw new RuntimeException("올바른 접근이 아닙니다.");
         }
         return sUrl;
@@ -72,9 +76,9 @@ public class SUrlService {
     public void deleteSUrl(Long userId, Long sUrlId) {
         Member member = memberService.findById(userId);
         SUrl sUrl = findById(sUrlId);
-        if(sUrl.getMember().equals(member)){
+        if (sUrl.getMember().equals(member)) {
             sUrlRepository.delete(sUrl);
-        }else {
+        } else {
             throw new IllegalArgumentException("잘못된 접근입니다.");
         }
     }

@@ -25,6 +25,9 @@ public class SUrl extends TimeEntity {
 	private Member member;
 
 	public String getShortUrl() {
+		if(title != null){
+			return AppConfig.getFrontUrl() + "/" + title;
+		}
 		return AppConfig.getFrontUrl() + "/" + id;
 	}
 }
