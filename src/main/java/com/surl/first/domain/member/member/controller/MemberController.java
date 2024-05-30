@@ -4,7 +4,9 @@ import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.service.MemberService;
 import com.surl.first.global.securityConfig.SecurityUser;
+import com.surl.first.global.securityConfig.jwtConfig.JwtUtil;
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotEmpty;
@@ -75,5 +77,15 @@ public class MemberController {
         return ResponseEntity.ok(dto);
     }
 
+    @GetMapping("/socialLogin/{providerTypeCode}")
+    public String socialLogin(@PathVariable(name = "providerTypeCode")String providerTypeCode,
+                              @RequestParam(name = "redirectUrlAfterSocialLogin")String redirectUrlAfterSocialLogin,
+                              HttpServletResponse response){
+        Cookie cookie = new Cookie("redirectUrlAfterSocialLogin", redirectUrlAfterSocialLogin);
+        cookie.setMaxAge(60*10);
+        cookie.setPath("/");
+        response.addCookie(cookie);
+        return "redirect:/oauth2/authorization/" + providerTypeCode;
+    }
 
 }

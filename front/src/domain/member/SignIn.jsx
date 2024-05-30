@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useRef } from 'react';
-import { Form, redirect, useNavigate } from 'react-router-dom';
+import { Form, Link, redirect, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../global/AuthProvider';
 
 export async function action({ params, request }) {
@@ -9,7 +9,7 @@ export async function action({ params, request }) {
 }
 
 function SignIn(props) {
-    const {setLogin} = useAuth();
+    const { setLogin } = useAuth();
     const navigate = useNavigate();
 
     const usernameRef = useRef();
@@ -60,6 +60,9 @@ function SignIn(props) {
                     <button onClick={signUpHandler}>Sign Up</button>
                 </div>
             </form>
+            <section>
+                <Link to={"https://kauth.kakao.com/oauth/authorize"} ><img src="src/assets/kakao_login_medium_narrow.png" style={{radius : 12+'px', padding : 0 + 'px', border: 'none'}} /></Link>
+            </section>
         </div>
     );
 }

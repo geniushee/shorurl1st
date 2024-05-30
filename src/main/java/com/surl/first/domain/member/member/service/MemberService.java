@@ -104,4 +104,14 @@ public class MemberService {
     public List<Member> findAll() {
         return memberRepository.findAll();
     }
+
+    public Member whenSocialLogin(String providerTypeCode, String username, String name) {
+        //todo optional로 변경할것!
+        try{
+            Member member = findByUsername(username);
+            return member;
+        }catch(Exception e){
+            return register(username, "", "", name);
+        }
+    }
 }

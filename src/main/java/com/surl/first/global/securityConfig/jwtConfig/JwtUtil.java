@@ -70,6 +70,7 @@ public class JwtUtil {
                 .build();
     }
 
+    // todo argument를 바꾸자
     public static ResponseCookie encodeAndSetCookie(String tokenName, long expiredMinutes, Map<String, Object> data) {
         String jws = encode(expiredMinutes,data);
         return setCrossDomainCookie(tokenName, jws);

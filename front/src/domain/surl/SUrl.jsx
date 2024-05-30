@@ -17,8 +17,6 @@ export async function loader({ params }) {
 }
 
 function SUrl() {
-    // const { sUrl } = useLoaderData();
-
 
     return (
         <div>

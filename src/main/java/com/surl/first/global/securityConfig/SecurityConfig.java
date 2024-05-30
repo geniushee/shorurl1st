@@ -1,9 +1,11 @@
 package com.surl.first.global.securityConfig;
 
 import com.surl.first.global.securityConfig.jwtConfig.JwtAuthenticationFilter;
+import com.surl.first.global.securityConfig.oauth2.CustomAuthenticationSuccessHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -24,6 +26,8 @@ import java.util.List;
 @EnableWebSecurity
 public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
+
 
     @Bean
     CorsConfigurationSource corsConfigOfFront(){
@@ -46,6 +50,8 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigOfFront()))
                 .sessionManagement(AbstractHttpConfigurer::disable)
+                .oauth2Login(oauth2Login ->
+                        oauth2Login.successHandler(customAuthenticationSuccessHandler))
                 .authorizeHttpRequests(authorizeRequest -> {
                     authorizeRequest.requestMatchers("/h2-console/**")
                             .permitAll();
