@@ -34,7 +34,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         Map properties = (Map) attributes.get("properties");
 
         String nickname = (String) properties.get("nickname");
-        String providerTypeCode = request.getClientRegistration().getClientId().toUpperCase();
+        String providerTypeCode = request.getClientRegistration().getRegistrationId().toUpperCase();
         String username = providerTypeCode + "__%s".formatted(oauthId);
         Member member = memberService.whenSocialLogin(providerTypeCode, username,nickname);
         return new SecurityUser(member.getId(), member.getUsername(), member.getPassword(), member.getName(), member.getAuthorities());

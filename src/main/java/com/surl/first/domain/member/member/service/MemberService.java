@@ -49,14 +49,14 @@ public class MemberService {
     }
 
     @Transactional
-    public HttpHeaders checkMemberAndMakeCookie(String username, String password) {
+    public HttpHeaders checkMemberAndMakeCookie(String username, String rawPassword) {
         Optional<Member> opMember = memberRepository.findByUsername(username);
 
         if(opMember.isEmpty()){
             throw new IllegalArgumentException("존재하지 않는 아이디입니다.");
         }
 
-        if(!passwordEncoder.matches(password, opMember.get().getPassword())){
+        if(!passwordEncoder.matches(rawPassword, opMember.get().getPassword())){
             throw new IllegalArgumentException("잘못된 회원정보입니다.");
         }
 
@@ -113,5 +113,34 @@ public class MemberService {
         }catch(Exception e){
             return register(username, "", "", name);
         }
+    }
+
+    public HttpHeaders makeCookieAsOAuth(Long id) {
+        Optional<Member> opMember = memberRepository.findById(id);
+
+        Member member = opMember.get();
+
+        ResponseCookie accessCookie = JwtUtil.encodeAndSetCookie("accessToken",
+                10,
+                Map.of(
+                        "id", id.toString(),
+                        "username", member.getUsername(),
+                        "authorities", member.getAuthorities()
+                )
+        );
+
+        ResponseCookie refreshCookie = JwtUtil.encodeAndSetCookie("refreshToken",
+                60 * 24 * 7,
+                Map.of(
+                        "id", member.getId(),
+                        "username", member.getUsername()
+                )
+        );
+        member.setRefreshToken(refreshCookie.getValue());
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Set-Cookie", accessCookie.toString());
+        headers.add("Set-Cookie", refreshCookie.toString());
+        return headers;
     }
 }

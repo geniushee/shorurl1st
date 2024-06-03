@@ -32,21 +32,37 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
+        if(!request.getRequestURI().startsWith("/api")){
+            filterChain.doFilter(request,response);
+            return;
+        }
+
+        if(List.of("/api/v1/members/login", "/api/v1/members/register").contains(request.getRequestURI())){
+            filterChain.doFilter(request,response);
+            return;
+        }
+
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             String accessToken = Arrays.stream(cookies)
                     .filter(cookie ->
                             cookie.getName()
                                     .equals("accessToken"))
-                    .findFirst().orElseThrow().getValue();
+                    .findFirst().orElse(new Cookie("accessToken","")).getValue();
             System.out.println(accessToken);
             String refreshToken = Arrays.stream(cookies)
                     .filter(cookie ->
                             cookie.getName()
                                     .equals("refreshToken"))
-                    .findFirst().orElseThrow().getValue();
+                    .findFirst().orElse(new Cookie("refreshToken","")).getValue();
             Claims claims;
-            if(!JwtUtil.notExpired(refreshToken)){
+
+            if(accessToken.isBlank() && refreshToken.isBlank()){
+                filterChain.doFilter(request,response);
+                return;
+            }
+
+            if(JwtUtil.expired(refreshToken)){
                 throw new RuntimeException("다시 로그인 해주세요.");
             } else if(JwtUtil.expired(accessToken) && JwtUtil.notExpired(refreshToken)){
                 System.out.println("어세스토큰 갱신!!!");

@@ -16,6 +16,15 @@ public class AppConfig {
 	@Getter
 	private static String jwtSecretKey;
 
+
+	@Getter
+	private static String backUrl;
+
+	@Value(value = "${custom.site.dev.backUrl}")
+	public void setBackUrl(String backUrl) {
+		this.backUrl = backUrl;
+	}
+
 	@Bean
 	public PasswordEncoder passwordEncoder(){
 		return new BCryptPasswordEncoder();
@@ -24,7 +33,7 @@ public class AppConfig {
 	@Getter
 	private static String frontUrl;
 
-	@Value("${custom.dev.frontUrl}")
+	@Value(value = "${custom.site.dev.frontUrl}")
 	public void setFrontUrl(String frontUrl){
 		this.frontUrl = frontUrl;
 	}
@@ -32,10 +41,10 @@ public class AppConfig {
 	@Getter
 	private static String frontDomain;
 
-	@Value("${custom.dev.domain}")
+	@Value(value = "${custom.site.dev.domain}")
 	public void setFrontDomain(String frontDomain){this.frontDomain = frontDomain;}
 
-	@Value("${custom.jwt.secretKey}")
+	@Value(value = "${custom.jwt.secretKey}")
 	public void setJwtSecretKey(String jwtSecretKey){
 		this.jwtSecretKey = jwtSecretKey;
 	}

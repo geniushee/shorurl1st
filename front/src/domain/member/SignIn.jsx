@@ -44,6 +44,8 @@ function SignIn(props) {
         navigate("/signup")
     }
 
+    const redirectUrl = encodeURI("http://localhost:5173")
+
     return (
         <div className='containter'>
             <form method='POST' onSubmit={submitHandler}>
@@ -61,7 +63,7 @@ function SignIn(props) {
                 </div>
             </form>
             <section>
-                <Link to={"https://kauth.kakao.com/oauth/authorize"} ><img src="src/assets/kakao_login_medium_narrow.png" style={{radius : 12+'px', padding : 0 + 'px', border: 'none'}} /></Link>
+                <a href={`http://localhost:8080/api/v1/members/socialLogin/kakao?redirectUrlAfterSocialLogin=${redirectUrl}`}><img src="src/assets/kakao_login_medium_narrow.png" style={{radius : 12+'px', padding : 0 + 'px', border: 'none'}} /></a>
             </section>
         </div>
     );

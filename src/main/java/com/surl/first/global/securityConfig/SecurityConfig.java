@@ -25,45 +25,27 @@ import java.util.List;
 @RequiredArgsConstructor
 @EnableWebSecurity
 public class SecurityConfig {
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
-
-
-    @Bean
-    CorsConfigurationSource corsConfigOfFront(){
-        CorsConfiguration configuration = new CorsConfiguration();
-
-        configuration.setAllowedOrigins(List.of("http://localhost:5173"));
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
-        configuration.setAllowedHeaders(List.of("content-type"));
-        configuration.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .csrf(AbstractHttpConfigurer::disable)
-                .cors(cors -> cors.configurationSource(corsConfigOfFront()))
                 .sessionManagement(AbstractHttpConfigurer::disable)
                 .oauth2Login(oauth2Login ->
                         oauth2Login.successHandler(customAuthenticationSuccessHandler))
                 .authorizeHttpRequests(authorizeRequest -> {
                     authorizeRequest.requestMatchers("/h2-console/**")
                             .permitAll();
-                    authorizeRequest.requestMatchers("/api/v1/members/login","/api/v1/members/logout").permitAll();
                     authorizeRequest.anyRequest().permitAll();
                 })
                 .headers(
                         headers -> headers.frameOptions(
                                 options -> options.sameOrigin()
                         )
-                )
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                );
+
         return http.build();
     }
 

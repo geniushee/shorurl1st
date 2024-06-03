@@ -37,17 +37,18 @@ public class CustomAuthenticationSuccessHandler extends SavedRequestAwareAuthent
         Optional<Cookie> opCookie = Arrays.stream(request.getCookies())
                 .filter(cookie -> cookie.getName().equals("redirectUrlAfterSocialLogin"))
                 .findFirst();
-
-        if(opCookie.get().getValue().equals(AppConfig.getFrontDomain())){
+System.out.println("커스텀 어센티케이션 성공");
+        if(opCookie.get().getValue().contains(AppConfig.getFrontUrl())){
+            System.out.println("여기에 들어오기는 하나?");
             JwtUtil.removeCookie(request,response,"redirectUrlAfterSocialLogin");
             SecurityUser user = (SecurityUser) authentication.getPrincipal();
-            Member member = memberService.findById(user.getId());
             // todo 굉장히 불필요한 작업이 이어지고 있다. 개선필요.
-            HttpHeaders headers = memberService.checkMemberAndMakeCookie(member.getUsername(), member.getPassword());
+            HttpHeaders headers = memberService.makeCookieAsOAuth(user.getId());
             List<String> cookieValues = headers.getValuesAsList("Set-Cookie");
             for(String value : cookieValues) {
                 response.addHeader("Set-Cookie", value);
             }
+            response.sendRedirect(opCookie.get().getValue());
             return;
         }
 

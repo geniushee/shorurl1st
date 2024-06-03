@@ -34,9 +34,10 @@ logging:
     org.springframework.transaction.interceptor: TRACE
 
 custom:
-  dev:
-    domain: localhost
-    frontUrl: "http://${custom.dev.domain}:5173"
-    backUrl: "http://${custom.dev.domain}:${server.port}"
+  site:
+    dev:
+      domain: localhost
+      frontUrl: "http://${custom.site.dev.domain}:5173"
+      backUrl: "http://${custom.site.dev.domain}:${server.port}"
   jwt:
     secretKey: ${custom.jwt.key}

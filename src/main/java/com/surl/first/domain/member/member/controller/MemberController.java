@@ -3,6 +3,7 @@ package com.surl.first.domain.member.member.controller;
 import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.service.MemberService;
+import com.surl.first.global.config.AppConfig;
 import com.surl.first.global.securityConfig.SecurityUser;
 import com.surl.first.global.securityConfig.jwtConfig.JwtUtil;
 import jakarta.servlet.http.Cookie;
@@ -20,6 +21,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.nio.file.attribute.UserPrincipal;
 
 @RestController
@@ -78,14 +80,15 @@ public class MemberController {
     }
 
     @GetMapping("/socialLogin/{providerTypeCode}")
-    public String socialLogin(@PathVariable(name = "providerTypeCode")String providerTypeCode,
+    public void socialLogin(@PathVariable(name = "providerTypeCode")String providerTypeCode,
                               @RequestParam(name = "redirectUrlAfterSocialLogin")String redirectUrlAfterSocialLogin,
-                              HttpServletResponse response){
+                              HttpServletResponse response) throws IOException {
         Cookie cookie = new Cookie("redirectUrlAfterSocialLogin", redirectUrlAfterSocialLogin);
         cookie.setMaxAge(60*10);
         cookie.setPath("/");
         response.addCookie(cookie);
-        return "redirect:/oauth2/authorization/" + providerTypeCode;
+        String redirectUrl = AppConfig.getBackUrl() + "/oauth2/authorization/" + providerTypeCode;
+        response.sendRedirect(redirectUrl);
     }
 
 }

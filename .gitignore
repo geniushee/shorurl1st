@@ -37,5 +37,4 @@ out/
 .vscode/
 
 ### custom ###
-./front
 application-secret.yml

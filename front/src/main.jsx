@@ -11,6 +11,7 @@ import SignIn, { action as signinAction } from './domain/member/SignIn.jsx'
 import AuthProvider from './global/AuthProvider.jsx'
 import MySUrlList, {loader as myListLoader} from './domain/surl/MySUrlList.jsx'
 import ModifySUrl, {loader as SUrlInfoLoader, action as modifyAction} from './domain/surl/ModifySUrl.jsx'
+import SignUp from "./domain/member/SignUp.jsx"
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         path: "/signin",
         element: <SignIn />,
         action: signinAction,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />
       }
     ]
   }, {
