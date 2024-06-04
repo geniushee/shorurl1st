@@ -12,6 +12,7 @@ import org.hibernate.annotations.UuidGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -44,7 +45,11 @@ public class Member extends TimeEntity {
 
     @SuppressWarnings("JpaAttributeTypeInspction")
     private List<String> getAuthoritiesAsStrList() {
-        return List.of("ROLE_MEMBER");
+        List<String> list = new ArrayList<>(List.of("ROLE_MEMBER"));
+        if(username.toUpperCase().contains("ADMIN")){
+            list.add("ROLE_ADMIN");
+        }
+        return list;
     }
 
     public void setRefreshToken(String refreshToken) {

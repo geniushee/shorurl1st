@@ -21,6 +21,9 @@ function App() {
       <div id="detail">
         <Outlet />
       </div>
+      <footer>
+        <Link to="/manage">관리자 페이지</Link>
+      </footer>
     </>
   )
 }

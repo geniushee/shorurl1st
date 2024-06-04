@@ -63,6 +63,7 @@ function SignIn(props) {
                 </div>
             </form>
             <section>
+                {/* OAuth2로 로그인 구현 시 axois나 fetch로 사용할 경우 CORS 오류를 받는다. 이유는 Auth서버에서 CORS를 지원하지 않기 때문에 엑세스 오리진 헤더를 포함하지 않는다. */}
                 <a href={`http://localhost:8080/api/v1/members/socialLogin/kakao?redirectUrlAfterSocialLogin=${redirectUrl}`}><img src="src/assets/kakao_login_medium_narrow.png" style={{radius : 12+'px', padding : 0 + 'px', border: 'none'}} /></a>
             </section>
         </div>

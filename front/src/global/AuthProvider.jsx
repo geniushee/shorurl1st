@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
-import {redirect, useNavigate} from 'react-router-dom';
+import { redirect, useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -11,8 +11,9 @@ function AuthProvider({ children }) {
     const [user, setUser] = useState({
         id: null,
         username: null,
-        name: null
+        name: null,
     });
+    const [isAdmin, setAdmin] = useState(false);
 
     async function getUser() {
         const data = await axios({
@@ -21,39 +22,49 @@ function AuthProvider({ children }) {
             withCredentials: true,
         }).then((response) => {
             setLogin(true);
-            setUser(response.data)
+            if (response.data.authorities.some(authObj => authObj.authority === "ROLE_ADMIN")) {
+                setAdmin(true);
+            }
+            setUser(
+                {
+                    id: response.data.id,
+                    username: response.data.username,
+                    name: response.data.name,
+                }
+            )
         })
             .catch(() => {
                 console.log("토큰없음")
                 return {
                     id: null,
                     username: null,
-                    name: null
+                    name: null,
                 }
             })
         return data;
     }
 
-    async function logout(){
-        try{
-        const data = await axios({
-            method: "POST",
-            url: "http://localhost:8080/api/v1/members/logout",
-            withCredentials: true,
-        }).then((response) => {
-            setLogin(false)
-            setUser({
-                id: null,
-                username: null,
-                name: null
+    async function logout() {
+        try {
+            const data = await axios({
+                method: "POST",
+                url: "http://localhost:8080/api/v1/members/logout",
+                withCredentials: true,
+            }).then((response) => {
+                setLogin(false)
+                setAdmin(false)
+                setUser({
+                    id: null,
+                    username: null,
+                    name: null
+                })
+                return response.data
             })
-            return response.data
-        })
-        console.log(data)
-        window.location.href="/";
-    }catch(error){
-        console.log("에러 발생")
-    }
+            console.log(data)
+            window.location.href = "/";
+        } catch (error) {
+            console.log("에러 발생")
+        }
     }
 
     // accessToken이 있을 경우 바로 로그인 하도록 초기화
@@ -74,7 +85,7 @@ function AuthProvider({ children }) {
     // const relUser = useMemo(() => ({user, setUser}), [user, setUser]);
 
     return (
-        <AuthContext.Provider value={{ user, isLogin, setLogin, logout }}>
+        <AuthContext.Provider value={{ user, getUser, isLogin, setLogin, logout, isAdmin, setAdmin }}>
             {children}
         </AuthContext.Provider>
     );

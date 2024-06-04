@@ -12,7 +12,9 @@ function Errorpage(props) {
             <p>
                 <i>{error.statusText || error.message}</i>
             </p>
-            <a href="/">back home</a>
+            <a href={document.referrer}>back</a>
+            <span>    </span>
+            <a href="/">home</a>
         </div>
     );
 }

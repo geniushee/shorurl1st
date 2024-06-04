@@ -17,12 +17,15 @@ import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.nio.file.attribute.UserPrincipal;
+import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -71,11 +74,11 @@ public class MemberController {
         return new ResponseEntity<>("로그아웃에 성공했습니다.", headers, HttpStatus.OK);
     }
 
-    public record UserInfoDto(Long id, String username, String name){}
+    public record UserInfoDto(Long id, String username, String name, Collection authorities){}
 
     @GetMapping("/info")
     public ResponseEntity<?> getUserInfo(@AuthenticationPrincipal SecurityUser principal){
-        UserInfoDto dto = new UserInfoDto(principal.getId(), principal.getUsername(), principal.getName());
+        UserInfoDto dto = new UserInfoDto(principal.getId(), principal.getUsername(), principal.getName(), principal.getAuthorities());
         return ResponseEntity.ok(dto);
     }
 

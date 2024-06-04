@@ -27,6 +27,7 @@ public class NotProd {
 				member1 = memberService.findById(1L);
 			}catch(Exception e){
 				member1 = memberService.register("user1", "1234", "user1@user.com", "user1");
+				memberService.register("admin", "admin1234", "admin@admin.com", "admin");
 			}
 
 			if(memberService.findAll().size() <1) {

@@ -12,6 +12,9 @@ import AuthProvider from './global/AuthProvider.jsx'
 import MySUrlList, {loader as myListLoader} from './domain/surl/MySUrlList.jsx'
 import ModifySUrl, {loader as SUrlInfoLoader, action as modifyAction} from './domain/surl/ModifySUrl.jsx'
 import SignUp from "./domain/member/SignUp.jsx"
+import ManageMain from './domain/manage/ManageMain.jsx'
+import ManageLogin, {action as manageLoginAction} from './domain/manage/ManageLogin.jsx'
+import ManageLayout from './domain/manage/ManageLayout.jsx'
 
 
 const router = createBrowserRouter([
@@ -56,6 +59,21 @@ const router = createBrowserRouter([
     element: <SUrl />,
     errorElement: <Errorpage />,
     loader: SUrlLoader,
+  },{
+    path: "/manage",
+    element : <ManageLayout />,
+    errorElement : <Errorpage />,
+    children : [
+      {
+        path: "/manage",
+        element : <ManageLogin/>,
+        action : manageLoginAction,
+      },
+      {
+        path: "/manage/main",
+        element : <ManageMain />,
+      }
+    ]
   }
 ])
 
