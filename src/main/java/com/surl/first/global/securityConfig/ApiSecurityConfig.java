@@ -48,7 +48,7 @@ public class ApiSecurityConfig {
                         authorization ->
                                 authorization.requestMatchers(HttpMethod.GET, "/api/*/surls")
                                         .permitAll()
-                                        .requestMatchers("/api/*/members/login", "/api/*/members/logout", "/api/*/members/socialLogin/**")
+                                        .requestMatchers("/api/*/members/login", "/api/*/members/logout", "/api/*/members/socialLogin/**", "/api/*/members/register")
                                         .permitAll()
                                         .anyRequest().authenticated()
                 )

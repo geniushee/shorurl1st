@@ -10,7 +10,6 @@ import com.surl.first.domain.surl.surl.repository.SUrlRepository;
 
 import lombok.RequiredArgsConstructor;
 
-import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -81,5 +80,9 @@ public class SUrlService {
         } else {
             throw new IllegalArgumentException("잘못된 접근입니다.");
         }
+    }
+
+    public List<SUrl> findTop10Recently() {
+        return sUrlRepository.findTop10ByOrderByCreateDateDesc();
     }
 }

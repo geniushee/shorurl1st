@@ -15,4 +15,5 @@ public interface SUrlRepository extends JpaRepository<SUrl, Long> {
 
     Optional<SUrl> findByTitle(String sUrl);
 
+    List<SUrl> findTop10ByOrderByCreateDateDesc();
 }

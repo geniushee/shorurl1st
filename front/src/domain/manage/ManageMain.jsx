@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 function ManageMain(props) {
 
@@ -13,9 +13,7 @@ function ManageMain(props) {
             <section>
                 관리자 페이지 입니다.
             </section>
-            <p>대시보드</p>
-            <p>총 SUrl</p>
-            <p>총 가입자</p>
+            <Outlet></Outlet>
         </>
     );
 }

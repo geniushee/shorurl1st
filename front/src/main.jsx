@@ -11,10 +11,11 @@ import SignIn, { action as signinAction } from './domain/member/SignIn.jsx'
 import AuthProvider from './global/AuthProvider.jsx'
 import MySUrlList, {loader as myListLoader} from './domain/surl/MySUrlList.jsx'
 import ModifySUrl, {loader as SUrlInfoLoader, action as modifyAction} from './domain/surl/ModifySUrl.jsx'
-import SignUp from "./domain/member/SignUp.jsx"
+import SignUp, {action as signUpAction} from "./domain/member/SignUp.jsx"
 import ManageMain from './domain/manage/ManageMain.jsx'
 import ManageLogin, {action as manageLoginAction} from './domain/manage/ManageLogin.jsx'
 import ManageLayout from './domain/manage/ManageLayout.jsx'
+import Dashboard, {loader as dashLoader} from './domain/manage/Dashboard.jsx'
 
 
 const router = createBrowserRouter([
@@ -51,7 +52,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/signup",
-        element: <SignUp />
+        element: <SignUp />,
+        action: signUpAction,
       }
     ]
   }, {
@@ -72,6 +74,13 @@ const router = createBrowserRouter([
       {
         path: "/manage/main",
         element : <ManageMain />,
+        children:[
+          {
+            path:"/manage/main",
+            element: <Dashboard/>,
+            loader: dashLoader,
+          }
+        ]
       }
     ]
   }

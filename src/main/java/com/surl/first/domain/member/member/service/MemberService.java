@@ -3,18 +3,15 @@ package com.surl.first.domain.member.member.service;
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.repository.MemberRepository;
 import com.surl.first.global.securityConfig.jwtConfig.JwtUtil;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseCookie;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -142,5 +139,9 @@ public class MemberService {
         headers.add("Set-Cookie", accessCookie.toString());
         headers.add("Set-Cookie", refreshCookie.toString());
         return headers;
+    }
+
+    public List<Member> findTop10Recently() {
+        return memberRepository.findTop10ByOrderByCreateDateDesc();
     }
 }
