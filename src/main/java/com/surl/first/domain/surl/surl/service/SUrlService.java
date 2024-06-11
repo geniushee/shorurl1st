@@ -85,4 +85,9 @@ public class SUrlService {
     public List<SUrl> findTop10Recently() {
         return sUrlRepository.findTop10ByOrderByCreateDateDesc();
     }
+
+    @Transactional
+    public void deleteAllByMember(Member member) {
+        sUrlRepository.deleteAllByMember(member);
+    }
 }

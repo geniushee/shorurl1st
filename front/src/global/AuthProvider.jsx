@@ -75,6 +75,11 @@ function AuthProvider({ children }) {
     // 로그인 시 user정보 가져오기
     useEffect(() => {
         if (!isLogin) {
+            setUser({
+                id: null,
+                username: null,
+                name: null
+            })
             return;
         }
         getUser();

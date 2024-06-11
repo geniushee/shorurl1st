@@ -3,6 +3,8 @@ package com.surl.first.domain.member.member.controller;
 import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.service.MemberService;
+import com.surl.first.domain.member.member.service.MemberTransactionManageService;
+import com.surl.first.domain.surl.surl.service.SUrlService;
 import com.surl.first.global.config.AppConfig;
 import com.surl.first.global.securityConfig.SecurityUser;
 import com.surl.first.global.securityConfig.jwtConfig.JwtUtil;
@@ -33,6 +35,7 @@ import java.util.List;
 public class MemberController {
 
     private final MemberService memberService;
+    private final MemberTransactionManageService transactionManageService;
 
     public record MemberRegisterDto(@NotEmpty String username, @NotEmpty String password, @NotEmpty String email,
                                     @NotEmpty String name) {
@@ -94,4 +97,15 @@ public class MemberController {
         response.sendRedirect(redirectUrl);
     }
 
+    @DeleteMapping("/withdrawal")
+    public ResponseEntity<?> withdrawalMember(@AuthenticationPrincipal SecurityUser user,
+                                              @RequestBody MemberLoginDto dto,
+                                              HttpServletRequest request,
+                                              HttpServletResponse response){
+        // 하나의 트랜잭션으로 관리하여 surl과 member를 삭제하기 위해서 트랜젝션으로 묶어줄 서비스를 만듬.
+        // 순환주입가 발생하여 어쩔 수 없이. 순환주입가 발생하지 않도록 주의 필요
+        HttpHeaders headers = transactionManageService.withdrawalMember(user.getId(), dto.password, request, response);
+
+        return new ResponseEntity<>("성공적으로 회원을 탈퇴했습니다.", headers, HttpStatus.OK);
+    }
 }

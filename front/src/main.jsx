@@ -9,13 +9,16 @@ import CreateSUrl, { action as createAction, loader as newLoader } from './domai
 import Main from './domain/Main.jsx'
 import SignIn, { action as signinAction } from './domain/member/SignIn.jsx'
 import AuthProvider from './global/AuthProvider.jsx'
-import MySUrlList, {loader as myListLoader} from './domain/surl/MySUrlList.jsx'
-import ModifySUrl, {loader as SUrlInfoLoader, action as modifyAction} from './domain/surl/ModifySUrl.jsx'
-import SignUp, {action as signUpAction} from "./domain/member/SignUp.jsx"
+import MySUrlList, { loader as myListLoader } from './domain/surl/MySUrlList.jsx'
+import ModifySUrl, { loader as SUrlInfoLoader, action as modifyAction } from './domain/surl/ModifySUrl.jsx'
+import SignUp, { action as signUpAction } from "./domain/member/SignUp.jsx"
 import ManageMain from './domain/manage/ManageMain.jsx'
-import ManageLogin, {action as manageLoginAction} from './domain/manage/ManageLogin.jsx'
+import ManageLogin, { action as manageLoginAction } from './domain/manage/ManageLogin.jsx'
 import ManageLayout from './domain/manage/ManageLayout.jsx'
-import Dashboard, {loader as dashLoader} from './domain/manage/Dashboard.jsx'
+import Dashboard, { loader as dashLoader } from './domain/manage/Dashboard.jsx'
+import Mypage from './domain/member/Mypage.jsx'
+import MypageLayout from './domain/member/MypageLayout.jsx'
+import Withdrawal from './domain/member/Withdrawal.jsx'
 
 
 const router = createBrowserRouter([
@@ -36,14 +39,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/modify/:id",
-        element: <ModifySUrl/>,
+        element: <ModifySUrl />,
         loader: SUrlInfoLoader,
         action: modifyAction,
-      },
-      {
-        path: "/mylist",
-        element: <MySUrlList/>,
-        loader: myListLoader,
       },
       {
         path: "/signin",
@@ -54,6 +52,24 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <SignUp />,
         action: signUpAction,
+      },
+      {
+        path: "/mypage",
+        element: <MypageLayout />,
+        children: [
+          {
+            path: "/mypage",
+            element: <Mypage />,
+          }, {
+            path: "/mypage/mylist",
+            element: <MySUrlList />,
+            loader: myListLoader,
+          },{
+            path : "/mypage/withdrawal",
+            element : <Withdrawal />,
+          }
+
+        ],
       }
     ]
   }, {
@@ -61,23 +77,23 @@ const router = createBrowserRouter([
     element: <SUrl />,
     errorElement: <Errorpage />,
     loader: SUrlLoader,
-  },{
+  }, {
     path: "/manage",
-    element : <ManageLayout />,
-    errorElement : <Errorpage />,
-    children : [
+    element: <ManageLayout />,
+    errorElement: <Errorpage />,
+    children: [
       {
         path: "/manage",
-        element : <ManageLogin/>,
-        action : manageLoginAction,
+        element: <ManageLogin />,
+        action: manageLoginAction,
       },
       {
         path: "/manage/main",
-        element : <ManageMain />,
-        children:[
+        element: <ManageMain />,
+        children: [
           {
-            path:"/manage/main",
-            element: <Dashboard/>,
+            path: "/manage/main",
+            element: <Dashboard />,
             loader: dashLoader,
           }
         ]

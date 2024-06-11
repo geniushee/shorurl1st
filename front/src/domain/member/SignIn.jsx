@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useRef } from 'react';
 import { Form, Link, redirect, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../global/AuthProvider';
+import toastr from 'toastr';
 
 export async function action({ params, request }) {
 
@@ -34,9 +35,11 @@ function SignIn(props) {
         }).then((response) => {
             console.log(response)
             setLogin(true);
+
             return response.data;
         }).catch(() => ("잘못된 정보입니다."))
         console.log(data)
+        toastr["success"]("로그인에 성공했습니다.")
         navigate("/")
     }
 

@@ -2,6 +2,7 @@ package com.surl.first.domain.member.member.service;
 
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.repository.MemberRepository;
+import com.surl.first.domain.surl.surl.service.SUrlService;
 import com.surl.first.global.securityConfig.jwtConfig.JwtUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -143,5 +144,18 @@ public class MemberService {
 
     public List<Member> findTop10Recently() {
         return memberRepository.findTop10ByOrderByCreateDateDesc();
+    }
+
+    public Member checkMember(Long userId, String rawPassword) {
+        Member member = findById(userId);
+        if(!passwordEncoder.matches(rawPassword,member.getPassword())){
+            throw new RuntimeException("비밀번호가 일치하지 않습니다.");
+        }
+        return member;
+    }
+
+    @Transactional
+    public void withdrawal(Member member) {
+        memberRepository.delete(member);
     }
 }
