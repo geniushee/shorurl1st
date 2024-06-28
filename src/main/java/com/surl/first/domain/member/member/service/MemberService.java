@@ -158,4 +158,23 @@ public class MemberService {
     public void withdrawal(Member member) {
         memberRepository.delete(member);
     }
+
+    @Transactional
+    public Member editProfile(Long id, String password, String passwordConfirm, String name, String email) {
+        Member member = findById(id);
+        if(!password.isBlank() && password.equals(passwordConfirm)){
+            member.setPassword(passwordEncoder.encode(password));
+        }
+
+        if(!name.isBlank()){
+            member.setName(name);
+        }
+
+        String regex = "^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+.[a-zA-Z0-9]+$";
+        if(!email.isBlank() && email.matches(regex)){
+            member.setEmail(email);
+        }
+
+        return memberRepository.save(member);
+    }
 }

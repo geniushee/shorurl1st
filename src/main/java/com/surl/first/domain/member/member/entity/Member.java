@@ -3,10 +3,7 @@ package com.surl.first.domain.member.member.entity;
 import com.surl.first.domain.surl.surl.entity.SUrl;
 import com.surl.first.global.entity.TimeEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.UuidGenerator;
 import org.springframework.security.core.GrantedAuthority;
@@ -29,8 +26,11 @@ import java.util.List;
 public class Member extends TimeEntity {
 
     private String username;
+    @Setter
     private String password;
+    @Setter
     private String email;
+    @Setter
     private String name;
     private String refreshToken;
 

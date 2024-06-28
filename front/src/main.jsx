@@ -19,6 +19,7 @@ import Dashboard, { loader as dashLoader } from './domain/manage/Dashboard.jsx'
 import Mypage from './domain/member/Mypage.jsx'
 import MypageLayout from './domain/member/MypageLayout.jsx'
 import Withdrawal from './domain/member/Withdrawal.jsx'
+import EditProfile from './domain/member/EditProfile.jsx'
 
 
 const router = createBrowserRouter([
@@ -67,6 +68,9 @@ const router = createBrowserRouter([
           },{
             path : "/mypage/withdrawal",
             element : <Withdrawal />,
+          },{
+            path : "/mypage/profile",
+            element : <EditProfile />,
           }
 
         ],

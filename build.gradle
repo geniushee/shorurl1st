@@ -49,6 +49,14 @@ dependencies {
     // JWT
     implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3', 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+
+    // json
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+    //meilisearch
+    implementation 'com.meilisearch.sdk:meilisearch-java:0.12.0'
+
 }
 
 tasks.named('test') {

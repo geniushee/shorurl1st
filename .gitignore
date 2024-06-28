@@ -38,3 +38,5 @@ out/
 
 ### custom ###
 application-secret.yml
+test_db.mv.db
+test_db.trace.db

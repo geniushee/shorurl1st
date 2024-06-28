@@ -32,6 +32,7 @@ function AuthProvider({ children }) {
                     name: response.data.name,
                 }
             )
+            return response.data
         })
             .catch(() => {
                 console.log("토큰없음")

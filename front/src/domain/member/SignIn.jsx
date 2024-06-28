@@ -35,11 +35,10 @@ function SignIn(props) {
         }).then((response) => {
             console.log(response)
             setLogin(true);
-
+            toastr["success"]("로그인에 성공했습니다.")
             return response.data;
         }).catch(() => ("잘못된 정보입니다."))
         console.log(data)
-        toastr["success"]("로그인에 성공했습니다.")
         navigate("/")
     }
 

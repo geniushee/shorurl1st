@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.6
+    container_name: meilisearch-1
+    environment:
+      MEILI_ENV: 'development'
+    ports:
+      - "7700:7700"
+    volumes:
+      - ./meili_data:/meili_data
+    restart: unless-stopped

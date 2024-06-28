@@ -1,33 +1,23 @@
 package com.surl.first.domain.member.member.controller;
 
-import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.service.MemberService;
 import com.surl.first.domain.member.member.service.MemberTransactionManageService;
-import com.surl.first.domain.surl.surl.service.SUrlService;
 import com.surl.first.global.config.AppConfig;
 import com.surl.first.global.securityConfig.SecurityUser;
-import com.surl.first.global.securityConfig.jwtConfig.JwtUtil;
 import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.nio.file.attribute.UserPrincipal;
 import java.util.Collection;
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -77,11 +67,12 @@ public class MemberController {
         return new ResponseEntity<>("로그아웃에 성공했습니다.", headers, HttpStatus.OK);
     }
 
-    public record UserInfoDto(Long id, String username, String name, Collection authorities){}
+    public record UserInfoDto(Long id, String username, String name, String email, Collection authorities){}
 
     @GetMapping("/info")
     public ResponseEntity<?> getUserInfo(@AuthenticationPrincipal SecurityUser principal){
-        UserInfoDto dto = new UserInfoDto(principal.getId(), principal.getUsername(), principal.getName(), principal.getAuthorities());
+        Member member = memberService.findById(principal.getId());
+        UserInfoDto dto = new UserInfoDto(principal.getId(), principal.getUsername(), principal.getName(), member.getEmail(),principal.getAuthorities());
         return ResponseEntity.ok(dto);
     }
 
@@ -107,5 +98,14 @@ public class MemberController {
         HttpHeaders headers = transactionManageService.withdrawalMember(user.getId(), dto.password, request, response);
 
         return new ResponseEntity<>("성공적으로 회원을 탈퇴했습니다.", headers, HttpStatus.OK);
+    }
+
+    public record RequestBodyEditProfile(String password, String passwordConfirm, String name, String email){}
+
+    @PutMapping("/editProfile")
+    public ResponseEntity<?> editMemberProfile(@AuthenticationPrincipal SecurityUser user,
+                                               @RequestBody RequestBodyEditProfile dto){
+        Member member = memberService.editProfile(user.getId(), dto.password, dto.passwordConfirm, dto.name, dto.email);
+        return ResponseEntity.ok(member);
     }
 }

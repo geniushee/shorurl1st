@@ -1,5 +1,8 @@
 package com.surl.first.global.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.meilisearch.sdk.Client;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -49,4 +52,10 @@ public class AppConfig {
 		this.jwtSecretKey = jwtSecretKey;
 	}
 
+	private static ObjectMapper objectMapper;
+
+	public static ObjectMapper getObjectMapper(){
+		if(objectMapper == null) AppConfig.objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
+		return objectMapper;
+	}
 }
