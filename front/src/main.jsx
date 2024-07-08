@@ -9,7 +9,7 @@ import CreateSUrl, { action as createAction, loader as newLoader } from './domai
 import Main from './domain/Main.jsx'
 import SignIn, { action as signinAction } from './domain/member/SignIn.jsx'
 import AuthProvider from './global/AuthProvider.jsx'
-import MySUrlList, { loader as myListLoader } from './domain/surl/MySUrlList.jsx'
+import MySUrlList, { loader as myListLoader } from './domain/member/MySUrlList.jsx'
 import ModifySUrl, { loader as SUrlInfoLoader, action as modifyAction } from './domain/surl/ModifySUrl.jsx'
 import SignUp, { action as signUpAction } from "./domain/member/SignUp.jsx"
 import ManageMain from './domain/manage/ManageMain.jsx'
@@ -20,6 +20,7 @@ import Mypage from './domain/member/Mypage.jsx'
 import MypageLayout from './domain/member/MypageLayout.jsx'
 import Withdrawal from './domain/member/Withdrawal.jsx'
 import EditProfile from './domain/member/EditProfile.jsx'
+import MeiliApp from './Meilisearch.jsx'
 
 
 const router = createBrowserRouter([

@@ -40,3 +40,4 @@ out/
 application-secret.yml
 test_db.mv.db
 test_db.trace.db
+meili_data

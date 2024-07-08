@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { deleteSUrl, getMySUrls } from '../../SUrls';
-import { useLoaderData, Link } from 'react-router-dom';
+import { useLoaderData, Link, Form} from 'react-router-dom';
 
 export async function loader({ params }) {
     const sUrls = getMySUrls();
@@ -30,6 +30,11 @@ function MySUrlList(props) {
 
     return (
         <>
+            <p>
+                <Form>
+                    <input type="search" placeholder='검색어 입력' /><button type='sumit'>검색</button>
+                </Form>
+            </p>
             <p>목록 보여주기</p>
             <ul>
                 {list.map((item, index) => (
