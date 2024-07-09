@@ -25,4 +25,10 @@ public class SUrlDocumentRepository {
         String document = Ut.Json.toJson(sUrlDoc);
         getIndex().addDocuments(document);
     }
+
+    public void modify(SUrlDto sUrlDto) {
+        SUrlDocument sUrlDoc = new SUrlDocument(sUrlDto);
+        String document = Ut.Json.toJson(sUrlDoc);
+        getIndex().updateDocuments(document);
+    }
 }

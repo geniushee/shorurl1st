@@ -13,4 +13,8 @@ public class SUrlDocumentService {
     public void createSUrl(SUrlDto sUrlDto) {
         surlDocumentRepository.create(sUrlDto);
     }
+
+    public void modify(SUrlDto sUrlDto) {
+        surlDocumentRepository.modify(sUrlDto);
+    }
 }

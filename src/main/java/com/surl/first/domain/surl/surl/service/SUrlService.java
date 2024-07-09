@@ -65,7 +65,7 @@ public class SUrlService {
         sUrl.setContent(content);
         System.out.println(sUrl.getTitle());
         System.out.println(sUrl.getContent());
-//        publisher.publishEvent();
+        publisher.publish(new SUrlEvent("modify", new SUrlDto(sUrl)));
         return sUrl;
     }
 
