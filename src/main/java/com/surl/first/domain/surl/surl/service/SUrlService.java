@@ -2,7 +2,9 @@ package com.surl.first.domain.surl.surl.service;
 
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.service.MemberService;
-import com.surl.first.global.event.SUrlCreateEvent;
+import com.surl.first.domain.surl.surl.dto.SUrlDto;
+import com.surl.first.global.event.event.SUrlEvent;
+import com.surl.first.global.event.publisher.EventPublisher;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +22,7 @@ import java.util.List;
 public class SUrlService {
     private final SUrlRepository sUrlRepository;
     private final MemberService memberService;
-    private final ApplicationEventPublisher publisher;
+    private final EventPublisher publisher;
 
     @Transactional
     public String createNew(String origin, Long memberId) {
@@ -31,7 +33,7 @@ public class SUrlService {
                 .build();
 
         sUrl = sUrlRepository.save(sUrl);
-        publisher.publishEvent(new SUrlCreateEvent(this, sUrl));
+        publisher.publish(new SUrlEvent("create", new SUrlDto(sUrl)));
         return sUrl.getShortUrl();
     }
 
@@ -63,6 +65,7 @@ public class SUrlService {
         sUrl.setContent(content);
         System.out.println(sUrl.getTitle());
         System.out.println(sUrl.getContent());
+//        publisher.publishEvent();
         return sUrl;
     }
 

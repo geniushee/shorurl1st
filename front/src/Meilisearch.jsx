@@ -20,11 +20,10 @@ const MeiliApp = () => (
 const Hit = ({hit}) => (
     <article key={hit.id}>
         {/* <img src={hit.image} alt={hit.name}/> */}
-        <h1>{hit.title}</h1>
-        <p>{hit.origin}</p>
-        <p>{hit.shortUrl}</p>
-        <p>{hit.content}</p>
-        {/* <p>{hit.description}</p> */}
+        <h1>Title : {hit.title ? hit.title : "No Title"}</h1>
+        <p>Origin : {hit.origin}</p>
+        <p>ShortUrl : {hit.shortUrl}</p>
+        <p>Content : {hit.content}</p>
     </article>
 
 );
