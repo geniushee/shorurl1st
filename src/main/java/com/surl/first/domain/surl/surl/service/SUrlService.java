@@ -82,10 +82,12 @@ public class SUrlService {
         Member member = memberService.findById(userId);
         SUrl sUrl = findById(sUrlId);
         if (sUrl.getMember().equals(member)) {
+            publisher.publish(new SUrlEvent("delete", new SUrlDto(sUrl)));
             sUrlRepository.delete(sUrl);
         } else {
             throw new IllegalArgumentException("잘못된 접근입니다.");
         }
+
     }
 
     public List<SUrl> findTop10Recently() {

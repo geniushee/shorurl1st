@@ -31,4 +31,8 @@ public class SUrlDocumentRepository {
         String document = Ut.Json.toJson(sUrlDoc);
         getIndex().updateDocuments(document);
     }
+
+    public void deleteById(Long id) {
+        getIndex().deleteDocument(String.valueOf(id));
+    }
 }

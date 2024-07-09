@@ -39,9 +39,11 @@ public class NotProd {
 				String sUrl1 = sUrlService.createNew("https://www.google.com", member1.getId());
 				String sUrl2 = sUrlService.createNew("https://www.naver.com", member1.getId());
 				String sUrl3 = sUrlService.createNew("https://www.daum.com", member1.getId());
+				String sUrl4 = sUrlService.createNew("https://www.daum.com", member1.getId());
 			}
 
 			sUrlService.modify(2L, "네이버", "네이버 이동");
+			sUrlService.deleteSUrl(member1.getId(), 4L);
 		};
 	}
 }

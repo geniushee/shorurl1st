@@ -14,6 +14,7 @@ public class SUrlDocumentEventHandler {
         switch (event.getEventType()){
             case "create" -> service.createSUrl(event.getSUrlDto());
             case "modify" -> service.modify(event.getSUrlDto());
+            case "delete" -> service.deleteById(event.getSUrlDto());
         }
     }
 }

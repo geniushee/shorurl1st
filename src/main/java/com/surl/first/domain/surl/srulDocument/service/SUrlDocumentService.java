@@ -17,4 +17,8 @@ public class SUrlDocumentService {
     public void modify(SUrlDto sUrlDto) {
         surlDocumentRepository.modify(sUrlDto);
     }
+
+    public void deleteById(SUrlDto sUrlDto) {
+        surlDocumentRepository.deleteById(sUrlDto.getId());
+    }
 }
