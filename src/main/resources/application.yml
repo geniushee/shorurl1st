@@ -21,6 +21,12 @@ spring:
   threads:
     virtual:
       enabled: true
+  kafka:
+    bootstrap-servers: localhost:19092
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
 
 server:
   port: 8080
@@ -32,6 +38,7 @@ logging:
     org.hibernate.orm.jdbc.bind: TRACE
     org.hibernate.orm.jdbc.extract: TRACE
     org.springframework.transaction.interceptor: TRACE
+#    org.springframework.kafka : debug
 
 custom:
   site:

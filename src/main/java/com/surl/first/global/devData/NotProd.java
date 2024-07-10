@@ -2,6 +2,8 @@ package com.surl.first.global.devData;
 
 import com.surl.first.domain.member.member.entity.Member;
 import com.surl.first.domain.member.member.service.MemberService;
+import com.surl.first.domain.surl.srulDocument.repository.SUrlDocumentRepository;
+import com.surl.first.global.config.meilisearch.MeiliConfig;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,10 +20,12 @@ public class NotProd {
 
 	private final SUrlService sUrlService;
 	private final MemberService memberService;
+	private final SUrlDocumentRepository SUrlDocRepo;
 
 	@Bean
 	public ApplicationRunner work1(){
 		return args -> {
+			SUrlDocRepo.clear();
 			Member member1 = null;
 			try{
 				member1 = memberService.findById(1L);

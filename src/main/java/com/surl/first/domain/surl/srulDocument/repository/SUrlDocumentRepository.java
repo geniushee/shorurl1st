@@ -35,4 +35,10 @@ public class SUrlDocumentRepository {
     public void deleteById(Long id) {
         getIndex().deleteDocument(String.valueOf(id));
     }
+
+    public void clear() {
+        getIndex().deleteAllDocuments();
+        getIndex().resetSortableAttributesSettings();
+        getIndex().updateSortableAttributesSettings(new String[]{"id"});
+    }
 }

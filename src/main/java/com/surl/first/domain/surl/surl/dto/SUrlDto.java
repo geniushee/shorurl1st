@@ -1,13 +1,16 @@
 package com.surl.first.domain.surl.surl.dto;
 
-import com.surl.first.domain.member.member.entity.Member;
+import com.surl.first.domain.member.member.dto.MemberDto;
 import com.surl.first.domain.surl.surl.entity.SUrl;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.jetbrains.annotations.NotNull;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SUrlDto {
     private Long id;
     private LocalDateTime createDate;
@@ -15,7 +18,7 @@ public class SUrlDto {
     private String origin;
     private String title;
     private String content;
-    private Member member;
+    private MemberDto memberDto;
     private String shortUrl;
 
     public SUrlDto(SUrl sUrl){
@@ -25,7 +28,7 @@ public class SUrlDto {
         this.origin = sUrl.getOrigin();
         this.title = sUrl.getTitle();
         this.content = sUrl.getContent();
-        this.member = sUrl.getMember();
+        this.memberDto = new MemberDto(sUrl.getMember());
         this.shortUrl = sUrl.getShortUrl();
     }
 

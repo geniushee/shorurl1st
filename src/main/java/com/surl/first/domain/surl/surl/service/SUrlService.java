@@ -34,6 +34,7 @@ public class SUrlService {
 
         sUrl = sUrlRepository.save(sUrl);
         publisher.publish(new SUrlEvent("create", new SUrlDto(sUrl)));
+        System.out.println(publisher.getClass().getSimpleName());
         return sUrl.getShortUrl();
     }
 

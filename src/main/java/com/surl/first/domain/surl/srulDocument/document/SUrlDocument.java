@@ -1,21 +1,13 @@
 package com.surl.first.domain.surl.srulDocument.document;
 
-import com.surl.first.domain.member.member.entity.Member;
+import com.surl.first.domain.member.member.dto.MemberDto;
 import com.surl.first.domain.surl.surl.dto.SUrlDto;
 import com.surl.first.domain.surl.surl.entity.SUrl;
-import com.surl.first.global.config.AppConfig;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.cglib.core.Local;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -33,7 +25,7 @@ public class SUrlDocument {
     private String title;
     private String content;
     @NotNull
-    private Member member;
+    private MemberDto memberDto;
     @NotNull
     private String shortUrl;
 
@@ -44,7 +36,7 @@ public class SUrlDocument {
         this.origin = sUrl.getOrigin();
         this.title = sUrl.getTitle();
         this.content = sUrl.getContent();
-        this.member = sUrl.getMember();
+        this.memberDto = new MemberDto(sUrl.getMember());
         this.shortUrl = sUrl.getShortUrl();
     }
 
@@ -55,7 +47,7 @@ public class SUrlDocument {
         this.origin = sUrlDto.getOrigin();
         this.title = sUrlDto.getTitle();
         this.content = sUrlDto.getContent();
-        this.member = sUrlDto.getMember();
+        this.memberDto = sUrlDto.getMemberDto();
         this.shortUrl = sUrlDto.getShortUrl();
     }
 }
