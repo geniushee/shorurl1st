@@ -70,7 +70,7 @@ public class SUrlService {
         return sUrl;
     }
 
-    private SUrl findById(Long id) {
+    public SUrl findById(Long id) {
         return sUrlRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("잘못된 정보입니다."));
     }
 

@@ -27,6 +27,12 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
       value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+  rabbitmq:
+    host: "${custom.rabbitmq.host}"
+    port: "${custom.rabbitmq.port}"
+    stompPort: "${custom.rabbitmq.stompPort}"
+    username: "${custom.rabbitmq.username}"
+    password: "${custom.rabbitmq.password}"
 
 server:
   port: 8080

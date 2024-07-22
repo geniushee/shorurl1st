@@ -44,6 +44,7 @@ function MySUrlList(props) {
                         <p>shortUrl : {item.shortUrl}</p>
                         <p>title : {item.title}</p>
                         <div>
+                            <Link to={`/chatRoom/create/${item.id}`}>채팅방 만들기</Link>
                             <Link to={`/modify/${item.id}`}>설정하기</Link>
                             <button onClick={() => clickDelete(item)}>삭제하기</button>
                         </div>

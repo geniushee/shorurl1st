@@ -28,7 +28,8 @@ function App() {
       <button onClick={openModal}><input type='search' placeholder='search'/><button>검색</button></button>
       {isModalOpen && <Modal onClose={closeModal} />}
       </div>
-      {isLogin ? <nav><Link to={"/mypage/mylist"}>내 SUrl 목록</Link></nav> : <p></p>}
+      {isLogin ? <nav><Link to={"/mypage/mylist"}>내 SUrl 목록</Link>
+      <Link to={"/chatRoom/roomList"}>SUrl 채팅방 목록</Link></nav> : <p></p>}
       <p>{isLogin ? "로그인" : "로그아웃"}</p>
       {!!user.username ? <div>
         <p>{user.username}</p>

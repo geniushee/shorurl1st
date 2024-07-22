@@ -21,6 +21,9 @@ import MypageLayout from './domain/member/MypageLayout.jsx'
 import Withdrawal from './domain/member/Withdrawal.jsx'
 import EditProfile from './domain/member/EditProfile.jsx'
 import MeiliApp from './Meilisearch.jsx'
+import CreateSUrlChatRoom, {loader as createRoomLoader, action as createRoomAction} from './domain/surl/chatRoom/CreateSUrlChatRoom.jsx'
+import ChatRoomList,{loader as roomListLoader} from './domain/surl/chatRoom/ChatRoomList.jsx'
+import ChatRoom, {loader as chatRoomMessagesLoader} from './domain/surl/chatRoom/ChatRoom.jsx'
 
 
 const router = createBrowserRouter([
@@ -75,6 +78,22 @@ const router = createBrowserRouter([
           }
 
         ],
+      },
+      {
+        path: "/chatRoom/create/:id",
+        element: <CreateSUrlChatRoom/>,
+        loader: createRoomLoader,
+        action: createRoomAction,
+      },
+      {
+        path: "/chatRoom/roomList",
+        element:<ChatRoomList/>,
+        loader: roomListLoader,
+      },
+      {
+        path: "/chatRoom/:roomId",
+        element: <ChatRoom/>,
+        loader: chatRoomMessagesLoader,
       }
     ]
   }, {
