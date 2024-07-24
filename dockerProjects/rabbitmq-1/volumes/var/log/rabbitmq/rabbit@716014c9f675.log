@@ -1,0 +1,936 @@
+2024-07-23 05:10:09.982868+00:00 [notice] <0.254.0> Logging: configured log handlers are now ACTIVE
+2024-07-23 05:10:10.025338+00:00 [info] <0.254.0> ra: starting system quorum_queues
+2024-07-23 05:10:10.025856+00:00 [info] <0.254.0> starting Ra system: quorum_queues in directory: /var/lib/rabbitmq/mnesia/rabbit@716014c9f675/quorum/rabbit@716014c9f675
+2024-07-23 05:10:10.399654+00:00 [info] <0.269.0> ra system 'quorum_queues' running pre init for 0 registered servers
+2024-07-23 05:10:10.521209+00:00 [info] <0.270.0> ra: meta data store initialised for system quorum_queues. 0 record(s) recovered
+2024-07-23 05:10:10.555882+00:00 [notice] <0.275.0> WAL: ra_log_wal init, open tbls: ra_log_open_mem_tables, closed tbls: ra_log_closed_mem_tables
+2024-07-23 05:10:10.666810+00:00 [info] <0.254.0> ra: starting system coordination
+2024-07-23 05:10:10.666912+00:00 [info] <0.254.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@716014c9f675/coordination/rabbit@716014c9f675
+2024-07-23 05:10:10.900016+00:00 [info] <0.283.0> ra system 'coordination' running pre init for 0 registered servers
+2024-07-23 05:10:10.983972+00:00 [info] <0.284.0> ra: meta data store initialised for system coordination. 0 record(s) recovered
+2024-07-23 05:10:10.984390+00:00 [notice] <0.289.0> WAL: ra_coordination_log_wal init, open tbls: ra_coordination_log_open_mem_tables, closed tbls: ra_coordination_log_closed_mem_tables
+2024-07-23 05:10:11.000015+00:00 [info] <0.254.0> ra: starting system coordination
+2024-07-23 05:10:11.000080+00:00 [info] <0.254.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@716014c9f675/coordination/rabbit@716014c9f675
+2024-07-23 05:10:11.213666+00:00 [info] <0.254.0> Waiting for Khepri leader for 30000 ms, 9 retries left
+2024-07-23 05:10:11.231709+00:00 [notice] <0.293.0> RabbitMQ metadata store: candidate -> leader in term: 1 machine version: 0
+2024-07-23 05:10:11.253044+00:00 [info] <0.254.0> Khepri leader elected
+2024-07-23 05:10:11.890528+00:00 [info] <0.254.0> 
+2024-07-23 05:10:11.890528+00:00 [info] <0.254.0>  Starting RabbitMQ 3.13.4 on Erlang 26.2.5.2 [jit]
+2024-07-23 05:10:11.890528+00:00 [info] <0.254.0>  Copyright (c) 2007-2024 Broadcom Inc and/or its subsidiaries
+2024-07-23 05:10:11.890528+00:00 [info] <0.254.0>  Licensed under the MPL 2.0. Website: https://rabbitmq.com
+2024-07-23 05:10:11.897571+00:00 [info] <0.254.0> 
+2024-07-23 05:10:11.897571+00:00 [info] <0.254.0>  node           : rabbit@716014c9f675
+2024-07-23 05:10:11.897571+00:00 [info] <0.254.0>  home dir       : /var/lib/rabbitmq
+2024-07-23 05:10:11.897571+00:00 [info] <0.254.0>  config file(s) : /etc/rabbitmq/rabbitmq.conf
+2024-07-23 05:10:11.897571+00:00 [info] <0.254.0>  cookie hash    : PuSnpjRtOTeN60gqWx7bUg==
+2024-07-23 05:10:11.897571+00:00 [info] <0.254.0>  log(s)         : /var/log/rabbitmq/rabbit@716014c9f675.log
+2024-07-23 05:10:11.897571+00:00 [info] <0.254.0>                 : <stdout>
+2024-07-23 05:10:11.897571+00:00 [info] <0.254.0>  data dir       : /var/lib/rabbitmq/mnesia/rabbit@716014c9f675
+2024-07-23 05:10:12.483060+00:00 [info] <0.254.0> Running boot step pre_boot defined by app rabbit
+2024-07-23 05:10:12.483165+00:00 [info] <0.254.0> Running boot step rabbit_global_counters defined by app rabbit
+2024-07-23 05:10:12.483449+00:00 [info] <0.254.0> Running boot step rabbit_osiris_metrics defined by app rabbit
+2024-07-23 05:10:12.484162+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics defined by app rabbit
+2024-07-23 05:10:12.484860+00:00 [info] <0.254.0> Running boot step rabbit_alarm defined by app rabbit
+2024-07-23 05:10:12.505711+00:00 [info] <0.330.0> Memory high watermark set to 1573 MiB (1649811456 bytes) of 3933 MiB (4124528640 bytes) total
+2024-07-23 05:10:12.514473+00:00 [info] <0.332.0> Enabling free disk space monitoring (disk free space: 115295883264, total memory: 4124528640)
+2024-07-23 05:10:12.514584+00:00 [info] <0.332.0> Disk free limit set to 50MB
+2024-07-23 05:10:12.519143+00:00 [info] <0.254.0> Running boot step code_server_cache defined by app rabbit
+2024-07-23 05:10:12.519274+00:00 [info] <0.254.0> Running boot step file_handle_cache defined by app rabbit
+2024-07-23 05:10:12.531772+00:00 [info] <0.335.0> Limiting to approx 1048479 file handles (943629 sockets)
+2024-07-23 05:10:12.532215+00:00 [info] <0.336.0> FHC read buffering: OFF
+2024-07-23 05:10:12.532262+00:00 [info] <0.336.0> FHC write buffering: ON
+2024-07-23 05:10:12.533473+00:00 [info] <0.254.0> Running boot step worker_pool defined by app rabbit
+2024-07-23 05:10:12.533592+00:00 [info] <0.316.0> Will use 4 processes for default worker pool
+2024-07-23 05:10:12.533628+00:00 [info] <0.316.0> Starting worker pool 'worker_pool' with 4 processes in it
+2024-07-23 05:10:12.534329+00:00 [info] <0.254.0> Running boot step database defined by app rabbit
+2024-07-23 05:10:12.538637+00:00 [info] <0.254.0> Peer discovery: configured backend: rabbit_peer_discovery_classic_config
+2024-07-23 05:10:12.544204+00:00 [notice] <0.317.0> Feature flags: attempt to enable `mqtt_v5`...
+2024-07-23 05:10:12.596892+00:00 [notice] <0.317.0> Feature flags: attempt to enable `delete_ra_cluster_mqtt_node`...
+2024-07-23 05:10:12.659488+00:00 [info] <0.353.0> Trying to acquire lock {mqtt_node,{mqtt_node,rabbit@716014c9f675}} on nodes [rabbit@716014c9f675] ...
+2024-07-23 05:10:12.659975+00:00 [info] <0.353.0> Acquired lock {mqtt_node,{mqtt_node,rabbit@716014c9f675}}
+2024-07-23 05:10:12.660087+00:00 [info] <0.353.0> Local Ra process mqtt_node does not exist
+2024-07-23 05:10:12.660928+00:00 [info] <0.353.0> Released lock {mqtt_node,{mqtt_node,rabbit@716014c9f675}}
+2024-07-23 05:10:12.726214+00:00 [notice] <0.317.0> Feature flags: `delete_ra_cluster_mqtt_node` enabled
+2024-07-23 05:10:12.726370+00:00 [notice] <0.317.0> Feature flags: attempt to enable `message_containers`...
+2024-07-23 05:10:12.839696+00:00 [notice] <0.317.0> Feature flags: `message_containers` enabled
+2024-07-23 05:10:12.898806+00:00 [notice] <0.317.0> Feature flags: `mqtt_v5` enabled
+2024-07-23 05:10:12.899075+00:00 [notice] <0.317.0> Feature flags: attempt to enable `detailed_queues_endpoint`...
+2024-07-23 05:10:13.017172+00:00 [notice] <0.317.0> Feature flags: `detailed_queues_endpoint` enabled
+2024-07-23 05:10:13.017685+00:00 [notice] <0.317.0> Feature flags: attempt to enable `quorum_queue_non_voters`...
+2024-07-23 05:10:13.134209+00:00 [notice] <0.317.0> Feature flags: `quorum_queue_non_voters` enabled
+2024-07-23 05:10:13.134538+00:00 [notice] <0.317.0> Feature flags: attempt to enable `stream_update_config_command`...
+2024-07-23 05:10:13.247066+00:00 [notice] <0.317.0> Feature flags: `stream_update_config_command` enabled
+2024-07-23 05:10:13.247295+00:00 [notice] <0.317.0> Feature flags: attempt to enable `stream_filtering`...
+2024-07-23 05:10:13.375363+00:00 [notice] <0.317.0> Feature flags: `stream_filtering` enabled
+2024-07-23 05:10:13.375820+00:00 [notice] <0.317.0> Feature flags: attempt to enable `stream_sac_coordinator_unblock_group`...
+2024-07-23 05:10:14.019332+00:00 [notice] <0.317.0> Feature flags: `stream_sac_coordinator_unblock_group` enabled
+2024-07-23 05:10:14.019734+00:00 [notice] <0.317.0> Feature flags: attempt to enable `restart_streams`...
+2024-07-23 05:10:14.189168+00:00 [notice] <0.317.0> Feature flags: `restart_streams` enabled
+2024-07-23 05:10:14.189564+00:00 [notice] <0.317.0> Feature flags: attempt to enable `message_containers_deaths_v2`...
+2024-07-23 05:10:14.349185+00:00 [notice] <0.317.0> Feature flags: `message_containers_deaths_v2` enabled
+2024-07-23 05:10:14.349442+00:00 [notice] <0.317.0> Feature flags: attempt to enable `rabbit_mqtt_qos0_queue`...
+2024-07-23 05:10:14.484467+00:00 [notice] <0.317.0> Feature flags: `rabbit_mqtt_qos0_queue` enabled
+2024-07-23 05:10:14.484838+00:00 [info] <0.254.0> DB: virgin node -> run peer discovery
+2024-07-23 05:10:14.505347+00:00 [notice] <0.44.0> Application mnesia exited with reason: stopped
+2024-07-23 05:10:15.219846+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 05:10:15.220165+00:00 [info] <0.254.0> Successfully synced tables from a peer
+2024-07-23 05:10:15.220287+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 05:10:15.220377+00:00 [info] <0.254.0> Successfully synced tables from a peer
+2024-07-23 05:10:15.236403+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 05:10:15.236660+00:00 [info] <0.254.0> Successfully synced tables from a peer
+2024-07-23 05:10:15.236904+00:00 [info] <0.254.0> Running boot step tracking_metadata_store defined by app rabbit
+2024-07-23 05:10:15.237012+00:00 [info] <0.581.0> Setting up a table for connection tracking on this node: tracked_connection
+2024-07-23 05:10:15.237063+00:00 [info] <0.581.0> Setting up a table for per-vhost connection counting on this node: tracked_connection_per_vhost
+2024-07-23 05:10:15.237126+00:00 [info] <0.581.0> Setting up a table for per-user connection counting on this node: tracked_connection_per_user
+2024-07-23 05:10:15.237173+00:00 [info] <0.581.0> Setting up a table for channel tracking on this node: tracked_channel
+2024-07-23 05:10:15.237272+00:00 [info] <0.581.0> Setting up a table for channel tracking on this node: tracked_channel_per_user
+2024-07-23 05:10:15.237463+00:00 [info] <0.254.0> Running boot step networking_metadata_store defined by app rabbit
+2024-07-23 05:10:15.237590+00:00 [info] <0.254.0> Running boot step feature_flags defined by app rabbit
+2024-07-23 05:10:15.237863+00:00 [info] <0.254.0> Running boot step codec_correctness_check defined by app rabbit
+2024-07-23 05:10:15.237904+00:00 [info] <0.254.0> Running boot step external_infrastructure defined by app rabbit
+2024-07-23 05:10:15.238063+00:00 [info] <0.254.0> Running boot step rabbit_event defined by app rabbit
+2024-07-23 05:10:15.238316+00:00 [info] <0.254.0> Running boot step rabbit_registry defined by app rabbit
+2024-07-23 05:10:15.238476+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit
+2024-07-23 05:10:15.238592+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit
+2024-07-23 05:10:15.238702+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit
+2024-07-23 05:10:15.238807+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_direct defined by app rabbit
+2024-07-23 05:10:15.238942+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit
+2024-07-23 05:10:15.239183+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_headers defined by app rabbit
+2024-07-23 05:10:15.239292+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_topic defined by app rabbit
+2024-07-23 05:10:15.239390+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_all defined by app rabbit
+2024-07-23 05:10:15.239444+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_exactly defined by app rabbit
+2024-07-23 05:10:15.239674+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_nodes defined by app rabbit
+2024-07-23 05:10:15.239724+00:00 [info] <0.254.0> Running boot step rabbit_priority_queue defined by app rabbit
+2024-07-23 05:10:15.239752+00:00 [info] <0.254.0> Priority queues enabled, real BQ is rabbit_variable_queue
+2024-07-23 05:10:15.239828+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_client_local defined by app rabbit
+2024-07-23 05:10:15.239879+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_min_masters defined by app rabbit
+2024-07-23 05:10:15.239957+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_random defined by app rabbit
+2024-07-23 05:10:15.240081+00:00 [info] <0.254.0> Running boot step kernel_ready defined by app rabbit
+2024-07-23 05:10:15.240111+00:00 [info] <0.254.0> Running boot step rabbit_sysmon_minder defined by app rabbit
+2024-07-23 05:10:15.240358+00:00 [info] <0.254.0> Running boot step rabbit_epmd_monitor defined by app rabbit
+2024-07-23 05:10:15.242504+00:00 [info] <0.589.0> epmd monitor knows us, inter-node communication (distribution) port: 25672
+2024-07-23 05:10:15.242696+00:00 [info] <0.254.0> Running boot step guid_generator defined by app rabbit
+2024-07-23 05:10:15.249572+00:00 [info] <0.254.0> Running boot step rabbit_node_monitor defined by app rabbit
+2024-07-23 05:10:15.250124+00:00 [info] <0.593.0> Starting rabbit_node_monitor (in ignore mode)
+2024-07-23 05:10:15.250338+00:00 [info] <0.254.0> Running boot step delegate_sup defined by app rabbit
+2024-07-23 05:10:15.251105+00:00 [info] <0.254.0> Running boot step rabbit_memory_monitor defined by app rabbit
+2024-07-23 05:10:15.251296+00:00 [info] <0.254.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit
+2024-07-23 05:10:15.251368+00:00 [info] <0.254.0> Running boot step core_initialized defined by app rabbit
+2024-07-23 05:10:15.251406+00:00 [info] <0.254.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit
+2024-07-23 05:10:15.251503+00:00 [info] <0.254.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit
+2024-07-23 05:10:15.251590+00:00 [info] <0.254.0> Running boot step rabbit_definitions_hashing defined by app rabbit
+2024-07-23 05:10:15.251751+00:00 [info] <0.254.0> Running boot step rabbit_exchange_parameters defined by app rabbit
+2024-07-23 05:10:15.301774+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_misc defined by app rabbit
+2024-07-23 05:10:15.302620+00:00 [info] <0.254.0> Running boot step rabbit_policies defined by app rabbit
+2024-07-23 05:10:15.302979+00:00 [info] <0.254.0> Running boot step rabbit_policy defined by app rabbit
+2024-07-23 05:10:15.303092+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_validator defined by app rabbit
+2024-07-23 05:10:15.303168+00:00 [info] <0.254.0> Running boot step rabbit_quorum_memory_manager defined by app rabbit
+2024-07-23 05:10:15.303285+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue defined by app rabbit
+2024-07-23 05:10:15.303575+00:00 [info] <0.254.0> Running boot step rabbit_stream_coordinator defined by app rabbit
+2024-07-23 05:10:15.306137+00:00 [info] <0.254.0> Running boot step rabbit_vhost_limit defined by app rabbit
+2024-07-23 05:10:15.306455+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_reset_handler defined by app rabbitmq_management
+2024-07-23 05:10:15.306610+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_db_handler defined by app rabbitmq_management_agent
+2024-07-23 05:10:15.306677+00:00 [info] <0.254.0> Management plugin: using rates mode 'basic'
+2024-07-23 05:10:15.306994+00:00 [info] <0.254.0> Running boot step recovery defined by app rabbit
+2024-07-23 05:10:15.329353+00:00 [info] <0.254.0> Running boot step empty_db_check defined by app rabbit
+2024-07-23 05:10:15.329444+00:00 [info] <0.254.0> Will seed default virtual host and user...
+2024-07-23 05:10:15.329705+00:00 [info] <0.254.0> Adding vhost '/' (description: 'Default virtual host', tags: [])
+2024-07-23 05:10:15.346655+00:00 [info] <0.640.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@716014c9f675/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists
+2024-07-23 05:10:15.367286+00:00 [info] <0.640.0> Setting segment_entry_count for vhost '/' with 0 queues to '2048'
+2024-07-23 05:10:15.401924+00:00 [info] <0.640.0> Starting message stores for vhost '/'
+2024-07-23 05:10:15.419825+00:00 [info] <0.650.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_transient": using rabbit_msg_store_ets_index to provide index
+2024-07-23 05:10:15.439598+00:00 [info] <0.640.0> Started message store of type transient for vhost '/'
+2024-07-23 05:10:15.439865+00:00 [info] <0.654.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": using rabbit_msg_store_ets_index to provide index
+2024-07-23 05:10:15.448167+00:00 [warning] <0.654.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch
+2024-07-23 05:10:15.456961+00:00 [info] <0.640.0> Started message store of type persistent for vhost '/'
+2024-07-23 05:10:15.457244+00:00 [info] <0.640.0> Recovering 0 queues of type rabbit_classic_queue took 85ms
+2024-07-23 05:10:15.457285+00:00 [info] <0.640.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms
+2024-07-23 05:10:15.457365+00:00 [info] <0.640.0> Recovering 0 queues of type rabbit_stream_queue took 0ms
+2024-07-23 05:10:15.459945+00:00 [info] <0.254.0> Created user 'admin'
+2024-07-23 05:10:15.461454+00:00 [info] <0.254.0> Successfully set user tags for user 'admin' to [administrator]
+2024-07-23 05:10:15.462919+00:00 [info] <0.254.0> Successfully set permissions for user 'admin' in virtual host '/' to '.*', '.*', '.*'
+2024-07-23 05:10:15.462984+00:00 [info] <0.254.0> Running boot step rabbit_observer_cli defined by app rabbit
+2024-07-23 05:10:15.463152+00:00 [info] <0.254.0> Running boot step rabbit_looking_glass defined by app rabbit
+2024-07-23 05:10:15.463185+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics_gc defined by app rabbit
+2024-07-23 05:10:15.463604+00:00 [info] <0.254.0> Running boot step background_gc defined by app rabbit
+2024-07-23 05:10:15.463862+00:00 [info] <0.254.0> Running boot step routing_ready defined by app rabbit
+2024-07-23 05:10:15.463893+00:00 [info] <0.254.0> Running boot step pre_flight defined by app rabbit
+2024-07-23 05:10:15.463994+00:00 [info] <0.254.0> Running boot step notify_cluster defined by app rabbit
+2024-07-23 05:10:15.464110+00:00 [info] <0.254.0> Running boot step networking defined by app rabbit
+2024-07-23 05:10:15.464287+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue_periodic_membership_reconciliation defined by app rabbit
+2024-07-23 05:10:15.464422+00:00 [info] <0.254.0> Running boot step definition_import_worker_pool defined by app rabbit
+2024-07-23 05:10:15.464548+00:00 [info] <0.316.0> Starting worker pool 'definition_import_pool' with 4 processes in it
+2024-07-23 05:10:15.465210+00:00 [info] <0.254.0> Running boot step cluster_name defined by app rabbit
+2024-07-23 05:10:15.465318+00:00 [info] <0.254.0> Initialising internal cluster ID to 'rabbitmq-cluster-id-ntXCXYEsiXpyX7kvkM5pZA'
+2024-07-23 05:10:15.466919+00:00 [info] <0.254.0> Running boot step virtual_host_reconciliation defined by app rabbit
+2024-07-23 05:10:15.467197+00:00 [info] <0.254.0> Running boot step direct_client defined by app rabbit
+2024-07-23 05:10:15.467381+00:00 [info] <0.254.0> Running boot step rabbit_management_load_definitions defined by app rabbitmq_management
+2024-07-23 05:10:15.467575+00:00 [info] <0.691.0> Resetting node maintenance status
+2024-07-23 05:10:15.831202+00:00 [warning] <0.720.0> Deprecated features: `management_metrics_collection`: Feature `management_metrics_collection` is deprecated.
+2024-07-23 05:10:15.831202+00:00 [warning] <0.720.0> By default, this feature can still be used for now.
+2024-07-23 05:10:15.831202+00:00 [warning] <0.720.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.
+2024-07-23 05:10:15.831202+00:00 [warning] <0.720.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:
+2024-07-23 05:10:15.831202+00:00 [warning] <0.720.0>     "deprecated_features.permit.management_metrics_collection = true"
+2024-07-23 05:10:15.831202+00:00 [warning] <0.720.0> To test RabbitMQ as if the feature was removed, set this in your configuration:
+2024-07-23 05:10:15.831202+00:00 [warning] <0.720.0>     "deprecated_features.permit.management_metrics_collection = false"
+2024-07-23 05:10:21.390929+00:00 [info] <0.757.0> Management plugin: HTTP (non-TLS) listener started on port 15672
+2024-07-23 05:10:21.391098+00:00 [info] <0.787.0> Statistics database started.
+2024-07-23 05:10:21.391221+00:00 [info] <0.786.0> Starting worker pool 'management_worker_pool' with 3 processes in it
+2024-07-23 05:10:21.392181+00:00 [info] <0.796.0> rabbit_stomp: default user 'guest' enabled
+2024-07-23 05:10:21.393861+00:00 [info] <0.815.0> started STOMP TCP listener on [::]:61613
+2024-07-23 05:10:21.395727+00:00 [info] <0.822.0> Starting MQTT retained message store rabbit_mqtt_retained_msg_store_dets for vhost '/'
+2024-07-23 05:10:21.397472+00:00 [info] <0.822.0> Recovered MQTT retained message store rabbit_mqtt_retained_msg_store_dets for vhost '/'
+2024-07-23 05:10:21.398310+00:00 [info] <0.842.0> started MQTT TCP listener on [::]:1883
+2024-07-23 05:10:21.399054+00:00 [info] <0.691.0> Ready to start client connection listeners
+2024-07-23 05:10:21.402147+00:00 [info] <0.860.0> started TCP listener on [::]:5672
+2024-07-23 05:10:21.573462+00:00 [info] <0.691.0> Server startup complete; 5 plugins started.
+2024-07-23 05:10:21.573462+00:00 [info] <0.691.0>  * rabbitmq_mqtt
+2024-07-23 05:10:21.573462+00:00 [info] <0.691.0>  * rabbitmq_stomp
+2024-07-23 05:10:21.573462+00:00 [info] <0.691.0>  * rabbitmq_management
+2024-07-23 05:10:21.573462+00:00 [info] <0.691.0>  * rabbitmq_management_agent
+2024-07-23 05:10:21.573462+00:00 [info] <0.691.0>  * rabbitmq_web_dispatch
+2024-07-23 05:10:21.707582+00:00 [info] <0.9.0> Time to start RabbitMQ: 17535 ms
+2024-07-23 06:52:36.776516+00:00 [info] <0.1217.0> accepting AMQP connection <0.1217.0> (172.20.0.1:41960 -> 172.20.0.3:5672)
+2024-07-23 06:52:36.796501+00:00 [error] <0.1217.0> closing AMQP connection <0.1217.0> (172.20.0.1:41960 -> 172.20.0.3:5672):
+2024-07-23 06:52:36.796501+00:00 [error] <0.1217.0> {bad_header,<<"GET / HT">>}
+2024-07-23 06:52:37.996941+00:00 [info] <0.1214.0> accepting AMQP connection <0.1214.0> (172.20.0.1:41958 -> 172.20.0.3:5672)
+2024-07-23 06:52:37.997278+00:00 [error] <0.1214.0> closing AMQP connection <0.1214.0> (172.20.0.1:41958 -> 172.20.0.3:5672):
+2024-07-23 06:52:37.997278+00:00 [error] <0.1214.0> {bad_header,<<"GET / HT">>}
+2024-07-23 06:52:43.019359+00:00 [info] <0.1225.0> accepting AMQP connection <0.1225.0> (172.20.0.1:41984 -> 172.20.0.3:5672)
+2024-07-23 06:52:43.019588+00:00 [error] <0.1225.0> closing AMQP connection <0.1225.0> (172.20.0.1:41984 -> 172.20.0.3:5672):
+2024-07-23 06:52:43.019588+00:00 [error] <0.1225.0> {bad_header,<<"GET / HT">>}
+2024-07-23 06:52:51.520997+00:00 [info] <0.1230.0> accepting AMQP connection <0.1230.0> (172.20.0.1:58292 -> 172.20.0.3:5672)
+2024-07-23 06:52:51.521747+00:00 [error] <0.1230.0> closing AMQP connection <0.1230.0> (172.20.0.1:58292 -> 172.20.0.3:5672):
+2024-07-23 06:52:51.521747+00:00 [error] <0.1230.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 06:52:52.562109+00:00 [info] <0.1233.0> accepting AMQP connection <0.1233.0> (172.20.0.1:58302 -> 172.20.0.3:5672)
+2024-07-23 06:52:52.562654+00:00 [error] <0.1233.0> closing AMQP connection <0.1233.0> (172.20.0.1:58302 -> 172.20.0.3:5672):
+2024-07-23 06:52:52.562654+00:00 [error] <0.1233.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 06:52:57.586449+00:00 [info] <0.1240.0> accepting AMQP connection <0.1240.0> (172.20.0.1:57196 -> 172.20.0.3:5672)
+2024-07-23 06:52:57.586929+00:00 [error] <0.1240.0> closing AMQP connection <0.1240.0> (172.20.0.1:57196 -> 172.20.0.3:5672):
+2024-07-23 06:52:57.586929+00:00 [error] <0.1240.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 06:53:07.596080+00:00 [info] <0.1243.0> accepting AMQP connection <0.1243.0> (172.20.0.1:57204 -> 172.20.0.3:5672)
+2024-07-23 06:53:07.600310+00:00 [error] <0.1243.0> closing AMQP connection <0.1243.0> (172.20.0.1:57204 -> 172.20.0.3:5672):
+2024-07-23 06:53:07.600310+00:00 [error] <0.1243.0> {handshake_timeout,handshake}
+2024-07-23 06:53:27.625849+00:00 [info] <0.1253.0> accepting AMQP connection <0.1253.0> (172.20.0.1:50694 -> 172.20.0.3:5672)
+2024-07-23 06:53:27.626171+00:00 [error] <0.1253.0> closing AMQP connection <0.1253.0> (172.20.0.1:50694 -> 172.20.0.3:5672):
+2024-07-23 06:53:27.626171+00:00 [error] <0.1253.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 06:53:37.626491+00:00 [info] <0.1250.0> accepting AMQP connection <0.1250.0> (172.20.0.1:50702 -> 172.20.0.3:5672)
+2024-07-23 06:53:37.626857+00:00 [error] <0.1250.0> closing AMQP connection <0.1250.0> (172.20.0.1:50702 -> 172.20.0.3:5672):
+2024-07-23 06:53:37.626857+00:00 [error] <0.1250.0> {handshake_timeout,handshake}
+2024-07-23 06:54:27.666856+00:00 [info] <0.1269.0> accepting AMQP connection <0.1269.0> (172.20.0.1:39296 -> 172.20.0.3:5672)
+2024-07-23 06:54:27.667102+00:00 [error] <0.1269.0> closing AMQP connection <0.1269.0> (172.20.0.1:39296 -> 172.20.0.3:5672):
+2024-07-23 06:54:27.667102+00:00 [error] <0.1269.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 06:54:37.667265+00:00 [info] <0.1266.0> accepting AMQP connection <0.1266.0> (172.20.0.1:39298 -> 172.20.0.3:5672)
+2024-07-23 06:54:37.667554+00:00 [error] <0.1266.0> closing AMQP connection <0.1266.0> (172.20.0.1:39298 -> 172.20.0.3:5672):
+2024-07-23 06:54:37.667554+00:00 [error] <0.1266.0> {handshake_timeout,handshake}
+2024-07-23 06:59:27.724484+00:00 [info] <0.1289.0> accepting AMQP connection <0.1289.0> (172.20.0.1:40006 -> 172.20.0.3:5672)
+2024-07-23 06:59:27.724892+00:00 [error] <0.1289.0> closing AMQP connection <0.1289.0> (172.20.0.1:40006 -> 172.20.0.3:5672):
+2024-07-23 06:59:27.724892+00:00 [error] <0.1289.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 06:59:37.727461+00:00 [info] <0.1294.0> accepting AMQP connection <0.1294.0> (172.20.0.1:40008 -> 172.20.0.3:5672)
+2024-07-23 06:59:37.727927+00:00 [error] <0.1294.0> closing AMQP connection <0.1294.0> (172.20.0.1:40008 -> 172.20.0.3:5672):
+2024-07-23 06:59:37.727927+00:00 [error] <0.1294.0> {handshake_timeout,handshake}
+2024-07-23 07:09:27.777752+00:00 [info] <0.1334.0> accepting AMQP connection <0.1334.0> (172.20.0.1:56292 -> 172.20.0.3:5672)
+2024-07-23 07:09:27.778223+00:00 [error] <0.1334.0> closing AMQP connection <0.1334.0> (172.20.0.1:56292 -> 172.20.0.3:5672):
+2024-07-23 07:09:27.778223+00:00 [error] <0.1334.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 07:09:37.778575+00:00 [info] <0.1331.0> accepting AMQP connection <0.1331.0> (172.20.0.1:56282 -> 172.20.0.3:5672)
+2024-07-23 07:09:37.779032+00:00 [error] <0.1331.0> closing AMQP connection <0.1331.0> (172.20.0.1:56282 -> 172.20.0.3:5672):
+2024-07-23 07:09:37.779032+00:00 [error] <0.1331.0> {handshake_timeout,handshake}
+2024-07-23 07:12:20.780676+00:00 [info] <0.1399.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 07:12:20.782167+00:00 [info] <0.1399.0> Successfully synced tables from a peer
+2024-07-23 07:12:23.177891+00:00 [info] <0.1415.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 07:12:23.178054+00:00 [info] <0.1415.0> Successfully synced tables from a peer
+2024-07-23 07:12:26.250592+00:00 [info] <0.1425.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 07:12:26.250758+00:00 [info] <0.1425.0> Successfully synced tables from a peer
+2024-07-23 07:12:29.640771+00:00 [info] <0.1434.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 07:12:29.640999+00:00 [info] <0.1434.0> Successfully synced tables from a peer
+2024-07-23 07:12:30.541687+00:00 [info] <0.1446.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 07:12:30.541855+00:00 [info] <0.1446.0> Successfully synced tables from a peer
+2024-07-23 07:32:05.058072+00:00 [info] <0.1824.0> accepting AMQP connection <0.1824.0> (172.20.0.1:58918 -> 172.20.0.3:5672)
+2024-07-23 07:32:05.059253+00:00 [error] <0.1824.0> closing AMQP connection <0.1824.0> (172.20.0.1:58918 -> 172.20.0.3:5672):
+2024-07-23 07:32:05.059253+00:00 [error] <0.1824.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 07:32:06.170641+00:00 [info] <0.1827.0> accepting AMQP connection <0.1827.0> (172.20.0.1:58920 -> 172.20.0.3:5672)
+2024-07-23 07:32:06.171300+00:00 [error] <0.1827.0> closing AMQP connection <0.1827.0> (172.20.0.1:58920 -> 172.20.0.3:5672):
+2024-07-23 07:32:06.171300+00:00 [error] <0.1827.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 07:32:11.193122+00:00 [info] <0.1834.0> accepting AMQP connection <0.1834.0> (172.20.0.1:58936 -> 172.20.0.3:5672)
+2024-07-23 07:32:11.193942+00:00 [error] <0.1834.0> closing AMQP connection <0.1834.0> (172.20.0.1:58936 -> 172.20.0.3:5672):
+2024-07-23 07:32:11.193942+00:00 [error] <0.1834.0> {bad_header,<<"GET /ws ">>}
+2024-07-23 07:32:21.195295+00:00 [info] <0.1837.0> accepting AMQP connection <0.1837.0> (172.20.0.1:58940 -> 172.20.0.3:5672)
+2024-07-23 07:32:21.195544+00:00 [error] <0.1837.0> closing AMQP connection <0.1837.0> (172.20.0.1:58940 -> 172.20.0.3:5672):
+2024-07-23 07:32:21.195544+00:00 [error] <0.1837.0> {handshake_timeout,handshake}
+2024-07-23 10:05:22.507403+00:00 [notice] <0.254.0> Logging: configured log handlers are now ACTIVE
+2024-07-23 10:05:22.750777+00:00 [info] <0.254.0> ra: starting system quorum_queues
+2024-07-23 10:05:22.751143+00:00 [info] <0.254.0> starting Ra system: quorum_queues in directory: /var/lib/rabbitmq/mnesia/rabbit@716014c9f675/quorum/rabbit@716014c9f675
+2024-07-23 10:05:24.154429+00:00 [info] <0.269.0> ra system 'quorum_queues' running pre init for 0 registered servers
+2024-07-23 10:05:24.459607+00:00 [info] <0.270.0> ra: meta data store initialised for system quorum_queues. 0 record(s) recovered
+2024-07-23 10:05:24.807427+00:00 [notice] <0.275.0> WAL: ra_log_wal init, open tbls: ra_log_open_mem_tables, closed tbls: ra_log_closed_mem_tables
+2024-07-23 10:05:25.273640+00:00 [info] <0.254.0> ra: starting system coordination
+2024-07-23 10:05:25.273764+00:00 [info] <0.254.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@716014c9f675/coordination/rabbit@716014c9f675
+2024-07-23 10:05:25.434697+00:00 [info] <0.283.0> ra system 'coordination' running pre init for 1 registered servers
+2024-07-23 10:05:25.549387+00:00 [info] <0.284.0> ra: meta data store initialised for system coordination. 1 record(s) recovered
+2024-07-23 10:05:25.551783+00:00 [notice] <0.289.0> WAL: ra_coordination_log_wal init, open tbls: ra_coordination_log_open_mem_tables, closed tbls: ra_coordination_log_closed_mem_tables
+2024-07-23 10:05:25.908560+00:00 [info] <0.254.0> ra: starting system coordination
+2024-07-23 10:05:25.908678+00:00 [info] <0.254.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@716014c9f675/coordination/rabbit@716014c9f675
+2024-07-23 10:05:27.555040+00:00 [info] <0.254.0> Waiting for Khepri leader for 30000 ms, 9 retries left
+2024-07-23 10:05:27.799886+00:00 [info] <0.254.0> Khepri leader elected
+2024-07-23 10:05:28.396234+00:00 [notice] <0.294.0> RabbitMQ metadata store: candidate -> leader in term: 2 machine version: 0
+2024-07-23 10:05:30.414514+00:00 [info] <0.254.0> 
+2024-07-23 10:05:30.414514+00:00 [info] <0.254.0>  Starting RabbitMQ 3.13.4 on Erlang 26.2.5.2 [jit]
+2024-07-23 10:05:30.414514+00:00 [info] <0.254.0>  Copyright (c) 2007-2024 Broadcom Inc and/or its subsidiaries
+2024-07-23 10:05:30.414514+00:00 [info] <0.254.0>  Licensed under the MPL 2.0. Website: https://rabbitmq.com
+2024-07-23 10:05:30.439764+00:00 [info] <0.254.0> 
+2024-07-23 10:05:30.439764+00:00 [info] <0.254.0>  node           : rabbit@716014c9f675
+2024-07-23 10:05:30.439764+00:00 [info] <0.254.0>  home dir       : /var/lib/rabbitmq
+2024-07-23 10:05:30.439764+00:00 [info] <0.254.0>  config file(s) : /etc/rabbitmq/rabbitmq.conf
+2024-07-23 10:05:30.439764+00:00 [info] <0.254.0>  cookie hash    : PuSnpjRtOTeN60gqWx7bUg==
+2024-07-23 10:05:30.439764+00:00 [info] <0.254.0>  log(s)         : /var/log/rabbitmq/rabbit@716014c9f675.log
+2024-07-23 10:05:30.439764+00:00 [info] <0.254.0>                 : <stdout>
+2024-07-23 10:05:30.439764+00:00 [info] <0.254.0>  data dir       : /var/lib/rabbitmq/mnesia/rabbit@716014c9f675
+2024-07-23 10:05:32.234999+00:00 [info] <0.254.0> Running boot step pre_boot defined by app rabbit
+2024-07-23 10:05:32.235127+00:00 [info] <0.254.0> Running boot step rabbit_global_counters defined by app rabbit
+2024-07-23 10:05:32.235938+00:00 [info] <0.254.0> Running boot step rabbit_osiris_metrics defined by app rabbit
+2024-07-23 10:05:32.236111+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics defined by app rabbit
+2024-07-23 10:05:32.237315+00:00 [info] <0.254.0> Running boot step rabbit_alarm defined by app rabbit
+2024-07-23 10:05:32.316413+00:00 [info] <0.406.0> Memory high watermark set to 1573 MiB (1649811456 bytes) of 3933 MiB (4124528640 bytes) total
+2024-07-23 10:05:32.413001+00:00 [info] <0.408.0> Enabling free disk space monitoring (disk free space: 116038049792, total memory: 4124528640)
+2024-07-23 10:05:32.413174+00:00 [info] <0.408.0> Disk free limit set to 50MB
+2024-07-23 10:05:32.480174+00:00 [info] <0.254.0> Running boot step code_server_cache defined by app rabbit
+2024-07-23 10:05:32.480592+00:00 [info] <0.254.0> Running boot step file_handle_cache defined by app rabbit
+2024-07-23 10:05:32.564241+00:00 [info] <0.411.0> Limiting to approx 1048479 file handles (943629 sockets)
+2024-07-23 10:05:32.565190+00:00 [info] <0.412.0> FHC read buffering: OFF
+2024-07-23 10:05:32.565265+00:00 [info] <0.412.0> FHC write buffering: ON
+2024-07-23 10:05:32.571579+00:00 [info] <0.254.0> Running boot step worker_pool defined by app rabbit
+2024-07-23 10:05:32.571783+00:00 [info] <0.339.0> Will use 4 processes for default worker pool
+2024-07-23 10:05:32.571848+00:00 [info] <0.339.0> Starting worker pool 'worker_pool' with 4 processes in it
+2024-07-23 10:05:32.573772+00:00 [info] <0.254.0> Running boot step database defined by app rabbit
+2024-07-23 10:05:32.600116+00:00 [info] <0.254.0> Peer discovery: configured backend: rabbit_peer_discovery_classic_config
+2024-07-23 10:05:32.651523+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 10:05:32.653109+00:00 [info] <0.254.0> Successfully synced tables from a peer
+2024-07-23 10:05:33.110087+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 10:05:33.110624+00:00 [info] <0.254.0> Successfully synced tables from a peer
+2024-07-23 10:05:33.111106+00:00 [info] <0.254.0> Running boot step tracking_metadata_store defined by app rabbit
+2024-07-23 10:05:33.111406+00:00 [info] <0.426.0> Setting up a table for connection tracking on this node: tracked_connection
+2024-07-23 10:05:33.111624+00:00 [info] <0.426.0> Setting up a table for per-vhost connection counting on this node: tracked_connection_per_vhost
+2024-07-23 10:05:33.111869+00:00 [info] <0.426.0> Setting up a table for per-user connection counting on this node: tracked_connection_per_user
+2024-07-23 10:05:33.111969+00:00 [info] <0.426.0> Setting up a table for channel tracking on this node: tracked_channel
+2024-07-23 10:05:33.120774+00:00 [info] <0.426.0> Setting up a table for channel tracking on this node: tracked_channel_per_user
+2024-07-23 10:05:33.121175+00:00 [info] <0.254.0> Running boot step networking_metadata_store defined by app rabbit
+2024-07-23 10:05:33.121532+00:00 [info] <0.254.0> Running boot step feature_flags defined by app rabbit
+2024-07-23 10:05:33.122127+00:00 [info] <0.254.0> Running boot step codec_correctness_check defined by app rabbit
+2024-07-23 10:05:33.132577+00:00 [info] <0.254.0> Running boot step external_infrastructure defined by app rabbit
+2024-07-23 10:05:33.132777+00:00 [info] <0.254.0> Running boot step rabbit_event defined by app rabbit
+2024-07-23 10:05:33.133732+00:00 [info] <0.254.0> Running boot step rabbit_registry defined by app rabbit
+2024-07-23 10:05:33.133993+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit
+2024-07-23 10:05:33.134190+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit
+2024-07-23 10:05:33.134323+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit
+2024-07-23 10:05:33.134401+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_direct defined by app rabbit
+2024-07-23 10:05:33.134479+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit
+2024-07-23 10:05:33.134550+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_headers defined by app rabbit
+2024-07-23 10:05:33.134640+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_topic defined by app rabbit
+2024-07-23 10:05:33.134793+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_all defined by app rabbit
+2024-07-23 10:05:33.143799+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_exactly defined by app rabbit
+2024-07-23 10:05:33.144057+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_nodes defined by app rabbit
+2024-07-23 10:05:33.144157+00:00 [info] <0.254.0> Running boot step rabbit_priority_queue defined by app rabbit
+2024-07-23 10:05:33.144223+00:00 [info] <0.254.0> Priority queues enabled, real BQ is rabbit_variable_queue
+2024-07-23 10:05:33.144337+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_client_local defined by app rabbit
+2024-07-23 10:05:33.144511+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_min_masters defined by app rabbit
+2024-07-23 10:05:33.144618+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_random defined by app rabbit
+2024-07-23 10:05:33.144759+00:00 [info] <0.254.0> Running boot step kernel_ready defined by app rabbit
+2024-07-23 10:05:33.144813+00:00 [info] <0.254.0> Running boot step rabbit_sysmon_minder defined by app rabbit
+2024-07-23 10:05:33.145055+00:00 [info] <0.254.0> Running boot step rabbit_epmd_monitor defined by app rabbit
+2024-07-23 10:05:33.196024+00:00 [info] <0.434.0> epmd monitor knows us, inter-node communication (distribution) port: 25672
+2024-07-23 10:05:33.196378+00:00 [info] <0.254.0> Running boot step guid_generator defined by app rabbit
+2024-07-23 10:05:33.323714+00:00 [info] <0.254.0> Running boot step rabbit_node_monitor defined by app rabbit
+2024-07-23 10:05:33.325020+00:00 [info] <0.438.0> Starting rabbit_node_monitor (in ignore mode)
+2024-07-23 10:05:33.327221+00:00 [info] <0.254.0> Running boot step delegate_sup defined by app rabbit
+2024-07-23 10:05:33.330297+00:00 [info] <0.254.0> Running boot step rabbit_memory_monitor defined by app rabbit
+2024-07-23 10:05:33.330993+00:00 [info] <0.254.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit
+2024-07-23 10:05:33.331283+00:00 [info] <0.254.0> Running boot step core_initialized defined by app rabbit
+2024-07-23 10:05:33.331418+00:00 [info] <0.254.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit
+2024-07-23 10:05:33.331688+00:00 [info] <0.254.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit
+2024-07-23 10:05:33.331895+00:00 [info] <0.254.0> Running boot step rabbit_definitions_hashing defined by app rabbit
+2024-07-23 10:05:33.332137+00:00 [info] <0.254.0> Running boot step rabbit_exchange_parameters defined by app rabbit
+2024-07-23 10:05:33.420253+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_misc defined by app rabbit
+2024-07-23 10:05:33.421933+00:00 [info] <0.254.0> Running boot step rabbit_policies defined by app rabbit
+2024-07-23 10:05:33.422893+00:00 [info] <0.254.0> Running boot step rabbit_policy defined by app rabbit
+2024-07-23 10:05:33.423084+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_validator defined by app rabbit
+2024-07-23 10:05:33.423425+00:00 [info] <0.254.0> Running boot step rabbit_quorum_memory_manager defined by app rabbit
+2024-07-23 10:05:33.423644+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue defined by app rabbit
+2024-07-23 10:05:33.424047+00:00 [info] <0.254.0> Running boot step rabbit_stream_coordinator defined by app rabbit
+2024-07-23 10:05:33.424947+00:00 [info] <0.254.0> Running boot step rabbit_vhost_limit defined by app rabbit
+2024-07-23 10:05:33.425344+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_reset_handler defined by app rabbitmq_management
+2024-07-23 10:05:33.425718+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_db_handler defined by app rabbitmq_management_agent
+2024-07-23 10:05:33.425845+00:00 [info] <0.254.0> Management plugin: using rates mode 'basic'
+2024-07-23 10:05:33.427219+00:00 [info] <0.254.0> Running boot step recovery defined by app rabbit
+2024-07-23 10:05:33.475439+00:00 [info] <0.475.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@716014c9f675/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists
+2024-07-23 10:05:33.537760+00:00 [info] <0.475.0> Starting message stores for vhost '/'
+2024-07-23 10:05:33.561840+00:00 [info] <0.485.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_transient": using rabbit_msg_store_ets_index to provide index
+2024-07-23 10:05:33.618578+00:00 [info] <0.475.0> Started message store of type transient for vhost '/'
+2024-07-23 10:05:33.620379+00:00 [info] <0.489.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": using rabbit_msg_store_ets_index to provide index
+2024-07-23 10:05:33.626412+00:00 [warning] <0.489.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch
+2024-07-23 10:05:33.648482+00:00 [info] <0.475.0> Started message store of type persistent for vhost '/'
+2024-07-23 10:05:33.648824+00:00 [info] <0.475.0> Recovering 0 queues of type rabbit_classic_queue took 153ms
+2024-07-23 10:05:33.648922+00:00 [info] <0.475.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms
+2024-07-23 10:05:33.649008+00:00 [info] <0.475.0> Recovering 0 queues of type rabbit_stream_queue took 0ms
+2024-07-23 10:05:33.651504+00:00 [info] <0.254.0> Running boot step empty_db_check defined by app rabbit
+2024-07-23 10:05:33.651751+00:00 [info] <0.254.0> Will not seed default virtual host and user: have definitions to load...
+2024-07-23 10:05:33.651881+00:00 [info] <0.254.0> Running boot step rabbit_observer_cli defined by app rabbit
+2024-07-23 10:05:33.652059+00:00 [info] <0.254.0> Running boot step rabbit_looking_glass defined by app rabbit
+2024-07-23 10:05:33.652168+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics_gc defined by app rabbit
+2024-07-23 10:05:33.652574+00:00 [info] <0.254.0> Running boot step background_gc defined by app rabbit
+2024-07-23 10:05:33.652858+00:00 [info] <0.254.0> Running boot step routing_ready defined by app rabbit
+2024-07-23 10:05:33.652928+00:00 [info] <0.254.0> Running boot step pre_flight defined by app rabbit
+2024-07-23 10:05:33.653047+00:00 [info] <0.254.0> Running boot step notify_cluster defined by app rabbit
+2024-07-23 10:05:33.653205+00:00 [info] <0.254.0> Running boot step networking defined by app rabbit
+2024-07-23 10:05:33.653288+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue_periodic_membership_reconciliation defined by app rabbit
+2024-07-23 10:05:33.653404+00:00 [info] <0.254.0> Running boot step definition_import_worker_pool defined by app rabbit
+2024-07-23 10:05:33.653535+00:00 [info] <0.339.0> Starting worker pool 'definition_import_pool' with 4 processes in it
+2024-07-23 10:05:33.653953+00:00 [info] <0.254.0> Running boot step cluster_name defined by app rabbit
+2024-07-23 10:05:33.654024+00:00 [info] <0.254.0> Running boot step virtual_host_reconciliation defined by app rabbit
+2024-07-23 10:05:33.654959+00:00 [info] <0.254.0> Running boot step direct_client defined by app rabbit
+2024-07-23 10:05:33.655081+00:00 [info] <0.254.0> Running boot step rabbit_management_load_definitions defined by app rabbitmq_management
+2024-07-23 10:05:33.655346+00:00 [info] <0.528.0> Resetting node maintenance status
+2024-07-23 10:05:34.105922+00:00 [warning] <0.557.0> Deprecated features: `management_metrics_collection`: Feature `management_metrics_collection` is deprecated.
+2024-07-23 10:05:34.105922+00:00 [warning] <0.557.0> By default, this feature can still be used for now.
+2024-07-23 10:05:34.105922+00:00 [warning] <0.557.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.
+2024-07-23 10:05:34.105922+00:00 [warning] <0.557.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:
+2024-07-23 10:05:34.105922+00:00 [warning] <0.557.0>     "deprecated_features.permit.management_metrics_collection = true"
+2024-07-23 10:05:34.105922+00:00 [warning] <0.557.0> To test RabbitMQ as if the feature was removed, set this in your configuration:
+2024-07-23 10:05:34.105922+00:00 [warning] <0.557.0>     "deprecated_features.permit.management_metrics_collection = false"
+2024-07-23 10:05:43.905686+00:00 [info] <0.594.0> Management plugin: HTTP (non-TLS) listener started on port 15672
+2024-07-23 10:05:43.905850+00:00 [info] <0.624.0> Statistics database started.
+2024-07-23 10:05:43.905960+00:00 [info] <0.623.0> Starting worker pool 'management_worker_pool' with 3 processes in it
+2024-07-23 10:05:43.907185+00:00 [info] <0.633.0> rabbit_stomp: default user 'guest' enabled
+2024-07-23 10:05:43.910348+00:00 [info] <0.652.0> started STOMP TCP listener on [::]:61613
+2024-07-23 10:05:43.918779+00:00 [info] <0.659.0> Starting MQTT retained message store rabbit_mqtt_retained_msg_store_dets for vhost '/'
+2024-07-23 10:05:43.931572+00:00 [info] <0.659.0> Recovered MQTT retained message store rabbit_mqtt_retained_msg_store_dets for vhost '/'
+2024-07-23 10:05:43.933359+00:00 [info] <0.679.0> started MQTT TCP listener on [::]:1883
+2024-07-23 10:05:43.935367+00:00 [info] <0.528.0> Ready to start client connection listeners
+2024-07-23 10:05:43.940292+00:00 [info] <0.697.0> started TCP listener on [::]:5672
+2024-07-23 10:05:44.162383+00:00 [info] <0.528.0> Server startup complete; 5 plugins started.
+2024-07-23 10:05:44.162383+00:00 [info] <0.528.0>  * rabbitmq_mqtt
+2024-07-23 10:05:44.162383+00:00 [info] <0.528.0>  * rabbitmq_stomp
+2024-07-23 10:05:44.162383+00:00 [info] <0.528.0>  * rabbitmq_management
+2024-07-23 10:05:44.162383+00:00 [info] <0.528.0>  * rabbitmq_management_agent
+2024-07-23 10:05:44.162383+00:00 [info] <0.528.0>  * rabbitmq_web_dispatch
+2024-07-23 10:05:44.201791+00:00 [info] <0.9.0> Time to start RabbitMQ: 56950 ms
+2024-07-23 10:07:47.732450+00:00 [notice] <0.86.0>     alarm_handler: {set,{system_memory_high_watermark,[]}}
+2024-07-23 10:10:47.802381+00:00 [notice] <0.86.0>     alarm_handler: {clear,system_memory_high_watermark}
+2024-07-23 10:39:41.118009+00:00 [info] <0.818.0> accepting STOMP connection <0.818.0> (172.20.0.1:53164 -> 172.20.0.3:61613)
+2024-07-23 10:39:41.280294+00:00 [warning] <0.818.0> AMQP 0-9-1 client call timeout was 70000 ms, is updated to a safe effective value of 130000 ms
+2024-07-23 10:39:57.879976+00:00 [info] <0.840.0> accepting STOMP connection <0.840.0> (172.20.0.1:59918 -> 172.20.0.3:61613)
+2024-07-23 10:39:57.880836+00:00 [info] <0.843.0> accepting STOMP connection <0.843.0> (172.20.0.1:59928 -> 172.20.0.3:61613)
+2024-07-23 10:40:01.286010+00:00 [info] <0.882.0> accepting STOMP connection <0.882.0> (172.20.0.1:55928 -> 172.20.0.3:61613)
+2024-07-23 10:40:01.308584+00:00 [info] <0.899.0> accepting STOMP connection <0.899.0> (172.20.0.1:55932 -> 172.20.0.3:61613)
+2024-07-23 10:40:23.392646+00:00 [info] <0.899.0> closing STOMP connection <0.899.0> (172.20.0.1:55932 -> 172.20.0.3:61613)
+2024-07-23 10:40:23.401683+00:00 [info] <0.882.0> closing STOMP connection <0.882.0> (172.20.0.1:55928 -> 172.20.0.3:61613)
+2024-07-23 10:40:23.402258+00:00 [info] <0.840.0> closing STOMP connection <0.840.0> (172.20.0.1:59918 -> 172.20.0.3:61613)
+2024-07-23 10:40:23.402536+00:00 [info] <0.843.0> closing STOMP connection <0.843.0> (172.20.0.1:59928 -> 172.20.0.3:61613)
+2024-07-23 10:40:24.209988+00:00 [info] <0.941.0> accepting STOMP connection <0.941.0> (172.20.0.1:53248 -> 172.20.0.3:61613)
+2024-07-23 10:40:24.210113+00:00 [info] <0.944.0> accepting STOMP connection <0.944.0> (172.20.0.1:53238 -> 172.20.0.3:61613)
+2024-07-23 10:40:24.226013+00:00 [info] <0.947.0> accepting STOMP connection <0.947.0> (172.20.0.1:53264 -> 172.20.0.3:61613)
+2024-07-23 10:40:24.263847+00:00 [info] <0.1002.0> accepting STOMP connection <0.1002.0> (172.20.0.1:53280 -> 172.20.0.3:61613)
+2024-07-23 10:42:34.280780+00:00 [warning] <0.941.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:53248 -> 172.20.0.3:61613, closing it
+2024-07-23 10:42:34.281254+00:00 [warning] <0.947.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:53264 -> 172.20.0.3:61613, closing it
+2024-07-23 10:42:34.285513+00:00 [warning] <0.944.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:53238 -> 172.20.0.3:61613, closing it
+2024-07-23 10:42:34.299505+00:00 [warning] <0.1002.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:53280 -> 172.20.0.3:61613, closing it
+2024-07-23 10:46:29.710177+00:00 [info] <0.1060.0> accepting STOMP connection <0.1060.0> (172.20.0.1:37556 -> 172.20.0.3:61613)
+2024-07-23 10:46:29.715759+00:00 [info] <0.1078.0> accepting STOMP connection <0.1078.0> (172.20.0.1:37558 -> 172.20.0.3:61613)
+2024-07-23 10:50:38.452698+00:00 [info] <0.1078.0> closing STOMP connection <0.1078.0> (172.20.0.1:37558 -> 172.20.0.3:61613)
+2024-07-23 10:50:38.452959+00:00 [info] <0.1060.0> closing STOMP connection <0.1060.0> (172.20.0.1:37556 -> 172.20.0.3:61613)
+2024-07-23 10:50:38.477242+00:00 [info] <0.818.0> closing STOMP connection <0.818.0> (172.20.0.1:53164 -> 172.20.0.3:61613)
+2024-07-23 10:50:38.482479+00:00 [info] <0.1127.0> accepting STOMP connection <0.1127.0> (172.20.0.1:59048 -> 172.20.0.3:61613)
+2024-07-23 10:50:38.489091+00:00 [info] <0.1127.0> closing STOMP connection <0.1127.0> (172.20.0.1:59048 -> 172.20.0.3:61613)
+2024-07-23 10:50:53.124088+00:00 [info] <0.1153.0> accepting STOMP connection <0.1153.0> (172.20.0.1:40608 -> 172.20.0.3:61613)
+2024-07-23 11:02:22.764778+00:00 [info] <0.1213.0> accepting STOMP connection <0.1213.0> (172.20.0.1:55822 -> 172.20.0.3:61613)
+2024-07-23 11:02:22.764723+00:00 [info] <0.1210.0> accepting STOMP connection <0.1210.0> (172.20.0.1:55808 -> 172.20.0.3:61613)
+2024-07-23 11:04:52.783085+00:00 [warning] <0.1210.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:55808 -> 172.20.0.3:61613, closing it
+2024-07-23 11:04:52.783493+00:00 [warning] <0.1213.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:55822 -> 172.20.0.3:61613, closing it
+2024-07-23 11:06:39.320583+00:00 [info] <0.1273.0> accepting STOMP connection <0.1273.0> (172.20.0.1:50524 -> 172.20.0.3:61613)
+2024-07-23 11:06:39.328421+00:00 [info] <0.1292.0> accepting STOMP connection <0.1292.0> (172.20.0.1:50536 -> 172.20.0.3:61613)
+2024-07-23 11:10:59.360457+00:00 [warning] <0.1273.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:50524 -> 172.20.0.3:61613, closing it
+2024-07-23 11:10:59.364302+00:00 [warning] <0.1292.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:50536 -> 172.20.0.3:61613, closing it
+2024-07-23 11:14:15.392488+00:00 [info] <0.1153.0> closing STOMP connection <0.1153.0> (172.20.0.1:40608 -> 172.20.0.3:61613)
+2024-07-23 11:14:15.413392+00:00 [info] <0.1352.0> accepting STOMP connection <0.1352.0> (172.20.0.1:44774 -> 172.20.0.3:61613)
+2024-07-23 11:14:15.419260+00:00 [info] <0.1352.0> closing STOMP connection <0.1352.0> (172.20.0.1:44774 -> 172.20.0.3:61613)
+2024-07-23 11:14:29.379810+00:00 [info] <0.1377.0> accepting STOMP connection <0.1377.0> (172.20.0.1:49596 -> 172.20.0.3:61613)
+2024-07-23 11:18:26.274445+00:00 [info] <0.1377.0> closing STOMP connection <0.1377.0> (172.20.0.1:49596 -> 172.20.0.3:61613)
+2024-07-23 11:18:26.303195+00:00 [info] <0.1415.0> accepting STOMP connection <0.1415.0> (172.20.0.1:37616 -> 172.20.0.3:61613)
+2024-07-23 11:18:26.303686+00:00 [info] <0.1415.0> closing STOMP connection <0.1415.0> (172.20.0.1:37616 -> 172.20.0.3:61613)
+2024-07-23 11:18:39.089113+00:00 [info] <0.1418.0> accepting STOMP connection <0.1418.0> (172.20.0.1:52828 -> 172.20.0.3:61613)
+2024-07-23 11:18:55.512764+00:00 [info] <0.1440.0> accepting STOMP connection <0.1440.0> (172.20.0.1:41248 -> 172.20.0.3:61613)
+2024-07-23 11:18:55.514478+00:00 [info] <0.1443.0> accepting STOMP connection <0.1443.0> (172.20.0.1:41246 -> 172.20.0.3:61613)
+2024-07-23 11:20:45.538667+00:00 [warning] <0.1440.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:41248 -> 172.20.0.3:61613, closing it
+2024-07-23 11:20:45.540236+00:00 [warning] <0.1443.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:41246 -> 172.20.0.3:61613, closing it
+2024-07-23 11:50:01.715620+00:00 [info] <0.1613.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:01.716512+00:00 [info] <0.1613.0> Successfully synced tables from a peer
+2024-07-23 11:50:06.178417+00:00 [info] <0.1624.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:06.178576+00:00 [info] <0.1624.0> Successfully synced tables from a peer
+2024-07-23 11:50:06.631623+00:00 [info] <0.1636.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:06.631812+00:00 [info] <0.1636.0> Successfully synced tables from a peer
+2024-07-23 11:50:09.163425+00:00 [info] <0.1648.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:09.163587+00:00 [info] <0.1648.0> Successfully synced tables from a peer
+2024-07-23 11:50:13.828395+00:00 [info] <0.1652.0> accepting STOMP connection <0.1652.0> (172.20.0.1:37088 -> 172.20.0.3:61613)
+2024-07-23 11:50:13.841713+00:00 [info] <0.1657.0> accepting STOMP connection <0.1657.0> (172.20.0.1:37104 -> 172.20.0.3:61613)
+2024-07-23 11:50:15.015792+00:00 [info] <0.1652.0> closing STOMP connection <0.1652.0> (172.20.0.1:37088 -> 172.20.0.3:61613)
+2024-07-23 11:50:15.024923+00:00 [info] <0.1657.0> closing STOMP connection <0.1657.0> (172.20.0.1:37104 -> 172.20.0.3:61613)
+2024-07-23 11:50:23.450587+00:00 [info] <0.1715.0> accepting STOMP connection <0.1715.0> (172.20.0.1:42634 -> 172.20.0.3:61613)
+2024-07-23 11:50:23.450648+00:00 [info] <0.1718.0> accepting STOMP connection <0.1718.0> (172.20.0.1:42640 -> 172.20.0.3:61613)
+2024-07-23 11:50:27.967607+00:00 [info] <0.1769.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:27.967765+00:00 [info] <0.1769.0> Successfully synced tables from a peer
+2024-07-23 11:50:30.659624+00:00 [info] <0.1778.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:30.659778+00:00 [info] <0.1778.0> Successfully synced tables from a peer
+2024-07-23 11:50:31.463410+00:00 [info] <0.1788.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:31.463588+00:00 [info] <0.1788.0> Successfully synced tables from a peer
+2024-07-23 11:50:32.156154+00:00 [info] <0.1798.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:32.156262+00:00 [info] <0.1798.0> Successfully synced tables from a peer
+2024-07-23 11:50:32.620061+00:00 [info] <0.1809.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:32.620214+00:00 [info] <0.1809.0> Successfully synced tables from a peer
+2024-07-23 11:50:32.905796+00:00 [info] <0.1818.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:32.905932+00:00 [info] <0.1818.0> Successfully synced tables from a peer
+2024-07-23 11:50:33.181563+00:00 [info] <0.1828.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:33.181721+00:00 [info] <0.1828.0> Successfully synced tables from a peer
+2024-07-23 11:50:33.499459+00:00 [info] <0.1837.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:33.499650+00:00 [info] <0.1837.0> Successfully synced tables from a peer
+2024-07-23 11:50:33.997422+00:00 [info] <0.1844.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:33.997625+00:00 [info] <0.1844.0> Successfully synced tables from a peer
+2024-07-23 11:50:38.954004+00:00 [info] <0.1851.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:38.954152+00:00 [info] <0.1851.0> Successfully synced tables from a peer
+2024-07-23 11:50:45.738371+00:00 [info] <0.1865.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:45.738547+00:00 [info] <0.1865.0> Successfully synced tables from a peer
+2024-07-23 11:50:46.887836+00:00 [info] <0.1872.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:46.887977+00:00 [info] <0.1872.0> Successfully synced tables from a peer
+2024-07-23 11:50:48.943860+00:00 [info] <0.1895.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:48.943970+00:00 [info] <0.1895.0> Successfully synced tables from a peer
+2024-07-23 11:50:49.853552+00:00 [info] <0.1908.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:49.853690+00:00 [info] <0.1908.0> Successfully synced tables from a peer
+2024-07-23 11:50:52.913583+00:00 [info] <0.1918.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:52.913748+00:00 [info] <0.1918.0> Successfully synced tables from a peer
+2024-07-23 11:50:54.515853+00:00 [info] <0.1927.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:50:54.515987+00:00 [info] <0.1927.0> Successfully synced tables from a peer
+2024-07-23 11:51:03.929667+00:00 [info] <0.1938.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:03.929808+00:00 [info] <0.1938.0> Successfully synced tables from a peer
+2024-07-23 11:51:05.324403+00:00 [info] <0.1951.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:05.324512+00:00 [info] <0.1951.0> Successfully synced tables from a peer
+2024-07-23 11:51:07.370309+00:00 [info] <0.1958.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:07.370450+00:00 [info] <0.1958.0> Successfully synced tables from a peer
+2024-07-23 11:51:07.908374+00:00 [info] <0.1965.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:07.908518+00:00 [info] <0.1965.0> Successfully synced tables from a peer
+2024-07-23 11:51:14.720777+00:00 [info] <0.1976.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:14.721664+00:00 [info] <0.1976.0> Successfully synced tables from a peer
+2024-07-23 11:51:18.667405+00:00 [info] <0.1983.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:18.669097+00:00 [info] <0.1983.0> Successfully synced tables from a peer
+2024-07-23 11:51:20.667703+00:00 [info] <0.1991.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:20.667992+00:00 [info] <0.1991.0> Successfully synced tables from a peer
+2024-07-23 11:51:30.203460+00:00 [info] <0.2001.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:30.203709+00:00 [info] <0.2001.0> Successfully synced tables from a peer
+2024-07-23 11:51:31.542158+00:00 [info] <0.2009.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:31.542336+00:00 [info] <0.2009.0> Successfully synced tables from a peer
+2024-07-23 11:51:54.777963+00:00 [warning] <0.1421.0> Connection (<0.1421.0>) closing: received hard error {'connection.close',320,
+2024-07-23 11:51:54.777963+00:00 [warning] <0.1421.0>                                                       "Closed via management plugin",
+2024-07-23 11:51:54.777963+00:00 [warning] <0.1421.0>                                                       0,0} from server
+2024-07-23 11:51:54.786446+00:00 [warning] <0.1418.0> STOMP connection 172.20.0.1:52828 -> 172.20.0.3:61613 terminated with reason {channel_died,
+2024-07-23 11:51:54.786446+00:00 [warning] <0.1418.0>                                                                               {shutdown,
+2024-07-23 11:51:54.786446+00:00 [warning] <0.1418.0>                                                                                {connection_closing,
+2024-07-23 11:51:54.786446+00:00 [warning] <0.1418.0>                                                                                 {server_initiated_close,
+2024-07-23 11:51:54.786446+00:00 [warning] <0.1418.0>                                                                                  320,
+2024-07-23 11:51:54.786446+00:00 [warning] <0.1418.0>                                                                                  "Closed via management plugin"}}}}, closing it
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0> ** Generic server <0.1418.0> terminating
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0> ** Last message in was {'EXIT',<0.1429.0>,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            {shutdown,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                                {connection_closing,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                                    {server_initiated_close,320,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                                        "Closed via management plugin"}}}}
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0> ** When Server state == {reader_state,#Port<0.307>,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                          <<"172.20.0.1:52828 -> 172.20.0.3:61613">>,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                          {resume,#Fun<rabbit_stomp_frame.0.87872170>},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                          {proc_state,"session-vtdNjMUn3bwoE9MqQT0IJw",
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                           <0.1429.0>,<0.1421.0>,#{},"1.2",undefined,undefined,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                           {stomp_configuration,<<"guest">>,<<"guest">>,false,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            false,false},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                           {set,0,16,16,8,80,48,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            {{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                              []}}},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                           #{},#Fun<rabbit_stomp_processor.5.3471862>,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                           {amqp_adapter_info,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            {0,0,0,0,0,65535,44052,3},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            61613,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            {0,0,0,0,0,65535,44052,1},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            52828,<<"172.20.0.1:52828 -> 172.20.0.3:61613">>,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            {'STOMP',0},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                            [{channels,1},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                             {channel_max,1},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                             {frame_max,0},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                             {client_properties,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                              [{<<"product">>,longstr,<<"STOMP client">>}]},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                             {ssl,false}]},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                           #Fun<rabbit_stomp_reader.3.74893134>,none,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                           {0,0,0,0,0,65535,44052,3},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                           true,stomp_headers,<<"admin">>,<<"amq.topic">>,true},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                          running,false,true,4194304,199,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                          {state,fine,5000,#Ref<0.4084703975.1399062529.19060>},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                          undefined,<0.1421.0>,<0.1417.0>,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                          {<0.1435.0>,<0.1436.0>},
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                          {10,10}}
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0> ** Reason for termination ==
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0> ** {channel_died,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>        {shutdown,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>            {connection_closing,
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0>                {server_initiated_close,320,"Closed via management plugin"}}}}
+2024-07-23 11:51:54.786696+00:00 [error] <0.1418.0> 
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>   crasher:
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     initial call: rabbit_stomp_reader:init/1
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     pid: <0.1418.0>
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     registered_name: []
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     exception exit: {channel_died,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                         {shutdown,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                             {connection_closing,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                                 {server_initiated_close,320,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                                     "Closed via management plugin"}}}}
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>       in function  gen_server2:terminate/3 (gen_server2.erl, line 1172)
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     ancestors: [<0.1416.0>,<0.640.0>,<0.639.0>,<0.638.0>,<0.636.0>,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                   <0.635.0>,rabbit_stomp_sup,<0.633.0>]
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     message_queue_len: 1
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     messages: [{'EXIT',<0.1421.0>,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                       {shutdown,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                           {server_initiated_close,320,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                               "Closed via management plugin"}}}]
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     links: [#Port<0.307>,<0.1416.0>]
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     dictionary: [{gen_server_call_timeout,130000},
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                   {rand_seed,{#{max => 288230376151711743,type => exsplus,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                                 next => #Fun<rand.5.65977474>,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                                 jump => #Fun<rand.3.65977474>},
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                               [1018119410006630|71067258390301033]}},
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                   {guid_secure,{{1,rabbit@716014c9f675,
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                                  #Ref<0.4084703975.1398800385.228273>},
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>                                 0}}]
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     trap_exit: true
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     status: running
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     heap_size: 2586
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     stack_size: 28
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>     reductions: 239641
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0>   neighbours:
+2024-07-23 11:51:54.802761+00:00 [error] <0.1418.0> 
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>     supervisor: {<0.1416.0>,rabbit_stomp_client_sup}
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>     errorContext: child_terminated
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>     reason: {channel_died,
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                 {shutdown,
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                     {connection_closing,
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                         {server_initiated_close,320,
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                             "Closed via management plugin"}}}}
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>     offender: [{pid,<0.1418.0>},
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                {id,rabbit_stomp_reader},
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                {mfargs,
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                    {rabbit_stomp_reader,start_link,
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                        [<0.1417.0>,
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                         {acceptor,{0,0,0,0,0,0,0,0},61613},
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                         {stomp_configuration,<<"guest">>,<<"guest">>,false,
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                             false,false}]}},
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                {restart_type,transient},
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                {significant,true},
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                {shutdown,300000},
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0>                {child_type,worker}]
+2024-07-23 11:51:54.812582+00:00 [error] <0.1416.0> 
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>     supervisor: {<0.1416.0>,rabbit_stomp_client_sup}
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>     errorContext: shutdown
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>     reason: reached_max_restart_intensity
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>     offender: [{pid,<0.1418.0>},
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                {id,rabbit_stomp_reader},
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                {mfargs,
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                    {rabbit_stomp_reader,start_link,
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                        [<0.1417.0>,
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                         {acceptor,{0,0,0,0,0,0,0,0},61613},
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                         {stomp_configuration,<<"guest">>,<<"guest">>,false,
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                             false,false}]}},
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                {restart_type,transient},
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                {significant,true},
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                {shutdown,300000},
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0>                {child_type,worker}]
+2024-07-23 11:51:54.814953+00:00 [error] <0.1416.0> 
+2024-07-23 11:51:54.822466+00:00 [info] <0.2034.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:51:54.822642+00:00 [info] <0.2034.0> Successfully synced tables from a peer
+2024-07-23 11:51:54.823313+00:00 [info] <0.2038.0> accepting STOMP connection <0.2038.0> (172.20.0.1:36966 -> 172.20.0.3:61613)
+2024-07-23 11:52:04.531357+00:00 [info] <0.2066.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:52:04.531505+00:00 [info] <0.2066.0> Successfully synced tables from a peer
+2024-07-23 11:52:07.813160+00:00 [info] <0.2080.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:52:07.813338+00:00 [info] <0.2080.0> Successfully synced tables from a peer
+2024-07-23 11:52:28.697357+00:00 [info] <0.2115.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:52:28.697536+00:00 [info] <0.2115.0> Successfully synced tables from a peer
+2024-07-23 11:52:30.291103+00:00 [info] <0.2125.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:52:30.291212+00:00 [info] <0.2125.0> Successfully synced tables from a peer
+2024-07-23 11:52:30.894150+00:00 [info] <0.2134.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:52:30.894321+00:00 [info] <0.2134.0> Successfully synced tables from a peer
+2024-07-23 11:52:31.728013+00:00 [info] <0.2141.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:52:31.728216+00:00 [info] <0.2141.0> Successfully synced tables from a peer
+2024-07-23 11:52:33.487106+00:00 [info] <0.2148.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:52:33.487351+00:00 [info] <0.2148.0> Successfully synced tables from a peer
+2024-07-23 11:52:35.727759+00:00 [info] <0.2156.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+2024-07-23 11:52:35.727899+00:00 [info] <0.2156.0> Successfully synced tables from a peer
+2024-07-23 11:53:33.478479+00:00 [warning] <0.1718.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:42640 -> 172.20.0.3:61613, closing it
+2024-07-23 11:53:33.478549+00:00 [warning] <0.1715.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:42634 -> 172.20.0.3:61613, closing it
+2024-07-23 12:52:14.563347+00:00 [info] <0.2038.0> closing STOMP connection <0.2038.0> (172.20.0.1:36966 -> 172.20.0.3:61613)
+2024-07-23 12:52:14.582306+00:00 [info] <0.2389.0> accepting STOMP connection <0.2389.0> (172.20.0.1:53368 -> 172.20.0.3:61613)
+2024-07-23 12:52:14.634804+00:00 [info] <0.2389.0> closing STOMP connection <0.2389.0> (172.20.0.1:53368 -> 172.20.0.3:61613)
+2024-07-23 12:52:31.655657+00:00 [info] <0.2414.0> accepting STOMP connection <0.2414.0> (172.20.0.1:55152 -> 172.20.0.3:61613)
+2024-07-23 12:53:13.459078+00:00 [info] <0.2436.0> accepting STOMP connection <0.2436.0> (172.20.0.1:58186 -> 172.20.0.3:61613)
+2024-07-23 12:53:13.460140+00:00 [info] <0.2439.0> accepting STOMP connection <0.2439.0> (172.20.0.1:58202 -> 172.20.0.3:61613)
+2024-07-23 12:53:35.068274+00:00 [info] <0.2436.0> closing STOMP connection <0.2436.0> (172.20.0.1:58186 -> 172.20.0.3:61613)
+2024-07-23 12:53:35.068398+00:00 [info] <0.2439.0> closing STOMP connection <0.2439.0> (172.20.0.1:58202 -> 172.20.0.3:61613)
+2024-07-23 12:53:42.318537+00:00 [info] <0.2491.0> accepting STOMP connection <0.2491.0> (172.20.0.1:57656 -> 172.20.0.3:61613)
+2024-07-23 12:53:42.331273+00:00 [info] <0.2512.0> accepting STOMP connection <0.2512.0> (172.20.0.1:57664 -> 172.20.0.3:61613)
+2024-07-23 12:54:38.349006+00:00 [info] <0.2491.0> closing STOMP connection <0.2491.0> (172.20.0.1:57656 -> 172.20.0.3:61613)
+2024-07-23 12:54:38.438481+00:00 [info] <0.2512.0> closing STOMP connection <0.2512.0> (172.20.0.1:57664 -> 172.20.0.3:61613)
+2024-07-23 12:54:38.441045+00:00 [info] <0.2541.0> accepting STOMP connection <0.2541.0> (172.20.0.1:55004 -> 172.20.0.3:61613)
+2024-07-23 12:54:38.449115+00:00 [info] <0.2414.0> closing STOMP connection <0.2414.0> (172.20.0.1:55152 -> 172.20.0.3:61613)
+2024-07-23 12:54:38.464605+00:00 [info] <0.2541.0> closing STOMP connection <0.2541.0> (172.20.0.1:55004 -> 172.20.0.3:61613)
+2024-07-23 12:54:53.199686+00:00 [info] <0.2571.0> accepting STOMP connection <0.2571.0> (172.20.0.1:52400 -> 172.20.0.3:61613)
+2024-07-23 12:55:10.246782+00:00 [info] <0.2596.0> accepting STOMP connection <0.2596.0> (172.20.0.1:56112 -> 172.20.0.3:61613)
+2024-07-23 12:55:10.246781+00:00 [info] <0.2593.0> accepting STOMP connection <0.2593.0> (172.20.0.1:56110 -> 172.20.0.3:61613)
+2024-07-23 12:57:21.614350+00:00 [info] <0.2593.0> closing STOMP connection <0.2593.0> (172.20.0.1:56110 -> 172.20.0.3:61613)
+2024-07-23 12:57:21.620481+00:00 [info] <0.2596.0> closing STOMP connection <0.2596.0> (172.20.0.1:56112 -> 172.20.0.3:61613)
+2024-07-23 12:57:21.626032+00:00 [info] <0.2571.0> closing STOMP connection <0.2571.0> (172.20.0.1:52400 -> 172.20.0.3:61613)
+2024-07-23 12:57:21.632763+00:00 [info] <0.2653.0> accepting STOMP connection <0.2653.0> (172.20.0.1:58254 -> 172.20.0.3:61613)
+2024-07-23 12:57:21.638164+00:00 [info] <0.2653.0> closing STOMP connection <0.2653.0> (172.20.0.1:58254 -> 172.20.0.3:61613)
+2024-07-23 12:57:38.303852+00:00 [info] <0.2682.0> accepting STOMP connection <0.2682.0> (172.20.0.1:46182 -> 172.20.0.3:61613)
+2024-07-23 13:01:32.112482+00:00 [info] <0.2682.0> closing STOMP connection <0.2682.0> (172.20.0.1:46182 -> 172.20.0.3:61613)
+2024-07-23 13:01:32.144529+00:00 [info] <0.2716.0> accepting STOMP connection <0.2716.0> (172.20.0.1:36068 -> 172.20.0.3:61613)
+2024-07-23 13:01:32.164172+00:00 [info] <0.2716.0> closing STOMP connection <0.2716.0> (172.20.0.1:36068 -> 172.20.0.3:61613)
+2024-07-23 13:01:46.749447+00:00 [info] <0.2723.0> accepting STOMP connection <0.2723.0> (172.20.0.1:60880 -> 172.20.0.3:61613)
+2024-07-23 13:01:49.740651+00:00 [info] <0.2723.0> closing STOMP connection <0.2723.0> (172.20.0.1:60880 -> 172.20.0.3:61613)
+2024-07-23 13:02:05.072745+00:00 [info] <0.2748.0> accepting STOMP connection <0.2748.0> (172.20.0.1:34064 -> 172.20.0.3:61613)
+2024-07-23 13:02:25.692477+00:00 [info] <0.2769.0> accepting STOMP connection <0.2769.0> (172.20.0.1:52648 -> 172.20.0.3:61613)
+2024-07-23 13:02:25.694055+00:00 [info] <0.2772.0> accepting STOMP connection <0.2772.0> (172.20.0.1:52652 -> 172.20.0.3:61613)
+2024-07-23 13:04:11.390929+00:00 [info] <0.2772.0> closing STOMP connection <0.2772.0> (172.20.0.1:52652 -> 172.20.0.3:61613)
+2024-07-23 13:04:11.391342+00:00 [info] <0.2769.0> closing STOMP connection <0.2769.0> (172.20.0.1:52648 -> 172.20.0.3:61613)
+2024-07-23 13:04:11.404994+00:00 [info] <0.2748.0> closing STOMP connection <0.2748.0> (172.20.0.1:34064 -> 172.20.0.3:61613)
+2024-07-23 13:04:11.418660+00:00 [info] <0.2830.0> accepting STOMP connection <0.2830.0> (172.20.0.1:57306 -> 172.20.0.3:61613)
+2024-07-23 13:04:11.420734+00:00 [info] <0.2830.0> closing STOMP connection <0.2830.0> (172.20.0.1:57306 -> 172.20.0.3:61613)
+2024-07-23 13:04:25.767640+00:00 [info] <0.2833.0> accepting STOMP connection <0.2833.0> (172.20.0.1:57252 -> 172.20.0.3:61613)
+2024-07-23 13:04:31.843144+00:00 [info] <0.2854.0> accepting STOMP connection <0.2854.0> (172.20.0.1:35236 -> 172.20.0.3:61613)
+2024-07-23 13:04:31.845236+00:00 [info] <0.2857.0> accepting STOMP connection <0.2857.0> (172.20.0.1:35250 -> 172.20.0.3:61613)
+2024-07-23 13:04:56.767234+00:00 [info] <0.2857.0> closing STOMP connection <0.2857.0> (172.20.0.1:35250 -> 172.20.0.3:61613)
+2024-07-23 13:04:56.768436+00:00 [info] <0.2854.0> closing STOMP connection <0.2854.0> (172.20.0.1:35236 -> 172.20.0.3:61613)
+2024-07-23 13:07:37.370738+00:00 [info] <0.2833.0> closing STOMP connection <0.2833.0> (172.20.0.1:57252 -> 172.20.0.3:61613)
+2024-07-23 13:07:37.421203+00:00 [info] <0.2920.0> accepting STOMP connection <0.2920.0> (172.20.0.1:46868 -> 172.20.0.3:61613)
+2024-07-23 13:07:37.433239+00:00 [info] <0.2920.0> closing STOMP connection <0.2920.0> (172.20.0.1:46868 -> 172.20.0.3:61613)
+2024-07-24 00:09:24.500933+00:00 [notice] <0.86.0>     alarm_handler: {set,{{disk_almost_full,"/etc/rabbitmq"},[]}}
+2024-07-24 01:09:24.666523+00:00 [notice] <0.86.0>     alarm_handler: {clear,{disk_almost_full,"/etc/rabbitmq"}}
+2024-07-24 04:23:02.067305+00:00 [info] <0.4252.0> accepting STOMP connection <0.4252.0> (172.20.0.1:48074 -> 172.20.0.3:61613)
+2024-07-24 04:24:17.847080+00:00 [info] <0.4252.0> closing STOMP connection <0.4252.0> (172.20.0.1:48074 -> 172.20.0.3:61613)
+2024-07-24 04:24:17.868514+00:00 [info] <0.4283.0> accepting STOMP connection <0.4283.0> (172.20.0.1:35074 -> 172.20.0.3:61613)
+2024-07-24 04:24:17.869797+00:00 [info] <0.4283.0> closing STOMP connection <0.4283.0> (172.20.0.1:35074 -> 172.20.0.3:61613)
+2024-07-24 04:24:32.135910+00:00 [info] <0.4286.0> accepting STOMP connection <0.4286.0> (172.20.0.1:58282 -> 172.20.0.3:61613)
+2024-07-24 04:25:06.609246+00:00 [info] <0.4307.0> accepting STOMP connection <0.4307.0> (172.20.0.1:39582 -> 172.20.0.3:61613)
+2024-07-24 04:25:06.637955+00:00 [info] <0.4328.0> accepting STOMP connection <0.4328.0> (172.20.0.1:39588 -> 172.20.0.3:61613)
+2024-07-24 04:26:11.684965+00:00 [info] <0.4307.0> closing STOMP connection <0.4307.0> (172.20.0.1:39582 -> 172.20.0.3:61613)
+2024-07-24 04:26:11.695238+00:00 [info] <0.4328.0> closing STOMP connection <0.4328.0> (172.20.0.1:39588 -> 172.20.0.3:61613)
+2024-07-24 05:43:03.357599+00:00 [info] <0.4286.0> closing STOMP connection <0.4286.0> (172.20.0.1:58282 -> 172.20.0.3:61613)
+2024-07-24 05:43:03.439952+00:00 [info] <0.4608.0> accepting STOMP connection <0.4608.0> (172.20.0.1:33040 -> 172.20.0.3:61613)
+2024-07-24 05:43:03.487973+00:00 [info] <0.4608.0> closing STOMP connection <0.4608.0> (172.20.0.1:33040 -> 172.20.0.3:61613)
+2024-07-24 05:43:21.863288+00:00 [info] <0.4633.0> accepting STOMP connection <0.4633.0> (172.20.0.1:42364 -> 172.20.0.3:61613)
+2024-07-24 05:50:23.151844+00:00 [info] <0.4633.0> closing STOMP connection <0.4633.0> (172.20.0.1:42364 -> 172.20.0.3:61613)
+2024-07-24 05:50:23.188797+00:00 [info] <0.4683.0> accepting STOMP connection <0.4683.0> (172.20.0.1:52220 -> 172.20.0.3:61613)
+2024-07-24 05:50:23.189158+00:00 [info] <0.4683.0> closing STOMP connection <0.4683.0> (172.20.0.1:52220 -> 172.20.0.3:61613)
+2024-07-24 05:50:37.045415+00:00 [info] <0.4686.0> accepting STOMP connection <0.4686.0> (172.20.0.1:48492 -> 172.20.0.3:61613)
+2024-07-24 05:53:49.855998+00:00 [info] <0.4686.0> closing STOMP connection <0.4686.0> (172.20.0.1:48492 -> 172.20.0.3:61613)
+2024-07-24 05:53:49.893267+00:00 [info] <0.4718.0> accepting STOMP connection <0.4718.0> (172.20.0.1:51188 -> 172.20.0.3:61613)
+2024-07-24 05:53:49.897105+00:00 [info] <0.4718.0> closing STOMP connection <0.4718.0> (172.20.0.1:51188 -> 172.20.0.3:61613)
+2024-07-24 05:54:04.397348+00:00 [info] <0.4721.0> accepting STOMP connection <0.4721.0> (172.20.0.1:44048 -> 172.20.0.3:61613)
+2024-07-24 05:54:34.425177+00:00 [info] <0.4748.0> accepting STOMP connection <0.4748.0> (172.20.0.1:33474 -> 172.20.0.3:61613)
+2024-07-24 05:54:34.466073+00:00 [info] <0.4769.0> accepting STOMP connection <0.4769.0> (172.20.0.1:33490 -> 172.20.0.3:61613)
+2024-07-24 05:55:19.375030+00:00 [info] <0.4748.0> closing STOMP connection <0.4748.0> (172.20.0.1:33474 -> 172.20.0.3:61613)
+2024-07-24 05:55:19.376525+00:00 [info] <0.4721.0> closing STOMP connection <0.4721.0> (172.20.0.1:44048 -> 172.20.0.3:61613)
+2024-07-24 05:55:19.378989+00:00 [info] <0.4769.0> closing STOMP connection <0.4769.0> (172.20.0.1:33490 -> 172.20.0.3:61613)
+2024-07-24 05:55:19.391695+00:00 [info] <0.4802.0> accepting STOMP connection <0.4802.0> (172.20.0.1:52672 -> 172.20.0.3:61613)
+2024-07-24 05:55:19.393504+00:00 [info] <0.4802.0> closing STOMP connection <0.4802.0> (172.20.0.1:52672 -> 172.20.0.3:61613)
+2024-07-24 05:55:35.538539+00:00 [info] <0.4805.0> accepting STOMP connection <0.4805.0> (172.20.0.1:51240 -> 172.20.0.3:61613)
+2024-07-24 05:55:56.779623+00:00 [info] <0.4827.0> accepting STOMP connection <0.4827.0> (172.20.0.1:36416 -> 172.20.0.3:61613)
+2024-07-24 05:55:56.779658+00:00 [info] <0.4830.0> accepting STOMP connection <0.4830.0> (172.20.0.1:36430 -> 172.20.0.3:61613)
+2024-07-24 05:56:33.951918+00:00 [info] <0.4830.0> closing STOMP connection <0.4830.0> (172.20.0.1:36430 -> 172.20.0.3:61613)
+2024-07-24 05:56:33.952529+00:00 [info] <0.4827.0> closing STOMP connection <0.4827.0> (172.20.0.1:36416 -> 172.20.0.3:61613)
+2024-07-24 05:56:33.956476+00:00 [info] <0.4805.0> closing STOMP connection <0.4805.0> (172.20.0.1:51240 -> 172.20.0.3:61613)
+2024-07-24 05:56:33.973284+00:00 [info] <0.4886.0> accepting STOMP connection <0.4886.0> (172.20.0.1:50558 -> 172.20.0.3:61613)
+2024-07-24 05:56:33.973719+00:00 [info] <0.4886.0> closing STOMP connection <0.4886.0> (172.20.0.1:50558 -> 172.20.0.3:61613)
+2024-07-24 05:56:47.438282+00:00 [info] <0.4889.0> accepting STOMP connection <0.4889.0> (172.20.0.1:37248 -> 172.20.0.3:61613)
+2024-07-24 05:56:52.674077+00:00 [info] <0.4910.0> accepting STOMP connection <0.4910.0> (172.20.0.1:48576 -> 172.20.0.3:61613)
+2024-07-24 05:56:52.722482+00:00 [info] <0.4918.0> accepting STOMP connection <0.4918.0> (172.20.0.1:48584 -> 172.20.0.3:61613)
+2024-07-24 05:57:15.404942+00:00 [info] <0.4910.0> closing STOMP connection <0.4910.0> (172.20.0.1:48576 -> 172.20.0.3:61613)
+2024-07-24 05:57:15.407395+00:00 [info] <0.4889.0> closing STOMP connection <0.4889.0> (172.20.0.1:37248 -> 172.20.0.3:61613)
+2024-07-24 05:57:15.423897+00:00 [info] <0.4918.0> closing STOMP connection <0.4918.0> (172.20.0.1:48584 -> 172.20.0.3:61613)
+2024-07-24 05:57:15.436627+00:00 [info] <0.4965.0> accepting STOMP connection <0.4965.0> (172.20.0.1:60406 -> 172.20.0.3:61613)
+2024-07-24 05:57:15.447296+00:00 [info] <0.4965.0> closing STOMP connection <0.4965.0> (172.20.0.1:60406 -> 172.20.0.3:61613)
+2024-07-24 05:57:28.738104+00:00 [info] <0.4990.0> accepting STOMP connection <0.4990.0> (172.20.0.1:33934 -> 172.20.0.3:61613)
+2024-07-24 05:57:36.130123+00:00 [info] <0.5011.0> accepting STOMP connection <0.5011.0> (172.20.0.1:48946 -> 172.20.0.3:61613)
+2024-07-24 05:57:36.130295+00:00 [info] <0.5014.0> accepting STOMP connection <0.5014.0> (172.20.0.1:48944 -> 172.20.0.3:61613)
+2024-07-24 05:59:32.981108+00:00 [info] <0.5011.0> closing STOMP connection <0.5011.0> (172.20.0.1:48946 -> 172.20.0.3:61613)
+2024-07-24 05:59:32.981392+00:00 [info] <0.5014.0> closing STOMP connection <0.5014.0> (172.20.0.1:48944 -> 172.20.0.3:61613)
+2024-07-24 05:59:33.022606+00:00 [info] <0.4990.0> closing STOMP connection <0.4990.0> (172.20.0.1:33934 -> 172.20.0.3:61613)
+2024-07-24 05:59:33.042505+00:00 [info] <0.5071.0> accepting STOMP connection <0.5071.0> (172.20.0.1:48846 -> 172.20.0.3:61613)
+2024-07-24 05:59:33.048382+00:00 [info] <0.5071.0> closing STOMP connection <0.5071.0> (172.20.0.1:48846 -> 172.20.0.3:61613)
+2024-07-24 05:59:46.679490+00:00 [info] <0.5096.0> accepting STOMP connection <0.5096.0> (172.20.0.1:40262 -> 172.20.0.3:61613)
+2024-07-24 06:00:00.717955+00:00 [info] <0.5117.0> accepting STOMP connection <0.5117.0> (172.20.0.1:49428 -> 172.20.0.3:61613)
+2024-07-24 06:00:00.735196+00:00 [info] <0.5125.0> accepting STOMP connection <0.5125.0> (172.20.0.1:49430 -> 172.20.0.3:61613)
+2024-07-24 06:00:34.526223+00:00 [info] <0.5125.0> closing STOMP connection <0.5125.0> (172.20.0.1:49430 -> 172.20.0.3:61613)
+2024-07-24 06:00:34.549104+00:00 [info] <0.5117.0> closing STOMP connection <0.5117.0> (172.20.0.1:49428 -> 172.20.0.3:61613)
+2024-07-24 06:00:34.560377+00:00 [info] <0.5096.0> closing STOMP connection <0.5096.0> (172.20.0.1:40262 -> 172.20.0.3:61613)
+2024-07-24 06:00:34.592991+00:00 [info] <0.5177.0> accepting STOMP connection <0.5177.0> (172.20.0.1:50814 -> 172.20.0.3:61613)
+2024-07-24 06:00:34.593666+00:00 [info] <0.5177.0> closing STOMP connection <0.5177.0> (172.20.0.1:50814 -> 172.20.0.3:61613)
+2024-07-24 06:00:48.222301+00:00 [info] <0.5180.0> accepting STOMP connection <0.5180.0> (172.20.0.1:43394 -> 172.20.0.3:61613)
+2024-07-24 06:01:01.860282+00:00 [info] <0.5201.0> accepting STOMP connection <0.5201.0> (172.20.0.1:50702 -> 172.20.0.3:61613)
+2024-07-24 06:01:01.860774+00:00 [info] <0.5204.0> accepting STOMP connection <0.5204.0> (172.20.0.1:50710 -> 172.20.0.3:61613)
+2024-07-24 06:02:11.656389+00:00 [info] <0.5201.0> closing STOMP connection <0.5201.0> (172.20.0.1:50702 -> 172.20.0.3:61613)
+2024-07-24 06:02:11.658152+00:00 [info] <0.5204.0> closing STOMP connection <0.5204.0> (172.20.0.1:50710 -> 172.20.0.3:61613)
+2024-07-24 06:02:11.669226+00:00 [info] <0.5180.0> closing STOMP connection <0.5180.0> (172.20.0.1:43394 -> 172.20.0.3:61613)
+2024-07-24 06:02:11.695238+00:00 [info] <0.5256.0> accepting STOMP connection <0.5256.0> (172.20.0.1:40132 -> 172.20.0.3:61613)
+2024-07-24 06:02:11.704735+00:00 [info] <0.5256.0> closing STOMP connection <0.5256.0> (172.20.0.1:40132 -> 172.20.0.3:61613)
+2024-07-24 06:02:25.233890+00:00 [info] <0.5286.0> accepting STOMP connection <0.5286.0> (172.20.0.1:54808 -> 172.20.0.3:61613)
+2024-07-24 06:05:33.765566+00:00 [info] <0.5286.0> closing STOMP connection <0.5286.0> (172.20.0.1:54808 -> 172.20.0.3:61613)
+2024-07-24 06:05:33.779999+00:00 [info] <0.5318.0> accepting STOMP connection <0.5318.0> (172.20.0.1:39960 -> 172.20.0.3:61613)
+2024-07-24 06:05:33.780800+00:00 [info] <0.5318.0> closing STOMP connection <0.5318.0> (172.20.0.1:39960 -> 172.20.0.3:61613)
+2024-07-24 06:05:49.392393+00:00 [info] <0.5321.0> accepting STOMP connection <0.5321.0> (172.20.0.1:41798 -> 172.20.0.3:61613)
+2024-07-24 06:06:05.844800+00:00 [info] <0.5342.0> accepting STOMP connection <0.5342.0> (172.20.0.1:60728 -> 172.20.0.3:61613)
+2024-07-24 06:06:05.876134+00:00 [info] <0.5363.0> accepting STOMP connection <0.5363.0> (172.20.0.1:60742 -> 172.20.0.3:61613)
+2024-07-24 06:06:28.310559+00:00 [info] <0.5321.0> closing STOMP connection <0.5321.0> (172.20.0.1:41798 -> 172.20.0.3:61613)
+2024-07-24 06:06:28.311740+00:00 [info] <0.5363.0> closing STOMP connection <0.5363.0> (172.20.0.1:60742 -> 172.20.0.3:61613)
+2024-07-24 06:06:28.314131+00:00 [info] <0.5398.0> accepting STOMP connection <0.5398.0> (172.20.0.1:50626 -> 172.20.0.3:61613)
+2024-07-24 06:06:28.315453+00:00 [info] <0.5342.0> closing STOMP connection <0.5342.0> (172.20.0.1:60728 -> 172.20.0.3:61613)
+2024-07-24 06:06:28.316658+00:00 [info] <0.5398.0> closing STOMP connection <0.5398.0> (172.20.0.1:50626 -> 172.20.0.3:61613)
+2024-07-24 06:06:42.602877+00:00 [info] <0.5405.0> accepting STOMP connection <0.5405.0> (172.20.0.1:40772 -> 172.20.0.3:61613)
+2024-07-24 06:07:47.306395+00:00 [info] <0.5405.0> closing STOMP connection <0.5405.0> (172.20.0.1:40772 -> 172.20.0.3:61613)
+2024-07-24 06:07:47.321787+00:00 [info] <0.5431.0> accepting STOMP connection <0.5431.0> (172.20.0.1:37952 -> 172.20.0.3:61613)
+2024-07-24 06:07:47.323831+00:00 [info] <0.5431.0> closing STOMP connection <0.5431.0> (172.20.0.1:37952 -> 172.20.0.3:61613)
+2024-07-24 06:08:01.702817+00:00 [info] <0.5434.0> accepting STOMP connection <0.5434.0> (172.20.0.1:51734 -> 172.20.0.3:61613)
+2024-07-24 06:10:09.765143+00:00 [info] <0.5434.0> closing STOMP connection <0.5434.0> (172.20.0.1:51734 -> 172.20.0.3:61613)
+2024-07-24 06:10:09.787815+00:00 [info] <0.5465.0> accepting STOMP connection <0.5465.0> (172.20.0.1:55730 -> 172.20.0.3:61613)
+2024-07-24 06:10:09.791283+00:00 [info] <0.5465.0> closing STOMP connection <0.5465.0> (172.20.0.1:55730 -> 172.20.0.3:61613)
+2024-07-24 06:10:22.936571+00:00 [info] <0.5473.0> accepting STOMP connection <0.5473.0> (172.20.0.1:60232 -> 172.20.0.3:61613)
+2024-07-24 06:10:28.729997+00:00 [info] <0.5494.0> accepting STOMP connection <0.5494.0> (172.20.0.1:60242 -> 172.20.0.3:61613)
+2024-07-24 06:10:28.741720+00:00 [info] <0.5497.0> accepting STOMP connection <0.5497.0> (172.20.0.1:60258 -> 172.20.0.3:61613)
+2024-07-24 06:11:54.301523+00:00 [info] <0.5494.0> closing STOMP connection <0.5494.0> (172.20.0.1:60242 -> 172.20.0.3:61613)
+2024-07-24 06:11:54.304405+00:00 [info] <0.5473.0> closing STOMP connection <0.5473.0> (172.20.0.1:60232 -> 172.20.0.3:61613)
+2024-07-24 06:11:54.305001+00:00 [info] <0.5497.0> closing STOMP connection <0.5497.0> (172.20.0.1:60258 -> 172.20.0.3:61613)
+2024-07-24 06:11:54.332526+00:00 [info] <0.5549.0> accepting STOMP connection <0.5549.0> (172.20.0.1:40968 -> 172.20.0.3:61613)
+2024-07-24 06:11:54.341306+00:00 [info] <0.5549.0> closing STOMP connection <0.5549.0> (172.20.0.1:40968 -> 172.20.0.3:61613)
+2024-07-24 06:12:08.179679+00:00 [info] <0.5552.0> accepting STOMP connection <0.5552.0> (172.20.0.1:44242 -> 172.20.0.3:61613)
+2024-07-24 06:12:11.666711+00:00 [info] <0.5573.0> accepting STOMP connection <0.5573.0> (172.20.0.1:44252 -> 172.20.0.3:61613)
+2024-07-24 06:12:11.667614+00:00 [info] <0.5576.0> accepting STOMP connection <0.5576.0> (172.20.0.1:44266 -> 172.20.0.3:61613)
+2024-07-24 06:12:15.236124+00:00 [info] <0.5621.0> accepting AMQP connection <0.5621.0> (172.20.0.1:34400 -> 172.20.0.3:5672)
+2024-07-24 06:12:15.290639+00:00 [info] <0.5621.0> connection <0.5621.0> (172.20.0.1:34400 -> 172.20.0.3:5672) has a client-provided name: rabbitConnectionFactory#2259f81a:0
+2024-07-24 06:12:15.302531+00:00 [info] <0.5621.0> connection <0.5621.0> (172.20.0.1:34400 -> 172.20.0.3:5672 - rabbitConnectionFactory#2259f81a:0): user 'admin' authenticated and granted access to vhost '/'
+2024-07-24 06:12:33.286992+00:00 [info] <0.5573.0> closing STOMP connection <0.5573.0> (172.20.0.1:44252 -> 172.20.0.3:61613)
+2024-07-24 06:12:33.339363+00:00 [info] <0.5576.0> closing STOMP connection <0.5576.0> (172.20.0.1:44266 -> 172.20.0.3:61613)
+2024-07-24 06:12:33.934226+00:00 [info] <0.5642.0> accepting STOMP connection <0.5642.0> (172.20.0.1:57996 -> 172.20.0.3:61613)
+2024-07-24 06:12:33.950880+00:00 [info] <0.5661.0> accepting STOMP connection <0.5661.0> (172.20.0.1:58004 -> 172.20.0.3:61613)
+2024-07-24 06:12:45.737563+00:00 [info] <0.5552.0> closing STOMP connection <0.5552.0> (172.20.0.1:44242 -> 172.20.0.3:61613)
+2024-07-24 06:12:45.743711+00:00 [info] <0.5642.0> closing STOMP connection <0.5642.0> (172.20.0.1:57996 -> 172.20.0.3:61613)
+2024-07-24 06:12:45.745212+00:00 [info] <0.5661.0> closing STOMP connection <0.5661.0> (172.20.0.1:58004 -> 172.20.0.3:61613)
+2024-07-24 06:12:45.746520+00:00 [info] <0.5693.0> accepting STOMP connection <0.5693.0> (172.20.0.1:50596 -> 172.20.0.3:61613)
+2024-07-24 06:12:45.797660+00:00 [info] <0.5693.0> closing STOMP connection <0.5693.0> (172.20.0.1:50596 -> 172.20.0.3:61613)
+2024-07-24 06:12:48.514438+00:00 [info] <0.5621.0> closing AMQP connection <0.5621.0> (172.20.0.1:34400 -> 172.20.0.3:5672 - rabbitConnectionFactory#2259f81a:0, vhost: '/', user: 'admin')
+2024-07-24 06:54:59.267777+00:00 [info] <0.5858.0> accepting STOMP connection <0.5858.0> (172.20.0.1:33192 -> 172.20.0.3:61613)
+2024-07-24 06:55:20.984958+00:00 [info] <0.5882.0> accepting STOMP connection <0.5882.0> (172.20.0.1:50304 -> 172.20.0.3:61613)
+2024-07-24 06:55:20.987517+00:00 [info] <0.5879.0> accepting STOMP connection <0.5879.0> (172.20.0.1:50288 -> 172.20.0.3:61613)
+2024-07-24 06:55:36.888943+00:00 [info] <0.5882.0> closing STOMP connection <0.5882.0> (172.20.0.1:50304 -> 172.20.0.3:61613)
+2024-07-24 06:55:36.889316+00:00 [info] <0.5879.0> closing STOMP connection <0.5879.0> (172.20.0.1:50288 -> 172.20.0.3:61613)
+2024-07-24 06:55:40.457763+00:00 [info] <0.5929.0> accepting STOMP connection <0.5929.0> (172.20.0.1:53606 -> 172.20.0.3:61613)
+2024-07-24 06:55:40.483601+00:00 [info] <0.5950.0> accepting STOMP connection <0.5950.0> (172.20.0.1:53614 -> 172.20.0.3:61613)
+2024-07-24 06:57:38.861745+00:00 [info] <0.5929.0> closing STOMP connection <0.5929.0> (172.20.0.1:53606 -> 172.20.0.3:61613)
+2024-07-24 06:57:38.861745+00:00 [info] <0.5950.0> closing STOMP connection <0.5950.0> (172.20.0.1:53614 -> 172.20.0.3:61613)
+2024-07-24 06:57:40.401749+00:00 [info] <0.5986.0> accepting STOMP connection <0.5986.0> (172.20.0.1:49862 -> 172.20.0.3:61613)
+2024-07-24 06:57:40.417084+00:00 [info] <0.5993.0> accepting STOMP connection <0.5993.0> (172.20.0.1:49878 -> 172.20.0.3:61613)
+2024-07-24 06:57:40.479196+00:00 [warning] <0.6014.0> Deprecated features: `transient_nonexcl_queues`: Feature `transient_nonexcl_queues` is deprecated.
+2024-07-24 06:57:40.479196+00:00 [warning] <0.6014.0> By default, this feature can still be used for now.
+2024-07-24 06:57:40.479196+00:00 [warning] <0.6014.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.
+2024-07-24 06:57:40.479196+00:00 [warning] <0.6014.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:
+2024-07-24 06:57:40.479196+00:00 [warning] <0.6014.0>     "deprecated_features.permit.transient_nonexcl_queues = true"
+2024-07-24 06:57:40.479196+00:00 [warning] <0.6014.0> To test RabbitMQ as if the feature was removed, set this in your configuration:
+2024-07-24 06:57:40.479196+00:00 [warning] <0.6014.0>     "deprecated_features.permit.transient_nonexcl_queues = false"
+2024-07-24 06:57:40.490191+00:00 [warning] <0.6020.0> Deprecated features: `transient_nonexcl_queues`: Feature `transient_nonexcl_queues` is deprecated.
+2024-07-24 06:57:40.490191+00:00 [warning] <0.6020.0> By default, this feature can still be used for now.
+2024-07-24 06:57:40.490191+00:00 [warning] <0.6020.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.
+2024-07-24 06:57:40.490191+00:00 [warning] <0.6020.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:
+2024-07-24 06:57:40.490191+00:00 [warning] <0.6020.0>     "deprecated_features.permit.transient_nonexcl_queues = true"
+2024-07-24 06:57:40.490191+00:00 [warning] <0.6020.0> To test RabbitMQ as if the feature was removed, set this in your configuration:
+2024-07-24 06:57:40.490191+00:00 [warning] <0.6020.0>     "deprecated_features.permit.transient_nonexcl_queues = false"
+2024-07-24 06:57:47.205087+00:00 [info] <0.5993.0> closing STOMP connection <0.5993.0> (172.20.0.1:49878 -> 172.20.0.3:61613)
+2024-07-24 06:57:47.207807+00:00 [info] <0.5986.0> closing STOMP connection <0.5986.0> (172.20.0.1:49862 -> 172.20.0.3:61613)
+2024-07-24 06:57:52.144147+00:00 [info] <0.6054.0> accepting STOMP connection <0.6054.0> (172.20.0.1:48468 -> 172.20.0.3:61613)
+2024-07-24 06:57:52.160958+00:00 [info] <0.6077.0> accepting STOMP connection <0.6077.0> (172.20.0.1:48476 -> 172.20.0.3:61613)
+2024-07-24 07:00:17.872177+00:00 [info] <0.6077.0> closing STOMP connection <0.6077.0> (172.20.0.1:48476 -> 172.20.0.3:61613)
+2024-07-24 07:00:17.872730+00:00 [info] <0.6054.0> closing STOMP connection <0.6054.0> (172.20.0.1:48468 -> 172.20.0.3:61613)
+2024-07-24 07:00:20.699425+00:00 [info] <0.6134.0> accepting STOMP connection <0.6134.0> (172.20.0.1:47098 -> 172.20.0.3:61613)
+2024-07-24 07:00:20.700436+00:00 [info] <0.6137.0> accepting STOMP connection <0.6137.0> (172.20.0.1:47108 -> 172.20.0.3:61613)
+2024-07-24 07:00:24.090608+00:00 [info] <0.6137.0> closing STOMP connection <0.6137.0> (172.20.0.1:47108 -> 172.20.0.3:61613)
+2024-07-24 07:00:24.090843+00:00 [info] <0.6134.0> closing STOMP connection <0.6134.0> (172.20.0.1:47098 -> 172.20.0.3:61613)
+2024-07-24 07:00:27.437784+00:00 [info] <0.6202.0> accepting STOMP connection <0.6202.0> (172.20.0.1:49828 -> 172.20.0.3:61613)
+2024-07-24 07:00:27.457578+00:00 [info] <0.6223.0> accepting STOMP connection <0.6223.0> (172.20.0.1:49832 -> 172.20.0.3:61613)
+2024-07-24 07:02:07.461255+00:00 [warning] <0.6202.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:49828 -> 172.20.0.3:61613, closing it
+2024-07-24 07:02:07.476730+00:00 [warning] <0.6223.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:49832 -> 172.20.0.3:61613, closing it
+2024-07-24 07:02:35.703300+00:00 [info] <0.6276.0> accepting STOMP connection <0.6276.0> (172.20.0.1:40244 -> 172.20.0.3:61613)
+2024-07-24 07:02:35.752933+00:00 [info] <0.6297.0> accepting STOMP connection <0.6297.0> (172.20.0.1:40256 -> 172.20.0.3:61613)
+2024-07-24 07:03:04.131521+00:00 [info] <0.6276.0> closing STOMP connection <0.6276.0> (172.20.0.1:40244 -> 172.20.0.3:61613)
+2024-07-24 07:03:04.134513+00:00 [info] <0.6297.0> closing STOMP connection <0.6297.0> (172.20.0.1:40256 -> 172.20.0.3:61613)
+2024-07-24 07:03:04.828994+00:00 [info] <0.6347.0> accepting STOMP connection <0.6347.0> (172.20.0.1:38088 -> 172.20.0.3:61613)
+2024-07-24 07:03:04.859135+00:00 [info] <0.6344.0> accepting STOMP connection <0.6344.0> (172.20.0.1:38072 -> 172.20.0.3:61613)
+2024-07-24 07:03:45.652448+00:00 [info] <0.6347.0> closing STOMP connection <0.6347.0> (172.20.0.1:38088 -> 172.20.0.3:61613)
+2024-07-24 07:03:45.654501+00:00 [info] <0.6344.0> closing STOMP connection <0.6344.0> (172.20.0.1:38072 -> 172.20.0.3:61613)
+2024-07-24 07:03:46.453142+00:00 [info] <0.6413.0> accepting STOMP connection <0.6413.0> (172.20.0.1:56164 -> 172.20.0.3:61613)
+2024-07-24 07:03:46.489148+00:00 [info] <0.6416.0> accepting STOMP connection <0.6416.0> (172.20.0.1:56172 -> 172.20.0.3:61613)
+2024-07-24 07:04:07.259109+00:00 [info] <0.6416.0> closing STOMP connection <0.6416.0> (172.20.0.1:56172 -> 172.20.0.3:61613)
+2024-07-24 07:04:07.259686+00:00 [info] <0.6413.0> closing STOMP connection <0.6413.0> (172.20.0.1:56164 -> 172.20.0.3:61613)
+2024-07-24 07:04:07.988805+00:00 [info] <0.6481.0> accepting STOMP connection <0.6481.0> (172.20.0.1:43902 -> 172.20.0.3:61613)
+2024-07-24 07:04:08.002057+00:00 [info] <0.6489.0> accepting STOMP connection <0.6489.0> (172.20.0.1:43910 -> 172.20.0.3:61613)
+2024-07-24 07:04:10.319519+00:00 [info] <0.6537.0> accepting AMQP connection <0.6537.0> (172.20.0.1:43140 -> 172.20.0.3:5672)
+2024-07-24 07:04:10.395570+00:00 [info] <0.6537.0> connection <0.6537.0> (172.20.0.1:43140 -> 172.20.0.3:5672) has a client-provided name: rabbitConnectionFactory#2e3ecf1c:0
+2024-07-24 07:04:10.400824+00:00 [info] <0.6537.0> connection <0.6537.0> (172.20.0.1:43140 -> 172.20.0.3:5672 - rabbitConnectionFactory#2e3ecf1c:0): user 'admin' authenticated and granted access to vhost '/'
+2024-07-24 07:04:56.287554+00:00 [info] <0.6481.0> closing STOMP connection <0.6481.0> (172.20.0.1:43902 -> 172.20.0.3:61613)
+2024-07-24 07:04:56.287636+00:00 [info] <0.6489.0> closing STOMP connection <0.6489.0> (172.20.0.1:43910 -> 172.20.0.3:61613)
+2024-07-24 07:04:57.288075+00:00 [info] <0.6568.0> accepting STOMP connection <0.6568.0> (172.20.0.1:53984 -> 172.20.0.3:61613)
+2024-07-24 07:04:57.289344+00:00 [info] <0.6573.0> accepting STOMP connection <0.6573.0> (172.20.0.1:53986 -> 172.20.0.3:61613)
+2024-07-24 07:06:33.876804+00:00 [info] <0.6568.0> closing STOMP connection <0.6568.0> (172.20.0.1:53984 -> 172.20.0.3:61613)
+2024-07-24 07:06:33.879978+00:00 [info] <0.6573.0> closing STOMP connection <0.6573.0> (172.20.0.1:53986 -> 172.20.0.3:61613)
+2024-07-24 07:07:01.881879+00:00 [info] <0.6642.0> accepting STOMP connection <0.6642.0> (172.20.0.1:48892 -> 172.20.0.3:61613)
+2024-07-24 07:07:01.883623+00:00 [info] <0.6645.0> accepting STOMP connection <0.6645.0> (172.20.0.1:48896 -> 172.20.0.3:61613)
+2024-07-24 07:08:53.504887+00:00 [info] <0.6645.0> closing STOMP connection <0.6645.0> (172.20.0.1:48896 -> 172.20.0.3:61613)
+2024-07-24 07:08:53.506456+00:00 [info] <0.6642.0> closing STOMP connection <0.6642.0> (172.20.0.1:48892 -> 172.20.0.3:61613)
+2024-07-24 07:08:54.198254+00:00 [info] <0.6716.0> accepting STOMP connection <0.6716.0> (172.20.0.1:48904 -> 172.20.0.3:61613)
+2024-07-24 07:08:54.201373+00:00 [info] <0.6724.0> accepting STOMP connection <0.6724.0> (172.20.0.1:48910 -> 172.20.0.3:61613)
+2024-07-24 07:11:14.220195+00:00 [warning] <0.6716.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:48904 -> 172.20.0.3:61613, closing it
+2024-07-24 07:11:14.224191+00:00 [warning] <0.6724.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:48910 -> 172.20.0.3:61613, closing it
+2024-07-24 07:12:27.485848+00:00 [info] <0.6797.0> accepting STOMP connection <0.6797.0> (172.20.0.1:60996 -> 172.20.0.3:61613)
+2024-07-24 07:12:27.491943+00:00 [info] <0.6805.0> accepting STOMP connection <0.6805.0> (172.20.0.1:32770 -> 172.20.0.3:61613)
+2024-07-24 07:13:57.503706+00:00 [warning] <0.6797.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:60996 -> 172.20.0.3:61613, closing it
+2024-07-24 07:13:57.508704+00:00 [warning] <0.6805.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:32770 -> 172.20.0.3:61613, closing it
+2024-07-24 07:14:25.654582+00:00 [info] <0.6853.0> accepting STOMP connection <0.6853.0> (172.20.0.1:57070 -> 172.20.0.3:61613)
+2024-07-24 07:14:25.655176+00:00 [info] <0.6856.0> accepting STOMP connection <0.6856.0> (172.20.0.1:57074 -> 172.20.0.3:61613)
+2024-07-24 07:17:02.942618+00:00 [info] <0.6856.0> closing STOMP connection <0.6856.0> (172.20.0.1:57074 -> 172.20.0.3:61613)
+2024-07-24 07:17:02.942997+00:00 [info] <0.6853.0> closing STOMP connection <0.6853.0> (172.20.0.1:57070 -> 172.20.0.3:61613)
+2024-07-24 07:17:15.950769+00:00 [info] <0.6940.0> accepting STOMP connection <0.6940.0> (172.20.0.1:54860 -> 172.20.0.3:61613)
+2024-07-24 07:17:15.951242+00:00 [info] <0.6943.0> accepting STOMP connection <0.6943.0> (172.20.0.1:54862 -> 172.20.0.3:61613)
+2024-07-24 07:17:41.993757+00:00 [info] <0.7000.0> accepting STOMP connection <0.7000.0> (172.20.0.1:46794 -> 172.20.0.3:61613)
+2024-07-24 07:17:42.009840+00:00 [info] <0.7017.0> accepting STOMP connection <0.7017.0> (172.20.0.1:46800 -> 172.20.0.3:61613)
+2024-07-24 07:18:15.850406+00:00 [info] <0.6943.0> closing STOMP connection <0.6943.0> (172.20.0.1:54862 -> 172.20.0.3:61613)
+2024-07-24 07:18:15.854495+00:00 [info] <0.7000.0> closing STOMP connection <0.7000.0> (172.20.0.1:46794 -> 172.20.0.3:61613)
+2024-07-24 07:18:15.855865+00:00 [info] <0.7017.0> closing STOMP connection <0.7017.0> (172.20.0.1:46800 -> 172.20.0.3:61613)
+2024-07-24 07:18:15.857343+00:00 [info] <0.6940.0> closing STOMP connection <0.6940.0> (172.20.0.1:54860 -> 172.20.0.3:61613)
+2024-07-24 07:18:16.903234+00:00 [info] <0.7088.0> accepting STOMP connection <0.7088.0> (172.20.0.1:50466 -> 172.20.0.3:61613)
+2024-07-24 07:18:16.903372+00:00 [info] <0.7091.0> accepting STOMP connection <0.7091.0> (172.20.0.1:50468 -> 172.20.0.3:61613)
+2024-07-24 07:19:06.188490+00:00 [info] <0.7091.0> closing STOMP connection <0.7091.0> (172.20.0.1:50468 -> 172.20.0.3:61613)
+2024-07-24 07:19:06.188468+00:00 [info] <0.7088.0> closing STOMP connection <0.7088.0> (172.20.0.1:50466 -> 172.20.0.3:61613)
+2024-07-24 07:19:09.283031+00:00 [info] <0.7156.0> accepting STOMP connection <0.7156.0> (172.20.0.1:47212 -> 172.20.0.3:61613)
+2024-07-24 07:19:09.293001+00:00 [info] <0.7171.0> accepting STOMP connection <0.7171.0> (172.20.0.1:47216 -> 172.20.0.3:61613)
+2024-07-24 07:19:30.597514+00:00 [info] <0.7156.0> closing STOMP connection <0.7156.0> (172.20.0.1:47212 -> 172.20.0.3:61613)
+2024-07-24 07:19:30.600189+00:00 [info] <0.7171.0> closing STOMP connection <0.7171.0> (172.20.0.1:47216 -> 172.20.0.3:61613)
+2024-07-24 07:19:33.182465+00:00 [info] <0.7224.0> accepting STOMP connection <0.7224.0> (172.20.0.1:48926 -> 172.20.0.3:61613)
+2024-07-24 07:19:33.203938+00:00 [info] <0.7250.0> accepting STOMP connection <0.7250.0> (172.20.0.1:48932 -> 172.20.0.3:61613)
+2024-07-24 07:19:37.885449+00:00 [info] <0.7250.0> closing STOMP connection <0.7250.0> (172.20.0.1:48932 -> 172.20.0.3:61613)
+2024-07-24 07:20:20.733420+00:00 [info] <0.7300.0> accepting STOMP connection <0.7300.0> (172.20.0.1:58946 -> 172.20.0.3:61613)
+2024-07-24 07:20:20.750756+00:00 [info] <0.7321.0> accepting STOMP connection <0.7321.0> (172.20.0.1:58950 -> 172.20.0.3:61613)
+2024-07-24 07:21:50.781623+00:00 [warning] <0.7321.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:58950 -> 172.20.0.3:61613, closing it
+2024-07-24 07:22:00.755602+00:00 [warning] <0.7300.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:58946 -> 172.20.0.3:61613, closing it
+2024-07-24 07:22:03.219708+00:00 [warning] <0.7224.0> STOMP detected missed client heartbeat(s) on connection 172.20.0.1:48926 -> 172.20.0.3:61613, closing it
+2024-07-24 09:05:47.492683+00:00 [info] <0.5858.0> closing STOMP connection <0.5858.0> (172.20.0.1:33192 -> 172.20.0.3:61613)
+2024-07-24 09:05:47.637040+00:00 [info] <0.7712.0> accepting STOMP connection <0.7712.0> (172.20.0.1:36050 -> 172.20.0.3:61613)
+2024-07-24 09:05:47.677799+00:00 [info] <0.7712.0> closing STOMP connection <0.7712.0> (172.20.0.1:36050 -> 172.20.0.3:61613)
+2024-07-24 09:05:50.809898+00:00 [info] <0.6537.0> closing AMQP connection <0.6537.0> (172.20.0.1:43140 -> 172.20.0.3:5672 - rabbitConnectionFactory#2e3ecf1c:0, vhost: '/', user: 'admin')
+2024-07-24 10:55:13.077452+00:00 [notice] <0.86.0>     alarm_handler: {set,{{disk_almost_full,"/etc/rabbitmq"},[]}}

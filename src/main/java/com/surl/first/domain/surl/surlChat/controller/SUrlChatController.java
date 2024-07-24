@@ -15,11 +15,14 @@ import com.surl.first.global.securityConfig.SecurityUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,16 +55,17 @@ public class SUrlChatController {
         return ResponseEntity.of(Optional.ofNullable(pages));
     }
 
-    @MessageMapping("/{roomId}/createChat")
+    @MessageMapping("/chat/{roomId}/createChat")
+    @Transactional
     public void createMessage(
-            @PathVariable(name = "roomId") Long roomId,
+            @DestinationVariable(value = "roomId") Long roomId,
             CreatedMessageDto dto,
             Authentication authentication){
         SecurityUser user = (SecurityUser) authentication.getPrincipal();
         Member member = memberService.findById(user.getId());
 
         ChatMessageDto chatMessageDto = sUrlChatService.createMessage(member, roomId, dto.getBody());
-        template.convertAndSend("topic", "routingkey", chatMessageDto);
+        template.convertAndSend("topic", "chatRoom"+roomId+"MessageCreated", chatMessageDto);
     }
 
     @GetMapping("/{roomId}/detail")

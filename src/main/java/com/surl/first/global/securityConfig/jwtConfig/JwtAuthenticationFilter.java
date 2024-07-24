@@ -70,7 +70,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 Map data = Map.of(
                         "id", member.getId(),
                         "username", member.getUsername(),
-                        "Authorities", member.getAuthorities());
+                        "authorities", member.getAuthorities());
                 ResponseCookie token = JwtUtil.encodeAndSetCookie("accessToken",10,data);
                 response.addHeader("Set-Cookie", token.toString());
                 claims = JwtUtil.decode(token.toString());

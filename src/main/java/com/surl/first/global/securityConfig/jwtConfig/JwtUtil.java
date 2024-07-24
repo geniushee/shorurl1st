@@ -115,4 +115,10 @@ public class JwtUtil {
         cookie.setMaxAge(0);
         response.addCookie(cookie);
     }
+
+    public static Map<String, Object> getDataFromToken(String accessToken) {
+        Claims claims = JwtUtil.decode(accessToken);
+        Map<String, Object> data = (Map<String, Object>) claims.get("data", Map.class);
+        return data;
+    }
 }
