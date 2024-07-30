@@ -33,7 +33,7 @@ function ModifySUrl(props) {
 
     const prePage = (event) =>{
         event.preventDefault();
-        navigate("/mylist")
+        navigate("/mypage/mylist")
     }
     console.log(data);
 
@@ -84,22 +84,23 @@ function ModifySUrl(props) {
 
     // action 이후 Form 내부의 값이 재랜더링 되지 않음.
     return (
-        <>
-            <Form method='PUT'>
-                <div>sUrl : http://localhost:5173/<span>{data.title}</span></div>
-                <div>owner : {sUrl.owner}</div>
-                <div><label>origin : {sUrl.origin}</label></div>
-                <div><label>title : </label>
-                <input type="text" name='title' value={formTitle} placeholder='이름을 작성해주세요' onChange={onChangeHandler} /><span>가능한 입력 : 영어대소문자, 공백, 밑줄, 한글</span>
+        <div className='flex-column'>
+        <h2 className='my-5 fs-2'>SUrl 수정하기</h2>
+            <Form className='m-auto p-3 border border-primary rounded d-flex flex-column' method='PUT'>
+                <label className='mb-3 form-label'>sUrl : http://localhost:5173/<span>{data.title ? data.title : data.id}</span></label>
+                <div className='mb-3 form-label'>owner : {sUrl.owner}</div>
+                <div className='mb-3'><label className='form-label'>origin : {sUrl.origin}</label></div>
+                <div className='mb-3'><label className='form-label'>title : </label>
+                <input className='form-control' type="text" name='title' value={formTitle} placeholder='이름을 작성해주세요' onChange={onChangeHandler} /><span>가능한 입력 : 영어대소문자, 공백, 밑줄, 한글</span>
                 </div>
-                <div><label>content : </label>
-                <textarea style={{width : 500}}  name='content' value={sUrl.content} placeholder='설명을 작성해주세요' onChange={onChangeHandler} />
+                <div className='mb-3'><label className='form-label'>content : </label>
+                <textarea className='form-control' style={{width : 500}}  name='content' value={sUrl.content} placeholder='설명을 작성해주세요' onChange={onChangeHandler} />
                 </div>
-                <section>
-                    <button type='submit'>변경하기</button>  <button onClick={prePage}>이전으로</button>
+                <section className='d-flex justify-content-around'>
+                    <button className='btn btn-primary' type='submit'>변경하기</button>  <button className='btn btn-secondary' onClick={prePage}>이전으로</button>
                 </section>
             </Form>
-        </>
+        </div>
     );
 }
 

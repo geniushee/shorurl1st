@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../global/AuthProvider';
 import toastr from 'toastr';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 function EditProfile(props) {
     const { getUser } = useAuth()
@@ -80,8 +81,8 @@ function EditProfile(props) {
             setInfo(preInfo => ({
                 ...preInfo,
                 password: null,
-                name : data.name,
-                email : data.email,
+                name: data.name,
+                email: data.email,
             }))
             toastr["success"]("성공적으로 변경했습니다.")
         } catch {
@@ -104,14 +105,39 @@ function EditProfile(props) {
     return (
         <>
             <form method='PUT' onSubmit={onSubmitHandler} >
-                <p>아이디 : {userInfo.username}</p>
-                <p>비밀번호 : <input type="password" name="password" placeholder='수정할 비밀번호를 입력해주세요' onChange={onChangeHandler} /></p>
-                <p>비밀번호 확인 : <input type="password" name='passwordConfirm' placeholder='수정할 비밀번호를 다시 입력해주세요' onChange={onChangeHandler} /></p>
-                <p>닉네임 : <input type="text" name='name' value={nameValue} onChange={onChangeHandler} placeholder='변경할 닉네임을 입력해주세요' /><span>닉네임은 2자 이상(영문,숫자,공백)</span></p>
-                <p>email : <input type="text" name='email' value={emailValue} onChange={onChangeHandler} /></p>
-                <div>
-                    <button type='submit'>수정하기</button>
-                    <button onClick={goback}>이전으로</button>
+                <p className='row m-3 d-flex align-items-center'>
+                    <span className='col text-end'>아이디</span>
+                    <span className='col-10 text-start'>{userInfo.username}</span>
+                </p>
+
+                <p className='row m-3 d-flex align-items-center'>
+                    <span className='col text-end'>비밀번호</span>
+                    <span className='col-10'>
+                        <input className='form-control' type="password" name="password" placeholder='수정할 비밀번호를 입력해주세요' onChange={onChangeHandler} />
+                    </span>
+                </p>
+                <p className='row m-3 d-flex align-items-center'>
+                    <span className='col text-end'>비밀번호 확인</span>
+                    <div className='col-10'>
+                        <input className='form-control' type="password" name='passwordConfirm' placeholder='수정할 비밀번호를 다시 입력해주세요' onChange={onChangeHandler} />
+                    </div>
+                </p>
+                <p className='row m-3 d-flex align-items-center'>
+                    <span className='col text-end p-auto'>닉네임</span>
+                    <div className='col-10'>
+                        <input className='form-control' type="text" name='name' value={nameValue} onChange={onChangeHandler} placeholder='변경할 닉네임을 입력해주세요' />
+                        <div className='form-text'>닉네임은 2자 이상(영문,숫자,공백)</div>
+                    </div>
+                </p>
+                <p className='row m-3 d-flex align-items-center'>
+                    <span className='col text-end'>email</span>
+                    <div className='col-10'>
+                        <input className='form-control' type="text" name='email' value={emailValue} onChange={onChangeHandler} />
+                    </div>
+                </p>
+                <div  className='mt-5 mx-3 d-flex align-items-center justify-content-around'>
+                    <Button variant='primary' type='submit'>수정하기</Button>
+                    <Button variant='secondary' onClick={goback}>이전으로</Button>
                 </div>
             </ form>
         </>

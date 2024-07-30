@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Errorpage from './errors/Errorpage.jsx'
 import SUrl, { loader as SUrlLoader } from "./domain/surl/SUrl.jsx"
@@ -24,7 +23,6 @@ import MeiliApp from './Meilisearch.jsx'
 import CreateSUrlChatRoom, {loader as createRoomLoader, action as createRoomAction} from './domain/surl/chatRoom/CreateSUrlChatRoom.jsx'
 import ChatRoomList,{loader as roomListLoader} from './domain/surl/chatRoom/ChatRoomList.jsx'
 import ChatRoom, {loader as chatRoomMessagesLoader} from './domain/surl/chatRoom/ChatRoom.jsx'
-
 
 const router = createBrowserRouter([
   {
@@ -63,9 +61,6 @@ const router = createBrowserRouter([
         element: <MypageLayout />,
         children: [
           {
-            path: "/mypage",
-            element: <Mypage />,
-          }, {
             path: "/mypage/mylist",
             element: <MySUrlList />,
             loader: myListLoader,

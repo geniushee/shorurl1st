@@ -36,18 +36,19 @@ function Withdrawal(props) {
     }
 
     return (
-        <div>
-            <form method='POST' onSubmit={onSubmitHandler}>
-                <p>
+        <div className='m-2'>
+            <h2 className='fs-2'>회원탈퇴</h2>
+            <form className='m-5' method='POST' onSubmit={onSubmitHandler}>
+                <p className='form-label'>
                     아이디 : <span>{user.username}</span>
                 </p>
-                <p>
+                <label htmlFor='password'>
                     비밀번호 :
-                </p>
-                <input type="password" name='password' placeholder='비밀번호를 입력해주세요.' />
-                <div>
-                    <button type='submit'>탈퇴하기</button>
-                    <button onClick={goback}>이전으로</button>
+                </label>
+                <input className='form-control' type="password" id='password' name='password' placeholder='비밀번호를 입력해주세요.' />
+                <div className='m-3 d-flex justify-content-end'>
+                    <button className='btn btn-primary mx-2' type='submit'>탈퇴하기</button>
+                    <button className='btn btn-secondary mx-2' onClick={goback}>이전으로</button>
                 </div>
 
             </form>

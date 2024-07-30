@@ -10,15 +10,6 @@
   align-items: center;
 }
 
-.modal-content {
-  position: relative;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 60%;
-  width: 100%;
-}
-
 .close-button {
   background: none;
   border: none;

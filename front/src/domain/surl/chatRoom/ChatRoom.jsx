@@ -47,7 +47,7 @@ function ChatRoom(props) {
             if (subscriptionRef.current) {
                 subscriptionRef.current.unsubscribe();
             }
-            console.log("연결여부 : " +stompClientRef.current.cennected)
+            
             if (stompClientRef.current.connected) {
                 console.log("스톰프 연결 해체")
                 stompClientRef.current.disconnect();

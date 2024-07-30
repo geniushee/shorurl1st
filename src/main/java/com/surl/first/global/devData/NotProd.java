@@ -35,6 +35,8 @@ public class NotProd {
 			Member member3 = null;
 			try{
 				member1 = memberService.findById(1L);
+				member2 = memberService.findById(2L);
+				member3 = memberService.findById(3L);
 			}catch(Exception e){
 				member1 = memberService.register("user1", "1234", "user1@user.com", "user1");
 				memberService.register("admin", "admin1234", "admin@admin.com", "admin");
@@ -53,7 +55,11 @@ public class NotProd {
 			}
 
 			sUrlService.modify(2L, "네이버", "네이버 이동");
+			try{
 			sUrlService.deleteSUrl(member1.getId(), 4L);
+			}catch (Exception e){
+				e.printStackTrace();
+			}
 
 			SUrlChatRoomDto room1 = sUrlChatService.createRoom(sUrlService.findById(1L),member1, "room1");
 			SUrlChatRoomDto room2 = sUrlChatService.createRoom(sUrlService.findById(1L),member1, "room2");
